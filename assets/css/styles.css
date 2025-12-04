@@ -163,6 +163,8 @@ img {
 
 .btn-block {
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .badge {
@@ -680,6 +682,9 @@ html[dir="rtl"] .scroll-top {
   gap: 28px;
   align-items: center;
   flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .hero-stats > div {
@@ -687,7 +692,6 @@ html[dir="rtl"] .scroll-top {
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  flex-shrink: 0;
 }
 
 .hero-stats .number {
@@ -696,12 +700,8 @@ html[dir="rtl"] .scroll-top {
   color: var(--accent-400);
   display: inline-block;
   line-height: 1.2;
-  width: 110px;
-  min-width: 110px;
-  max-width: 110px;
   text-align: center;
   font-variant-numeric: tabular-nums;
-  overflow: hidden;
 }
 
 .hero-stats .label {
@@ -1891,8 +1891,11 @@ html[dir="rtl"] .floating-contact-menu {
 
   .hero-stats > div {
     width: 100%;
-    padding: 20px 10px;
+    padding: 18px 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .hero-stats > div:last-child {
@@ -1900,10 +1903,12 @@ html[dir="rtl"] .floating-contact-menu {
   }
 
   .hero-stats .number {
-    font-size: 1.6rem;
-    width: 100px;
-    min-width: 100px;
-    max-width: 100px;
+    font-size: 1.5rem;
+    display: inline-block;
+  }
+
+  .hero-stats .label {
+    font-size: 0.88rem;
   }
 
   .hero-stats .label {

@@ -122,10 +122,6 @@
   color: var(--white);
   margin-bottom: 8px;
   line-height: 1;
-  display: inline-block;
-  min-width: 5ch;
-  text-align: center;
-  font-variant-numeric: tabular-nums;
 }
 
 .stat-label {
@@ -441,6 +437,8 @@
 .contact-section {
   padding: 80px 0;
   background: var(--gray-100);
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .contact-container {
@@ -449,6 +447,8 @@
   gap: 60px;
   /* Stretch columns so both cards share equal height */
   align-items: stretch;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .contact-form {
@@ -456,6 +456,9 @@
   border-radius: var(--radius-lg);
   padding: 40px;
   box-shadow: var(--card-shadow);
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .contact-form h3 {
@@ -465,8 +468,21 @@
   text-align: center;
 }
 
+.contact-form form {
+  width: 100%;
+  max-width: 100%;
+}
+
 .form-group {
   margin-bottom: 20px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: 100%;
 }
 
 .form-group label {
@@ -474,10 +490,12 @@
   margin-bottom: 8px;
   font-weight: 600;
   color: var(--gray-700);
+  word-wrap: break-word;
 }
 
 .form-control {
   width: 100%;
+  max-width: 100%;
   padding: 14px 18px;
   border: 1px solid var(--gray-200);
   border-radius: var(--radius-md);
@@ -486,6 +504,7 @@
   color: var(--gray-700);
   transition: var(--transition);
   background: var(--gray-50);
+  box-sizing: border-box;
 }
 
 .form-control:focus {
@@ -498,11 +517,30 @@
 textarea.form-control {
   min-height: 140px;
   resize: vertical;
+  max-width: 100%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .form-submit {
   width: 100%;
   margin-top: 10px;
+}
+
+.form-status {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  text-align: center;
+  font-weight: 600;
+  word-wrap: break-word;
+  max-width: 100%;
 }
 
 .contact-info {
@@ -511,6 +549,9 @@ textarea.form-control {
   padding: 40px;
   box-shadow: var(--card-shadow);
   height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 /* Make sure contact cards are visible even if JS reveal doesn't run */
@@ -614,6 +655,8 @@ textarea.form-control {
   margin: 0;
   line-height: 1.6;
   display: block;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .contact-details a:hover {
@@ -758,29 +801,20 @@ textarea.form-control {
 @media (max-width: 1200px) {
   .hero-container {
     grid-template-columns: 1fr 1fr;
-    gap: 35px;
+    gap: 30px;
   }
 
   .hero-title {
-    font-size: 2.6rem;
-  }
-
-  .hero-lead {
-    font-size: 1.15rem;
+    font-size: 2.8rem;
   }
 
   .about-card {
     padding: 50px 40px;
-    gap: 45px;
-  }
-
-  .services-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    gap: 40px;
   }
 
   .contact-container {
-    gap: 45px;
+    gap: 40px;
   }
 }
 
@@ -792,7 +826,6 @@ textarea.form-control {
   .hero-container {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 40px;
   }
 
   .hero-content {
@@ -800,15 +833,9 @@ textarea.form-control {
     margin: 0 auto;
   }
 
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
   .hero-lead {
     margin-left: auto;
     margin-right: auto;
-    max-width: 100%;
-    font-size: 1.15rem;
   }
 
   .hero-cta {
@@ -818,19 +845,11 @@ textarea.form-control {
   .hero-image {
     max-width: 600px;
     margin: 0 auto;
-    transform: none;
-  }
-
-  .hero-stats {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
   }
 
   .about-card {
     grid-template-columns: 1fr;
     text-align: center;
-    padding: 50px 30px;
-    gap: 40px;
   }
 
   .about-features {
@@ -844,315 +863,114 @@ textarea.form-control {
     text-align: center;
   }
 
-  .services-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
-
   .banner-container {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 30px;
   }
 
   .banner-text p {
     margin: 0 auto 20px;
   }
 
-  .banner-phone {
-    font-size: 1.6rem;
-  }
-
-  .social-links {
-    justify-content: center;
-  }
-
-  .banner-cta {
-    display: flex;
-    justify-content: center;
-  }
-
   .contact-container {
     grid-template-columns: 1fr;
-    gap: 40px;
   }
 }
 
 @media (max-width: 768px) {
   .hero {
-    padding: 80px 0 50px;
-  }
-
-  .hero-container {
-    gap: 30px;
+    padding: 80px 0 40px;
   }
 
   .hero-title {
-    font-size: 2.2rem;
-    line-height: 1.2;
+    font-size: 2.4rem;
   }
 
   .hero-lead {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    margin-bottom: 28px;
+    font-size: 1.1rem;
   }
 
   .hero-stats {
     grid-template-columns: 1fr 1fr;
-    gap: 25px 15px;
-    margin-top: 40px;
-    padding-top: 30px;
-  }
-
-  .hero-stats .number {
-    width: 100px;
-  }
-
-  .stat-number {
-    font-size: 2rem;
-    width: 100px;
-    margin: 0 auto;
-  }
-
-  .stat-label {
-    font-size: 0.9rem;
-  }
-
-  .section-heading {
-    margin-bottom: 40px;
+    gap: 30px 20px;
   }
 
   .section-heading h2 {
     font-size: 2rem;
-    line-height: 1.3;
-  }
-
-  .section-heading p {
-    font-size: 1rem;
-  }
-
-  .about-card {
-    padding: 40px 25px;
-    gap: 30px;
-  }
-
-  .about-content h2 {
-    font-size: 1.9rem;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .service-card {
-    padding: 35px 25px;
-  }
-
-  .banner-text h2 {
-    font-size: 1.8rem;
-  }
-
-  .banner-text p {
-    font-size: 1.05rem;
-  }
-
-  .banner-phone {
-    font-size: 1.4rem;
   }
 
   .contact-form,
   .contact-info {
-    padding: 30px 25px;
+    padding: 30px 20px;
+    max-width: 100%;
   }
 
-  .contact-form h3 {
-    font-size: 1.5rem;
+  .form-control {
+    font-size: 0.95rem;
+    padding: 12px 16px;
   }
 }
 
 @media (max-width: 576px) {
-  .hero {
-    padding: 70px 0 40px;
-  }
-
-  .hero-container {
-    gap: 25px;
-  }
-
-  .hero-badge {
-    font-size: 0.85rem;
-    padding: 6px 16px;
-  }
-
   .hero-title {
-    font-size: 1.75rem;
-    line-height: 1.25;
-    margin-bottom: 16px;
-  }
-
-  .hero-lead {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 24px;
+    font-size: 2rem;
   }
 
   .hero-cta {
     flex-direction: column;
     width: 100%;
-    gap: 12px;
   }
 
   .hero-cta .btn {
     width: 100%;
-    padding: 14px 20px;
-    font-size: 0.95rem;
   }
 
   .hero-stats {
     grid-template-columns: 1fr;
-    gap: 0;
     text-align: center;
-    margin-top: 30px;
-    padding-top: 25px;
-  }
-
-  .hero-stats > div {
-    padding: 20px 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .hero-stats > div:last-child {
-    border-bottom: none;
-  }
-
-  .hero-stats .number {
-    font-size: 1.8rem;
-    width: 120px;
-    min-width: 120px;
-    max-width: 120px;
-    margin: 0 auto 10px;
-    overflow: hidden;
-  }
-
-  .hero-stats .label {
-    font-size: 0.95rem;
   }
 
   .stat-item {
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .stat-item:last-child {
-    border-bottom: none;
-  }
-
-  .stat-number {
-    font-size: 2rem;
-    width: 100px;
-    margin: 0 auto;
-    text-align: center;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .stat-label {
-    font-size: 0.9rem;
-  }
-
-  .section-heading h2 {
-    font-size: 1.75rem;
-  }
-
-  .section-heading p {
-    font-size: 0.95rem;
+    padding: 10px 0;
   }
 
   .about-card {
-    padding: 30px 20px;
-    gap: 25px;
+    padding: 40px 25px;
   }
 
-  .about-content h2 {
-    font-size: 1.65rem;
-  }
-
-  .about-content p {
-    font-size: 0.95rem;
-  }
-
-  .about-features {
-    gap: 15px;
-  }
-
-  .service-card {
-    padding: 30px 20px;
-  }
-
-  .service-icon {
-    width: 70px;
-    height: 70px;
-    font-size: 28px;
-  }
-
-  .service-card h3 {
-    font-size: 1.3rem;
-  }
-
-  .service-card p {
-    font-size: 0.95rem;
-  }
-
-  .banner-text h2 {
-    font-size: 1.5rem;
-  }
-
-  .banner-text p {
-    font-size: 0.95rem;
-  }
-
-  .banner-phone {
-    font-size: 1.3rem;
-    letter-spacing: 0.5px;
-  }
-
-  .social-links {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .social-links a {
-    width: 100%;
-    justify-content: center;
+  .services-grid {
+    grid-template-columns: 1fr;
   }
 
   .contact-form,
   .contact-info {
-    padding: 25px 20px;
+    padding: 25px 15px;
   }
 
-  .contact-form h3 {
-    font-size: 1.3rem;
+  .contact-form h3,
+  .contact-info h3 {
+    font-size: 1.5rem;
   }
 
   .form-control {
-    padding: 12px 16px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    padding: 12px 14px;
   }
 
-  textarea.form-control {
-    min-height: 120px;
+  .stats-list {
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
 
   .contact-method {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 12px;
   }
 
-  .method-icon {
-    margin: 0;
+  .contact-details p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 }
 
@@ -1190,5 +1008,31 @@ textarea.form-control {
 @media (max-width: 576px) {
   .partner-logos {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+  .contact-form,
+  .contact-info {
+    padding: 20px 12px;
+  }
+
+  .contact-form h3,
+  .contact-info h3 {
+    font-size: 1.3rem;
+  }
+
+  .form-control {
+    font-size: 0.875rem;
+    padding: 10px 12px;
+  }
+
+  .stats-list li {
+    padding: 15px 10px;
+  }
+
+  .stats-list .stat-number {
+    font-size: 2rem;
   }
 }
