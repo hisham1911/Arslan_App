@@ -760,7 +760,7 @@ html[dir="rtl"] .scroll-top {
   display: flex;
   align-items: center;
   gap: 10px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .avatar {
@@ -773,6 +773,29 @@ html[dir="rtl"] .scroll-top {
   align-items: center;
   justify-content: center;
   font-weight: 700;
+}
+
+.avatar-link {
+  display: inline-block;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.avatar-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--white);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.avatar-link:hover .avatar-img {
+  transform: scale(1.15);
+  box-shadow: 0 6px 16px rgba(14, 184, 226, 0.4);
+  border-color: var(--accent-500);
 }
 
 .mini-avatars .text {
@@ -2258,7 +2281,8 @@ html[dir="ltr"] .project-header h2 {
     margin-bottom: 16px;
   }
 
-  .mini-avatars .avatar {
+  .mini-avatars .avatar,
+  .mini-avatars .avatar-img {
     width: 36px;
     height: 36px;
     font-size: 0.9rem;
@@ -2300,7 +2324,8 @@ html[dir="ltr"] .project-header h2 {
     gap: 8px;
   }
 
-  .mini-avatars .avatar {
+  .mini-avatars .avatar,
+  .mini-avatars .avatar-img {
     width: 34px;
     height: 34px;
     font-size: 0.85rem;
@@ -2333,19 +2358,26 @@ html[dir="ltr"] .project-header h2 {
 
   .mini-avatars {
     gap: 7px;
-    justify-content: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap !important;
+    flex-direction: row !important;
   }
 
-  .mini-avatars .avatar {
+  .mini-avatars .avatar,
+  .mini-avatars .avatar-img,
+  .mini-avatars .avatar-link {
     width: 32px;
     height: 32px;
     font-size: 0.8rem;
+    flex-shrink: 0;
   }
 
   .mini-avatars .text {
     font-size: 0.8rem;
-    flex-basis: 100%;
-    text-align: center;
+    flex: 1 1 auto;
+    text-align: left;
+    margin-left: 5px;
+    white-space: nowrap;
   }
 }
 
@@ -2368,14 +2400,24 @@ html[dir="ltr"] .project-header h2 {
     font-size: 0.9rem;
   }
 
-  .mini-avatars .avatar {
-    width: 30px;
-    height: 30px;
+  .mini-avatars {
+    gap: 5px;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .mini-avatars .avatar,
+  .mini-avatars .avatar-img,
+  .mini-avatars .avatar-link {
+    width: 28px;
+    height: 28px;
     font-size: 0.75rem;
+    flex-shrink: 0;
   }
 
   .mini-avatars .text {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
+    white-space: nowrap;
   }
 }
 
