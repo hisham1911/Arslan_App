@@ -2248,6 +2248,25 @@ html[dir="ltr"] .project-header h2 {
   .project-logo img {
     width: 120px;
   }
+
+  .floating-card {
+    padding: 28px;
+  }
+
+  .hero-logo {
+    width: 120px;
+    margin-bottom: 16px;
+  }
+
+  .mini-avatars .avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .mini-avatars .text {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -2265,6 +2284,98 @@ html[dir="ltr"] .project-header h2 {
 
   .project-section ul {
     flex-direction: column;
+  }
+
+  .floating-card {
+    padding: 26px;
+    gap: 16px;
+  }
+
+  .hero-logo {
+    width: 110px;
+    margin-bottom: 14px;
+  }
+
+  .mini-avatars {
+    gap: 8px;
+  }
+
+  .mini-avatars .avatar {
+    width: 34px;
+    height: 34px;
+    font-size: 0.85rem;
+  }
+
+  .mini-avatars .text {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .floating-card {
+    padding: 24px 20px;
+    gap: 14px;
+  }
+
+  .floating-card p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .hero-logo {
+    width: 100px;
+    margin-bottom: 12px;
+  }
+
+  .link-arrow {
+    font-size: 0.95rem;
+  }
+
+  .mini-avatars {
+    gap: 7px;
+    justify-content: center;
+  }
+
+  .mini-avatars .avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+
+  .mini-avatars .text {
+    font-size: 0.8rem;
+    flex-basis: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .floating-card {
+    padding: 20px 16px;
+    gap: 12px;
+  }
+
+  .floating-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .hero-logo {
+    width: 90px;
+  }
+
+  .link-arrow {
+    font-size: 0.9rem;
+  }
+
+  .mini-avatars .avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 0.75rem;
+  }
+
+  .mini-avatars .text {
+    font-size: 0.75rem;
   }
 }
 
