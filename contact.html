@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("site_lang");
+          var html = document.documentElement;
+          if (saved === "en") {
+            html.lang = "en";
+            html.dir = "ltr";
+            html.classList.add("lang-loading");
+          } else if (saved === "ar") {
+            html.lang = "ar";
+            html.dir = "rtl";
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <title data-i18n="contact.page_title">Contact Us - Arslan Tech</title>
+    <link
+      rel="icon"
+      type="image/webp"
+      href="assets/images/logos/logo-arslan-primary.webp"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/contact.css" />
+    <!-- Added SVG decorations CSS link -->
+    <link rel="stylesheet" href="assets/css/svg-decorations.css" />
+    <link rel="canonical" href="https://arslantech-eg.com/contact.html" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "mainEntity": {
+          "@type": "Organization",
+          "name": "Arslan Tech",
+          "url": "https://arslantech-eg.com",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+20-101-407-8319",
+            "contactType": "customer service",
+            "email": "info@arslantech-eg.com"
+          }
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <div class="topbar-inner">
+          <div class="topbar-contact">
+            <i class="fas fa-phone topbar-icon"></i>
+            <a href="tel:01014078319">01014078319</a>
+            <span class="divider"></span>
+            <i class="fas fa-envelope topbar-icon"></i>
+            <a href="mailto:info@arslantech-eg.com">info@arslantech-eg.com</a>
+          </div>
+          <div class="topbar-social">
+            <a
+              href="https://www.linkedin.com/company/arslantech"
+              aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a
+              href="https://wa.me/201014078319"
+              aria-label="WhatsApp"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+            <a
+              href="https://www.facebook.com/Arslantecheg/"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+          </div>
+          <div
+            class="topbar-lang"
+            id="langToggle"
+            role="navigation"
+            aria-label="Language switcher"
+          >
+            <button class="lang-btn" data-lang="ar">العربية</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav
+      class="navbar"
+      id="navbar"
+      role="navigation"
+      aria-label="Main navigation"
+    >
+      <div class="container">
+        <div class="nav-wrapper">
+          <a class="brand" href="index.html" aria-label="Arslan Tech Home">
+            <img
+              src="assets/images/logos/logo-arslan-primary.webp"
+              alt="Arslan Tech"
+              class="brand-image"
+              decoding="async"
+              loading="lazy"
+            />
+          </a>
+          <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="قائمة التنقل"
+            aria-controls="navLinks"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" data-i18n="nav.home">الرئيسية</a></li>
+            <li><a href="about.html" data-i18n="nav.about">من نحن</a></li>
+            <li>
+              <a href="services.html" data-i18n="nav.services">خدماتنا</a>
+            </li>
+            <li>
+              <a href="projects.html" data-i18n="nav.projects">سابقة أعمالنا</a>
+            </li>
+            <li>
+              <a href="products.html" data-i18n="nav.products">المنتجات</a>
+            </li>
+            <li>
+              <a href="academy.html" data-i18n="nav.academy">أرسلان أكاديمي</a>
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="btn btn-nav active"
+                data-i18n="nav.contact"
+                >تواصل معنا</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero" style="padding: 60px 0 40px">
+        <div class="container">
+          <h1 class="hero-title" data-i18n="contact_page.hero_title">
+            تواصل معنا
+          </h1>
+          <p
+            class="hero-lead"
+            style="color: rgba(255, 255, 255, 0.85); max-width: 820px"
+            data-i18n="contact_page.hero_lead"
+          >
+            يسعدنا خدمتك عبر جميع قنوات الدعم – أرسل رسالة، اتصل بنا مباشرة، أو
+            قم بزيارة مكتبنا.
+          </p>
+        </div>
+      </section>
+
+      <!-- Intro / Methods -->
+      <section class="contact-intro">
+        <div class="container">
+          <div class="intro-heading">
+            <h2 data-i18n="contact_page.section_intro_title">
+              اختر الطريقة الأنسب للتواصل
+            </h2>
+            <p data-i18n="contact_page.section_intro_text">
+              فريق الدعم والفريق التقني والمبيعات جاهزون لمساعدتك. نرد عادة خلال
+              أقل من 24 ساعة عمل.
+            </p>
+          </div>
+          <div class="contact-methods">
+            <div class="info-block" aria-labelledby="supportBoxTitle">
+              <div class="icon-circle small">
+                <i class="fas fa-headset" aria-hidden="true"></i>
+              </div>
+              <h3
+                id="supportBoxTitle"
+                data-i18n="contact_page.support_box_title"
+              >
+                الدعم الفني
+              </h3>
+              <p data-i18n="contact_page.support_box_text">
+                حل المشكلات والأعطال، متابعة الأداء، وترقية الأنظمة.
+              </p>
+            </div>
+            <div class="info-block" aria-labelledby="salesBoxTitle">
+              <div class="icon-circle small">
+                <i class="fas fa-lightbulb" aria-hidden="true"></i>
+              </div>
+              <h3 id="salesBoxTitle" data-i18n="contact_page.sales_box_title">
+                المبيعات والحلول
+              </h3>
+              <p data-i18n="contact_page.sales_box_text">
+                تحليل وضعك الحالي واقتراح حلول تقنية عملية تناسب ميزانيتك.
+              </p>
+            </div>
+            <div class="info-block" aria-labelledby="hoursBoxTitle">
+              <div class="icon-circle small">
+                <i class="fas fa-clock" aria-hidden="true"></i>
+              </div>
+              <h3 id="hoursBoxTitle" data-i18n="contact_page.hours_title">
+                ساعات العمل
+              </h3>
+              <p data-i18n="contact_page.hours_value">
+                السبت - الخميس: 10 صباحاً - 8 مساءً
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Contact Section -->
+      <section id="contact" class="contact-section contact-page-section">
+        <div class="container contact-grid">
+          <!-- Contact Information -->
+          <div class="contact-info">
+            <h3 data-i18n="contact.form_title">تواصل مع الدعم الفني</h3>
+            <p data-i18n="contact_page.form_lead">
+              املأ النموذج وسيقوم فريقنا بالتواصل معك في أقرب وقت.
+            </p>
+            <ul class="stats-list">
+              <li>
+                <span
+                  class="stat-number count-up"
+                  data-target="4"
+                  data-prefix="+"
+                  >0</span
+                >
+                <span class="stat-label" data-i18n="contact.stat.years"
+                  >سنوات الخبرة</span
+                >
+              </li>
+              <li>
+                <span
+                  class="stat-number count-up"
+                  data-target="377"
+                  data-prefix="+"
+                  >0</span
+                >
+                <span class="stat-label" data-i18n="contact.stat.projects"
+                  >مشاريعنا</span
+                >
+              </li>
+              <li>
+                <span
+                  class="stat-number count-up"
+                  data-target="141"
+                  data-prefix="+"
+                  >0</span
+                >
+                <span class="stat-label" data-i18n="contact.stat.clients"
+                  >عملائنا</span
+                >
+              </li>
+            </ul>
+            <div class="contact-details">
+              <p>
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <strong data-i18n="contact.phone_label">رقم الهاتف:</strong>
+                <a href="tel:01014078319">01014078319</a>
+              </p>
+              <p>
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <strong data-i18n="contact.email_label"
+                  >البريد الإلكتروني:</strong
+                >
+                <a href="mailto:info@arslantech-eg.com"
+                  >info@arslantech-eg.com</a
+                >
+              </p>
+              <p>
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                <strong data-i18n="contact_page.address_title">العنوان</strong>
+                <span data-i18n="contact.address"
+                  >الفيوم المسلة العبودي بجوار محمصات وكافيه شيخ البلد</span
+                >
+              </p>
+            </div>
+            <div class="direct-contact" aria-labelledby="directContactTitle">
+              <h4
+                id="directContactTitle"
+                data-i18n="contact_page.direct_contact_title"
+              >
+                تواصل مباشر
+              </h4>
+              <div class="direct-actions">
+                <a
+                  class="btn btn-light"
+                  href="https://wa.me/201014078319"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-i18n="contact_page.whatsapp_cta"
+                  >أرسل رسالة واتساب</a
+                >
+                <a
+                  class="btn btn-outline"
+                  href="mailto:info@arslantech-eg.com"
+                  data-i18n="contact_page.email_cta"
+                  >أرسل بريد إلكتروني</a
+                >
+                <a
+                  class="btn btn-primary"
+                  href="tel:01014078319"
+                  data-i18n="contact_page.phone_cta"
+                  >اتصل الآن</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form">
+            <h3 data-i18n="contact.form_title">تواصل مع الدعم الفني</h3>
+            <form id="supportForm" method="POST">
+              <div class="form-group">
+                <label for="firstName" data-i18n="form.first"
+                  >الاسم الأول</label
+                >
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  placeholder="الاسم الأول"
+                  data-i18n-placeholder="form.first_ph"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="lastName" data-i18n="form.last">الاسم الأخير</label>
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  placeholder="الاسم الأخير"
+                  data-i18n-placeholder="form.last_ph"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email" data-i18n="form.email"
+                  >البريد الإلكتروني</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="example@email.com"
+                  data-i18n-placeholder="form.email_ph"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="phone" data-i18n="form.phone">رقم الهاتف</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="010xxxxxxxx"
+                  data-i18n-placeholder="form.phone_ph"
+                />
+              </div>
+              <div class="form-group full-width">
+                <label for="message" data-i18n="form.message"
+                  >اكتب رسالتك</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  placeholder="كيف يمكننا مساعدتك؟"
+                  data-i18n-placeholder="form.message_ph"
+                  required
+                ></textarea>
+              </div>
+              <!-- Honeypot Field -->
+              <input
+                type="text"
+                name="website"
+                style="display: none"
+                tabindex="-1"
+                autocomplete="off"
+              />
+              <button
+                type="submit"
+                class="btn btn-primary btn-block"
+                data-i18n="form.submit"
+              >
+                أرسل الرسالة
+              </button>
+              <p id="formStatus" class="form-status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <img
+              src="assets/images/logos/logo-arslan-primary.webp"
+              alt="Arslan Tech"
+              class="footer-logo-image"
+              decoding="async"
+              loading="lazy"
+            />
+          </div>
+          <p data-i18n="footer.about">
+            حلول تقنية مبتكرة ومتكاملة تساعد الشركات على تحقيق النمو والازدهار
+            في العصر الرقمي.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h4 data-i18n="footer.links_title">روابط سريعة</h4>
+          <ul>
+            <li><a data-i18n="nav.home" href="index.html#home">الرئيسية</a></li>
+            <li><a data-i18n="nav.about" href="about.html">من نحن</a></li>
+            <li>
+              <a data-i18n="nav.services" href="index.html#services">خدماتنا</a>
+            </li>
+            <li>
+              <a data-i18n="nav.projects" href="projects.html">سابقة أعمالنا</a>
+            </li>
+            <li>
+              <a data-i18n="nav.academy" href="index.html#academy"
+                >أرسلان أكاديمي</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4 data-i18n="footer.contact_title">تواصل معنا</h4>
+          <p>
+            <i class="fas fa-phone"></i>
+            <strong data-i18n="footer.phone">الهاتف:</strong>
+            <a href="tel:01014078319">01014078319</a>
+          </p>
+          <p>
+            <i class="fas fa-envelope"></i>
+            <strong data-i18n="footer.email">البريد:</strong>
+            <a href="mailto:info@arslantech-eg.com">info@arslantech-eg.com</a>
+          </p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i>
+            <strong data-i18n="contact.address_label">العنوان:</strong>
+            <span data-i18n="contact.address"
+              >الفيوم المسلة العبودي بجوار محمصات وكافيه شيخ البلد</span
+            >
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p data-i18n="footer.copyright">
+            Copyright © 2025 - WebSite Design by Hisham Mohamed
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="floating-contact-menu" id="floatingContactMenu">
+      <div class="social-icons-group">
+        <a
+          href="https://wa.me/201014078319"
+          class="social-icon whatsapp"
+          target="_blank"
+          aria-label="WhatsApp"
+        >
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a
+          href="https://m.me/104783481303669"
+          class="social-icon messenger"
+          target="_blank"
+          aria-label="Messenger"
+        >
+          <i class="fab fa-facebook-messenger"></i>
+        </a>
+        <a
+          href="tel:01014078319"
+          class="social-icon phone"
+          aria-label="Call Us"
+        >
+          <i class="fas fa-phone"></i>
+        </a>
+        <a
+          href="mailto:info@arslantech-eg.com"
+          class="social-icon email"
+          aria-label="Email Us"
+        >
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+      <button
+        class="floating-toggle-btn"
+        id="floatingToggleBtn"
+        aria-label="Toggle Contact Menu"
+      >
+        <i class="fas fa-comments" id="floatingIcon"></i>
+      </button>
+    </div>
+
+    <button
+      class="scroll-top"
+      id="scrollTop"
+      aria-label="العودة للأعلى"
+      data-i18n-aria="footer.scroll_top"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/script.js"></script>
+    <!-- Added SVG decorations JS script -->
+    <script src="assets/js/svg-decorations.js"></script>
+  </body>
+</html>

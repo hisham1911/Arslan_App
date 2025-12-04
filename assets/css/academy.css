@@ -1,0 +1,508 @@
+@import url("./styles.css");
+
+/* Academy Hero Section */
+.academy-hero {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+  padding: 100px 0 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.academy-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      circle at 20% 50%,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(255, 255, 255, 0.05) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+}
+
+.academy-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.academy-hero .hero-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Cairo", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.academy-hero .hero-lead {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.8;
+}
+
+.academy-hero .hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Academy Programs Section */
+.academy-programs {
+  padding: 80px 0;
+  background: var(--background);
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.program-card {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.program-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary);
+}
+
+.program-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: var(--white);
+  transition: all 0.3s ease;
+}
+
+.program-card:hover .program-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.program-card h3 {
+  font-size: 1.4rem;
+  color: var(--dark);
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+}
+
+.program-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.program-list li {
+  padding: 0.8rem 0;
+  color: var(--text);
+  font-size: 1rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  line-height: 1.6;
+}
+
+.program-list li:last-child {
+  border-bottom: none;
+}
+
+.program-list li::before {
+  content: "✓";
+  color: var(--success);
+  font-weight: bold;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-inline-end: 0.8rem !important;
+}
+
+/* Academy Advantages Section */
+.academy-advantages {
+  padding: 80px 0;
+  background: linear-gradient(180deg, var(--white) 0%, var(--background) 100%);
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.advantage-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+}
+
+.advantage-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border-color: var(--primary);
+}
+
+.advantage-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(
+    135deg,
+    rgba(46, 49, 146, 0.1),
+    rgba(126, 34, 206, 0.1)
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2.2rem;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.advantage-card:hover .advantage-icon {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--white);
+  transform: scale(1.1);
+}
+
+.advantage-card h3 {
+  font-size: 1.2rem;
+  color: var(--dark);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.advantage-card p {
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Academy CTA Section */
+.academy-cta {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.academy-cta::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cta-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.academy-cta h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: var(--white);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.academy-cta p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-large {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--white);
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-outline:hover {
+  background: var(--white);
+  color: var(--primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .academy-hero {
+    padding: 80px 0 60px;
+  }
+
+  .academy-programs,
+  .academy-advantages,
+  .academy-cta {
+    padding: 60px 0;
+  }
+
+  .programs-grid,
+  .advantages-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .program-card,
+  .advantage-card {
+    padding: 1.5rem;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-large {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* RTL Support */
+[dir="rtl"] .program-list li::before {
+  margin-right: 0.8rem;
+  margin-left: 0;
+}
+
+[dir="ltr"] .program-list li::before {
+  margin-right: 0;
+  margin-left: 0.8rem;
+}
+
+/* Academy Registration Section */
+.academy-registration {
+  padding: 80px 0;
+  background: linear-gradient(180deg, var(--white) 0%, #f5f8fc 100%);
+}
+
+.registration-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 40px;
+  align-items: start;
+}
+
+.registration-form-wrapper {
+  background: var(--white);
+  padding: 34px 32px 38px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(46, 82, 152, 0.08);
+  position: relative;
+}
+
+.registration-form-wrapper form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.registration-form-wrapper .form-group.full-width {
+  grid-column: span 2;
+}
+
+.registration-form-wrapper select {
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  background: #f9fbff;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.25s ease;
+  width: 100%;
+}
+
+.registration-form-wrapper select:hover {
+  border-color: var(--gray-300);
+  background: var(--white);
+}
+.registration-form-wrapper select:focus {
+  outline: none;
+  border-color: var(--accent-500);
+  box-shadow: 0 0 0 4px rgba(14, 184, 226, 0.15);
+  background: var(--white);
+}
+
+.registration-info {
+  background: linear-gradient(135deg, var(--primary-800), var(--primary-600));
+  color: var(--white);
+  padding: 40px 34px 46px;
+  border-radius: 22px;
+  box-shadow: 0 24px 50px rgba(17, 52, 109, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.registration-info::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at 20% 30%,
+      rgba(255, 255, 255, 0.12),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(255, 255, 255, 0.08),
+      transparent 65%
+    );
+  pointer-events: none;
+}
+
+.registration-info h3 {
+  font-size: 1.6rem;
+  margin: 0 0 20px;
+  font-weight: 700;
+}
+
+.registration-points {
+  list-style: none;
+  margin: 0 0 26px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.registration-points li {
+  position: relative;
+  padding-right: 26px;
+  line-height: 1.6;
+}
+html[dir="ltr"] .registration-points li {
+  padding-left: 26px;
+  padding-right: 0;
+}
+.registration-points li::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-500), var(--primary-600));
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+html[dir="ltr"] .registration-points li::before {
+  left: 0;
+  right: auto;
+}
+
+.registration-contact-inline {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.registration-contact-inline .btn-outline {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.registration-contact-inline .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.form-status {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.form-status.pending {
+  color: var(--primary);
+}
+.form-status.success {
+  color: var(--success);
+}
+.form-status.error {
+  color: var(--error);
+}
+
+@media (max-width: 900px) {
+  .registration-form-wrapper form {
+    grid-template-columns: 1fr;
+  }
+  .registration-form-wrapper .form-group.full-width {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .registration-grid {
+    grid-template-columns: 1fr;
+  }
+  .registration-info {
+    padding: 32px 26px 40px;
+  }
+}
