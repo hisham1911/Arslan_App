@@ -423,11 +423,14 @@
         translations[lang] && translations[lang][key]
           ? translations[lang][key]
           : el.textContent;
-      
+
       // Special handling for footer copyright with link
-      if (key === 'footer.copyright') {
-        const name = lang === 'ar' ? 'هشام محمد' : 'Hisham Mohamed';
-        const prefix = lang === 'ar' ? 'جميع الحقوق محفوظة © 2025 - تصميم الموقع بواسطة' : 'Copyright © 2025 - WebSite Design by';
+      if (key === "footer.copyright") {
+        const name = lang === "ar" ? "هشام محمد" : "Hisham Mohamed";
+        const prefix =
+          lang === "ar"
+            ? "جميع الحقوق محفوظة © 2025 - تصميم الموقع بواسطة"
+            : "Copyright © 2025 - WebSite Design by";
         el.innerHTML = `${prefix} <a href="https://wa.me/201112742841" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">${name}</a>`;
       } else {
         el.textContent = txt;
