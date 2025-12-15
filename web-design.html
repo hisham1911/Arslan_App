@@ -1,58 +1,63 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>
-      (function () {
-        try {
-          var saved = localStorage.getItem("site_lang");
-          var html = document.documentElement;
-          if (saved === "en") {
-            html.lang = "en";
-            html.dir = "ltr";
-            html.classList.add("lang-loading");
-          } else if (saved === "ar") {
-            html.lang = "ar";
-            html.dir = "rtl";
-          }
-        } catch (e) {}
-      })();
-    </script>
-    <title data-i18n="webdesign.page_title">تصميم المواقع - أرسلان تك</title>
-    <meta name="description" content="نصمم مواقع وأنظمة مطاعم وكاشير وأنظمة أعمال مخصصة تعمل محليًا أو على السحابة، بأداء سريع وتجربة ممتازة وإتقان في كل التفاصيل. احصل على عرض خلال 24 ساعة." />
-    
-    <!-- SEO Meta Tags -->
-    <meta name="keywords" content="تصميم مواقع, تطوير مواقع, أنظمة مطاعم, كاشير, POS, أنظمة أعمال, سحابة, لوكال, SEO, مواقع متجاوبة, أرسلان تك, مصر, الفيوم" />
-    <meta name="author" content="أرسلان تك" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://arslantech-eg.com/web-design.html" />
-    
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="تصميم وتطوير المواقع - أرسلان تك" />
-    <meta property="og:description" content="نصمم مواقع وأنظمة مطاعم وكاشير تعمل محليًا أو على السحابة بإتقان وجودة عالية وأداء سريع وتجربة مستخدم ممتازة." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://arslantech-eg.com/web-design.html" />
-    <meta property="og:image" content="https://arslantech-eg.com/assets/images/logos/logo-arslan-primary.webp" />
-    <meta property="og:image:alt" content="أرسلان تك - تصميم المواقع" />
-    <meta property="og:site_name" content="أرسلان تك" />
-    <meta property="og:locale" content="ar_EG" />
-    
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="تصميم وتطوير المواقع - أرسلان تك" />
-    <meta name="twitter:description" content="نقدم مواقع وأنظمة مطاعم وكاشير قابلة للنشر محليًا أو على السحابة بإتقان في التنفيذ وأداء متميز." />
-    <meta name="twitter:image" content="https://arslantech-eg.com/assets/images/logos/logo-arslan-primary.webp" />
-    <meta name="twitter:image:alt" content="أرسلان تك - تصميم المواقع" />
-    
-    <!-- Additional SEO -->
-    <meta name="theme-color" content="#1952a0" />
-    <meta name="msapplication-TileColor" content="#1952a0" />
-    <link rel="alternate" hreflang="ar" href="https://arslantech-eg.com/web-design.html" />
-    <link rel="alternate" hreflang="en" href="https://arslantech-eg.com/web-design.html?lang=en" />
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("site_lang");
+        var html = document.documentElement;
+        if (saved === "en") {
+          html.lang = "en";
+          html.dir = "ltr";
+          html.classList.add("lang-loading");
+        } else if (saved === "ar") {
+          html.lang = "ar";
+          html.dir = "rtl";
+        }
+      } catch (e) { }
+    })();
+  </script>
+  <title data-i18n="webdesign.page_title">تصميم المواقع - أرسلان تك</title>
+  <meta name="description"
+    content="نصمم مواقع وأنظمة مطاعم وكاشير وأنظمة أعمال مخصصة تعمل محليًا أو على السحابة، بأداء سريع وتجربة ممتازة وإتقان في كل التفاصيل. احصل على عرض خلال 24 ساعة." />
+
+  <!-- SEO Meta Tags -->
+  <meta name="keywords"
+    content="تصميم مواقع, تطوير مواقع, أنظمة مطاعم, كاشير, POS, أنظمة أعمال, سحابة, لوكال, SEO, مواقع متجاوبة, أرسلان تك, مصر, الفيوم" />
+  <meta name="author" content="أرسلان تك" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://arslantech-eg.com/web-design.html" />
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="تصميم وتطوير المواقع - أرسلان تك" />
+  <meta property="og:description"
+    content="نصمم مواقع وأنظمة مطاعم وكاشير تعمل محليًا أو على السحابة بإتقان وجودة عالية وأداء سريع وتجربة مستخدم ممتازة." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://arslantech-eg.com/web-design.html" />
+  <meta property="og:image" content="https://arslantech-eg.com/assets/images/logos/logo-arslan-primary.webp" />
+  <meta property="og:image:alt" content="أرسلان تك - تصميم المواقع" />
+  <meta property="og:site_name" content="أرسلان تك" />
+  <meta property="og:locale" content="ar_EG" />
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="تصميم وتطوير المواقع - أرسلان تك" />
+  <meta name="twitter:description"
+    content="نقدم مواقع وأنظمة مطاعم وكاشير قابلة للنشر محليًا أو على السحابة بإتقان في التنفيذ وأداء متميز." />
+  <meta name="twitter:image" content="https://arslantech-eg.com/assets/images/logos/logo-arslan-primary.webp" />
+  <meta name="twitter:image:alt" content="أرسلان تك - تصميم المواقع" />
+
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#1952a0" />
+  <meta name="msapplication-TileColor" content="#1952a0" />
+  <link rel="alternate" hreflang="ar" href="https://arslantech-eg.com/web-design.html" />
+  <link rel="alternate" hreflang="en" href="https://arslantech-eg.com/web-design.html?lang=en" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
@@ -106,311 +111,479 @@
       }
     }
     </script>
-    <link rel="icon" type="image/webp" href="assets/images/logos/logo-arslan-primary.webp" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <link rel="stylesheet" href="assets/css/web-design.css" />
-    <link rel="stylesheet" href="assets/css/svg-decorations.css" />
-  </head>
-  <body>
-    <header class="topbar">
-      <div class="container">
-        <div class="topbar-inner">
-          <div class="topbar-contact">
-            <i class="fas fa-phone topbar-icon"></i>
-            <a href="tel:01014078319">01014078319</a>
-            <span class="divider"></span>
-            <i class="fas fa-envelope topbar-icon"></i>
-            <a href="mailto:info@arslantech-eg.com">info@arslantech-eg.com</a>
-          </div>
-          <div class="topbar-social">
-            <a href="https://www.linkedin.com/company/arslantech" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://wa.me/201014078319" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.facebook.com/Arslantecheg/" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-          </div>
-          <div class="topbar-lang" id="langToggle" role="navigation" aria-label="Language switcher">
-            <button class="lang-btn" data-lang="ar">العربية</button>
-            <button class="lang-btn" data-lang="en">EN</button>
-          </div>
+  <link rel="icon" type="image/webp" href="assets/images/logos/logo-arslan-primary.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/web-design.css" />
+  <link rel="stylesheet" href="assets/css/svg-decorations.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <div class="topbar-contact">
+          <i class="fas fa-phone topbar-icon"></i>
+          <a href="tel:01014078319">01014078319</a>
+          <span class="divider"></span>
+          <i class="fas fa-envelope topbar-icon"></i>
+          <a href="mailto:info@arslantech-eg.com">info@arslantech-eg.com</a>
+        </div>
+        <div class="topbar-social">
+          <a href="https://www.linkedin.com/company/arslantech" aria-label="LinkedIn" target="_blank"
+            rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/201014078319" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i
+              class="fab fa-whatsapp"></i></a>
+          <a href="https://www.facebook.com/Arslantecheg/" aria-label="Facebook" target="_blank"
+            rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <div class="topbar-lang" id="langToggle" role="navigation" aria-label="Language switcher">
+          <button class="lang-btn" data-lang="ar">العربية</button>
+          <button class="lang-btn" data-lang="en">EN</button>
         </div>
       </div>
-    </header>
-
-    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
-      <div class="container">
-        <div class="nav-wrapper">
-          <a class="brand" href="index.html" aria-label="Arslan Tech Home">
-            <img src="assets/images/logos/logo-arslan-primary.webp" alt="Arslan Tech" class="brand-image" decoding="async" loading="lazy" />
-          </a>
-          <button class="menu-toggle" id="menuToggle" aria-label="قائمة التنقل" aria-controls="navLinks" aria-expanded="false">
-            <span></span><span></span><span></span>
-          </button>
-          <ul class="nav-links" id="navLinks">
-            <li><a href="index.html" data-i18n="nav.home">الرئيسية</a></li>
-            <li><a href="about.html" data-i18n="nav.about">من نحن</a></li>
-            <li><a href="services.html" data-i18n="nav.services">خدماتنا</a></li>
-            <li><a href="web-design.html" class="active" data-i18n="nav.webdesign">تصميم المواقع</a></li>
-            <li><a href="projects.html" data-i18n="nav.projects">سابقة أعمالنا</a></li>
-            <li><a href="products.html" data-i18n="nav.products">المنتجات</a></li>
-            <li><a href="academy.html" data-i18n="nav.academy">أرسلان أكاديمي</a></li>
-            <li><a href="contact.html" class="btn btn-nav" data-i18n="nav.contact">تواصل معنا</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <main>
-      <!-- Hero -->
-      <section class="hero web-hero">
-        <div class="hero-overlay"></div>
-        <div class="container">
-          <span class="hero-badge" data-i18n="webdesign.hero_badge">مواقع وصفحات وسيستمات</span>
-          <h1 class="hero-title" data-i18n="webdesign.hero_title">مواقع احترافية + سيستمات مطاعم وكاشير وأي تطبيق</h1>
-          <p class="hero-lead" data-i18n="webdesign.hero_lead">من أول فكرة لحد الإطلاق، هننفّذ حل يناسب شغلك بأسعار مناسبة وباقات على قد ميزانيتك.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="contact.html?service=web-design" data-i18n="webdesign.cta_quote">اطلب عرضك خلال 24 ساعة</a>
-            <a class="btn btn-outline" href="projects.html" data-i18n="webdesign.cta_projects">شوف شغلنا</a>
-          </div>
-          <div class="hero-meta">
-            <div class="meta-item"><i class="fas fa-gauge-high"></i><span data-i18n="webdesign.benefit_1">سرعة وأداء عاليين</span></div>
-            <div class="meta-item"><i class="fas fa-magnifying-glass"></i><span data-i18n="webdesign.benefit_2">تهيئة للظهور في جوجل وتجربة استخدام مريحة</span></div>
-            <div class="meta-item"><i class="fas fa-headset"></i><span data-i18n="webdesign.benefit_3">شغل متقن وجودة عالية ودعم مستمر</span></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Benefits -->
-      <section class="benefits-section">
-        <div class="container">
-          <div class="benefits-heading">
-            <h2 data-i18n="webdesign.benefits_title">لماذا تختارنا؟</h2>
-          </div>
-          <div class="benefits-grid">
-            <div class="benefit-card">
-              <div class="icon"><i class="fas fa-mobile-screen"></i></div>
-              <div>
-                <h3 data-i18n="webdesign.package_feature_responsive">تصميم متجاوب لجميع الأجهزة</h3>
-                <p data-i18n="webdesign.package_feature_speed">تحسين السرعة والأداء</p>
-              </div>
-            </div>
-            <div class="benefit-card">
-              <div class="icon"><i class="fas fa-chart-line"></i></div>
-              <div>
-                <h3 data-i18n="webdesign.package_feature_seo">تهيئة أساسية لمحركات البحث (SEO)</h3>
-                <p data-i18n="webdesign.benefit_2">تحسين SEO وتجربة مستخدم</p>
-              </div>
-            </div>
-            <div class="benefit-card">
-              <div class="icon"><i class="fas fa-handshake"></i></div>
-              <div>
-                <h3 data-i18n="webdesign.package_feature_cms">لوحة تحكم سهلة (CMS)</h3>
-                <p data-i18n="webdesign.benefit_3">دعم فني مستمر</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Pricing -->
-      <section class="pricing-section">
-        <div class="container">
-          <div class="pricing-heading">
-            <h2 data-i18n="webdesign.packages_title">باقات تناسب احتياجك</h2>
-          </div>
-          <div class="pricing-grid">
-            <article class="pricing-card">
-              <div class="plan-name" data-i18n="webdesign.package_basic_name">بداية</div>
-              <div class="plan-price">—</div>
-              <ul class="pricing-features">
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.package_feature_responsive">تصميم متجاوب لجميع الأجهزة</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.package_feature_seo">تهيئة أساسية لمحركات البحث (SEO)</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.package_feature_whatsapp">زر واتساب واتصال مباشر</span></li>
-              </ul>
-              <a class="btn btn-light" href="contact.html?service=web-design&package=starter" data-i18n="webdesign.package_cta">ابدأ الآن</a>
-            </article>
-
-            <article class="pricing-card featured">
-              <div class="plan-name" data-i18n="webdesign.package_business_name">بيزنس</div>
-              <div class="plan-price">—</div>
-              <ul class="pricing-features">
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.package_feature_responsive">تصميم متجاوب لجميع الأجهزة</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.package_feature_speed">تحسين السرعة والأداء</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.package_feature_cms">لوحة تحكم سهلة (CMS)</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.package_feature_ssl">شهادة SSL وحماية أساسية</span></li>
-              </ul>
-              <a class="btn btn-primary" href="contact.html?service=web-design&package=business" data-i18n="webdesign.package_cta">ابدأ الآن</a>
-            </article>
-
-            <article class="pricing-card">
-              <div class="plan-name" data-i18n="webdesign.package_ecom_name">متجر إلكتروني</div>
-              <div class="plan-price">—</div>
-              <ul class="pricing-features">
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.package_feature_responsive">تصميم متجاوب لجميع الأجهزة</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.package_feature_payment">بوابات دفع وشحن</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.package_feature_cms">لوحة تحكم سهلة (CMS)</span></li>
-              </ul>
-              <a class="btn btn-light" href="contact.html?service=web-design&package=ecommerce" data-i18n="webdesign.package_cta">ابدأ الآن</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- System (POS) Packages -->
-      <section class="pricing-section sys-pricing-section">
-        <div class="container">
-          <div class="pricing-heading">
-            <h2 data-i18n="webdesign.sys_packages_title">باقات السيستم (POS)</h2>
-          </div>
-          <div class="pricing-grid">
-            <article class="pricing-card">
-              <div class="plan-name" data-i18n="webdesign.sys_package_basic_name">POS أساسي</div>
-              <ul class="pricing-features">
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_sales">مبيعات وفواتير</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_items">إدارة الأصناف والمخزون</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_users">مستخدمين وصلاحيات</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_reports">تقارير أساسية</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_local_cloud">تشغيل محلي أو على السحابة</span></li>
-              </ul>
-              <a class="btn btn-light" href="contact.html?service=pos&package=basic" data-i18n="webdesign.sys_package_cta">تواصل لتفاصيل الباقة</a>
-            </article>
-
-            <article class="pricing-card featured">
-              <div class="plan-name" data-i18n="webdesign.sys_package_business_name">POS بيزنس</div>
-              <ul class="pricing-features">
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_sales">مبيعات وفواتير</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_items">إدارة الأصناف والمخزون</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_users">مستخدمين وصلاحيات</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_reports">تقارير أساسية</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_local_cloud">تشغيل محلي أو على السحابة</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_branches">فروع متعددة وربط الفروع</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_adv_reports">تقارير متقدمة ولوحات متابعة</span></li>
-              </ul>
-              <a class="btn btn-primary" href="contact.html?service=pos&package=business" data-i18n="webdesign.sys_package_cta">تواصل لتفاصيل الباقة</a>
-            </article>
-
-            <article class="pricing-card">
-              <div class="plan-name" data-i18n="webdesign.sys_package_enterprise_name">POS إنتربرايز</div>
-              <ul class="pricing-features">
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_sales">مبيعات وفواتير</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_items">إدارة الأصناف والمخزون</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_users">مستخدمين وصلاحيات</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_local_cloud">تشغيل محلي أو على السحابة</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_branches">فروع متعددة وربط الفروع</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_adv_reports">تقارير متقدمة ولوحات متابعة</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_api">تكاملات API وأنظمة خارجية</span></li>
-                <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_support">دعم فني مخصص</span></li>
-              </ul>
-              <a class="btn btn-light" href="contact.html?service=pos&package=enterprise" data-i18n="webdesign.sys_package_cta">تواصل لتفاصيل الباقة</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Gallery -->
-      <section class="gallery-section">
-        <div class="container">
-          <div class="gallery-heading">
-            <h2 data-i18n="webdesign.gallery_title">نماذج من أعمالنا</h2>
-          </div>
-          <div class="gallery-grid">
-            <div class="gallery-item"><img src="assets/images/projects/project-afandena.jpg" alt="Afandena Project" loading="lazy" /></div>
-            <div class="gallery-item"><img src="assets/images/projects/project-qaroun-hotel.jpg" alt="Qaroun Hotel Project" loading="lazy" /></div>
-            <div class="gallery-item"><img src="assets/images/projects/project-elgawhra.jpg" alt="El Gawhra Project" loading="lazy" /></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- FAQ -->
-      <section class="faq-section">
-        <div class="container">
-          <div class="faq-heading">
-            <h2 data-i18n="webdesign.faq_title">أسئلة شائعة</h2>
-          </div>
-          <div class="faq-list">
-            <details>
-              <summary data-i18n="webdesign.faq_q1">كم يستغرق تنفيذ الموقع؟</summary>
-              <p data-i18n="webdesign.faq_a1">عادة من 10 إلى 20 يومًا حسب حجم المحتوى والخصائص المطلوبة.</p>
-            </details>
-            <details>
-              <summary data-i18n="webdesign.faq_q2">هل أوفر المحتوى والصور؟</summary>
-              <p data-i18n="webdesign.faq_a2">نوفر قوالب ونماذج نصوص، ويمكننا المساعدة في اختيار الصور المناسبة.</p>
-            </details>
-            <details>
-              <summary data-i18n="webdesign.faq_q3">هل الموقع متعدد اللغات؟</summary>
-              <p data-i18n="webdesign.faq_a3">نعم، ندعم العربية والإنجليزية مع هيكل ترجمة بسيط.</p>
-            </details>
-            <details>
-              <summary data-i18n="webdesign.faq_q4">هل أوفر الاستضافة والدومين؟</summary>
-              <p data-i18n="webdesign.faq_a4">يمكننا إدارة الاستضافة والدومين لك أو العمل على مزودك الحالي.</p>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <!-- Final CTA -->
-      <section class="cta-section web-cta">
-        <div class="container">
-          <div class="cta-content-wrapper">
-            <div class="cta-main">
-              <h2 class="cta-title" data-i18n="webdesign.cta_final_title">جاهز لإطلاق موقعك؟</h2>
-            </div>
-            <div class="cta-actions">
-              <a href="contact.html?service=web-design" class="btn btn-light" data-i18n="webdesign.cta_final_button">احصل على عرض خلال 24 ساعة</a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="container footer-container">
-        <div class="footer-brand">
-          <div class="brand-logo">
-            <img src="assets/images/logos/logo-arslan-primary.webp" alt="Arslan Tech" class="footer-logo-image" decoding="async" loading="lazy" />
-          </div>
-          <p data-i18n="footer.about">حلول تقنية مبتكرة ومتكاملة تساعد الشركات على تحقيق النمو والازدهار في العصر الرقمي.</p>
-        </div>
-        <div class="footer-links">
-          <h4 data-i18n="footer.links_title">روابط سريعة</h4>
-          <ul>
-            <li><a data-i18n="nav.home" href="index.html">الرئيسية</a></li>
-            <li><a data-i18n="nav.about" href="about.html">من نحن</a></li>
-            <li><a data-i18n="nav.services" href="services.html">خدماتنا</a></li>
-            <li><a data-i18n="nav.webdesign" href="web-design.html">تصميم المواقع</a></li>
-            <li><a data-i18n="nav.projects" href="projects.html">سابقة أعمالنا</a></li>
-            <li><a data-i18n="nav.academy" href="academy.html">أرسلان أكاديمي</a></li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <h4 data-i18n="footer.contact_title">تواصل معنا</h4>
-          <p><i class="fas fa-phone"></i><strong data-i18n="footer.phone">الهاتف:</strong><a href="tel:01014078319">01014078319</a></p>
-          <p><i class="fas fa-envelope"></i><strong data-i18n="footer.email">البريد:</strong><a href="mailto:info@arslantech-eg.com">info@arslantech-eg.com</a></p>
-          <p><i class="fas fa-map-marker-alt"></i><strong data-i18n="contact.address_label">العنوان:</strong><span data-i18n="contact.address">الفيوم المسلة العبودي بجوار محمصات وكافيه شيخ البلد</span></p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="container">
-          <p data-i18n="footer.copyright">Copyright © 2025 - WebSite Design by Hisham Mohamed</p>
-        </div>
-      </div>
-    </footer>
-
-    <div class="floating-contact-menu" id="floatingContactMenu">
-      <div class="social-icons-group">
-        <a href="https://wa.me/201014078319?text=Web%20Design%20Inquiry" class="social-icon whatsapp" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://m.me/104783481303669" class="social-icon messenger" target="_blank" aria-label="Messenger"><i class="fab fa-facebook-messenger"></i></a>
-        <a href="tel:01014078319" class="social-icon phone" aria-label="Call Us"><i class="fas fa-phone"></i></a>
-        <a href="mailto:info@arslantech-eg.com" class="social-icon email" aria-label="Email Us"><i class="fas fa-envelope"></i></a>
-      </div>
-      <button class="floating-toggle-btn" id="floatingToggleBtn" aria-label="Toggle Contact Menu"><i class="fas fa-comments" id="floatingIcon"></i></button>
     </div>
+  </header>
 
-    <button class="scroll-top" id="scrollTop" aria-label="العودة للأعلى" data-i18n-aria="footer.scroll_top"><i class="fas fa-arrow-up"></i></button>
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a class="brand" href="index.html" aria-label="Arslan Tech Home">
+          <img src="assets/images/logos/logo-arslan-primary.webp" alt="Arslan Tech" class="brand-image" decoding="async"
+            loading="lazy" />
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="قائمة التنقل" aria-controls="navLinks"
+          aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" data-i18n="nav.home">الرئيسية</a></li>
+          <li><a href="about.html" data-i18n="nav.about">من نحن</a></li>
+          <li><a href="services.html" data-i18n="nav.services">خدماتنا</a></li>
+          <li><a href="web-design.html" class="active" data-i18n="nav.webdesign">تصميم المواقع</a></li>
+          <li><a href="projects.html" data-i18n="nav.projects">سابقة أعمالنا</a></li>
+          <li><a href="products.html" data-i18n="nav.products">المنتجات</a></li>
+          <li><a href="academy.html" data-i18n="nav.academy">أرسلان أكاديمي</a></li>
+          <li><a href="contact.html" class="btn btn-nav" data-i18n="nav.contact">تواصل معنا</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/svg-decorations.js"></script>
-  </body>
+  <main>
+    <!-- Hero -->
+    <section class="hero web-hero">
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <span class="hero-badge" data-i18n="webdesign.hero_badge">مواقع وصفحات وسيستمات</span>
+        <h1 class="hero-title" data-i18n="webdesign.hero_title">مواقع احترافية + سيستمات مطاعم وكاشير وأي تطبيق</h1>
+        <p class="hero-lead" data-i18n="webdesign.hero_lead">من أول فكرة لحد الإطلاق، هننفّذ حل يناسب شغلك بأسعار مناسبة
+          وباقات على قد ميزانيتك.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="contact.html?service=web-design" data-i18n="webdesign.cta_quote">اطلب عرضك
+            خلال 24 ساعة</a>
+          <a class="btn btn-outline" href="projects.html" data-i18n="webdesign.cta_projects">شوف شغلنا</a>
+        </div>
+        <div class="hero-meta">
+          <div class="meta-item"><i class="fas fa-gauge-high"></i><span data-i18n="webdesign.benefit_1">سرعة وأداء
+              عاليين</span></div>
+          <div class="meta-item"><i class="fas fa-magnifying-glass"></i><span data-i18n="webdesign.benefit_2">تهيئة
+              للظهور في جوجل وتجربة استخدام مريحة</span></div>
+          <div class="meta-item"><i class="fas fa-headset"></i><span data-i18n="webdesign.benefit_3">شغل متقن وجودة
+              عالية ودعم مستمر</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits-section">
+      <div class="container">
+        <div class="benefits-heading">
+          <h2 data-i18n="webdesign.benefits_title">لماذا تختارنا؟</h2>
+        </div>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="icon"><i class="fas fa-mobile-screen"></i></div>
+            <div>
+              <h3 data-i18n="webdesign.package_feature_responsive">تصميم متجاوب لجميع الأجهزة</h3>
+              <p data-i18n="webdesign.package_feature_speed">تحسين السرعة والأداء</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="icon"><i class="fas fa-chart-line"></i></div>
+            <div>
+              <h3 data-i18n="webdesign.package_feature_seo">تهيئة أساسية لمحركات البحث (SEO)</h3>
+              <p data-i18n="webdesign.benefit_2">تحسين SEO وتجربة مستخدم</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="icon"><i class="fas fa-handshake"></i></div>
+            <div>
+              <h3 data-i18n="webdesign.package_feature_cms">لوحة تحكم سهلة (CMS)</h3>
+              <p data-i18n="webdesign.benefit_3">دعم فني مستمر</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing-section">
+      <div class="container">
+        <div class="pricing-heading">
+          <h2 data-i18n="webdesign.packages_title">باقات تناسب احتياجك</h2>
+        </div>
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <div class="plan-name" data-i18n="webdesign.package_basic_name">بداية</div>
+            <div class="plan-price">—</div>
+            <ul class="pricing-features">
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.package_feature_responsive">تصميم متجاوب لجميع
+                  الأجهزة</span></li>
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.package_feature_seo">تهيئة أساسية لمحركات البحث
+                  (SEO)</span></li>
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.package_feature_whatsapp">زر واتساب واتصال
+                  مباشر</span></li>
+            </ul>
+            <a class="btn btn-light" href="contact.html?service=web-design&package=starter"
+              data-i18n="webdesign.package_cta">ابدأ الآن</a>
+          </article>
+
+          <article class="pricing-card featured">
+            <div class="plan-name" data-i18n="webdesign.package_business_name">بيزنس</div>
+            <div class="plan-price">—</div>
+            <ul class="pricing-features">
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.package_feature_responsive">تصميم متجاوب لجميع
+                  الأجهزة</span></li>
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.package_feature_speed">تحسين السرعة
+                  والأداء</span></li>
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.package_feature_cms">لوحة تحكم سهلة
+                  (CMS)</span></li>
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.package_feature_ssl">شهادة SSL وحماية
+                  أساسية</span></li>
+            </ul>
+            <a class="btn btn-primary" href="contact.html?service=web-design&package=business"
+              data-i18n="webdesign.package_cta">ابدأ الآن</a>
+          </article>
+
+          <article class="pricing-card">
+            <div class="plan-name" data-i18n="webdesign.package_ecom_name">متجر إلكتروني</div>
+            <div class="plan-price">—</div>
+            <ul class="pricing-features">
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.package_feature_responsive">تصميم متجاوب لجميع
+                  الأجهزة</span></li>
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.package_feature_payment">بوابات دفع وشحن</span>
+              </li>
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.package_feature_cms">لوحة تحكم سهلة
+                  (CMS)</span></li>
+            </ul>
+            <a class="btn btn-light" href="contact.html?service=web-design&package=ecommerce"
+              data-i18n="webdesign.package_cta">ابدأ الآن</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- System (POS) Packages -->
+    <section class="pricing-section sys-pricing-section">
+      <div class="container">
+        <div class="pricing-heading">
+          <h2 data-i18n="webdesign.sys_packages_title">باقات السيستم (POS)</h2>
+        </div>
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <div class="plan-name" data-i18n="webdesign.sys_package_basic_name">POS أساسي</div>
+            <ul class="pricing-features">
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_sales">مبيعات
+                  وفواتير</span></li>
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_items">إدارة الأصناف
+                  والمخزون</span></li>
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_users">مستخدمين
+                  وصلاحيات</span></li>
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_reports">تقارير
+                  أساسية</span></li>
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_local_cloud">تشغيل محلي أو
+                  على السحابة</span></li>
+            </ul>
+            <a class="btn btn-light" href="contact.html?service=pos&package=basic"
+              data-i18n="webdesign.sys_package_cta">تواصل لتفاصيل الباقة</a>
+          </article>
+
+          <article class="pricing-card featured">
+            <div class="plan-name" data-i18n="webdesign.sys_package_business_name">POS بيزنس</div>
+            <ul class="pricing-features">
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_sales">مبيعات
+                  وفواتير</span></li>
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_items">إدارة الأصناف
+                  والمخزون</span></li>
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_users">مستخدمين
+                  وصلاحيات</span></li>
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_reports">تقارير
+                  أساسية</span></li>
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_local_cloud">تشغيل محلي أو
+                  على السحابة</span></li>
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_branches">فروع متعددة وربط
+                  الفروع</span></li>
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_adv_reports">تقارير متقدمة
+                  ولوحات متابعة</span></li>
+            </ul>
+            <a class="btn btn-primary" href="contact.html?service=pos&package=business"
+              data-i18n="webdesign.sys_package_cta">تواصل لتفاصيل الباقة</a>
+          </article>
+
+          <article class="pricing-card">
+            <div class="plan-name" data-i18n="webdesign.sys_package_enterprise_name">POS إنتربرايز</div>
+            <ul class="pricing-features">
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_sales">مبيعات
+                  وفواتير</span></li>
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_items">إدارة الأصناف
+                  والمخزون</span></li>
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_users">مستخدمين
+                  وصلاحيات</span></li>
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_local_cloud">تشغيل محلي أو
+                  على السحابة</span></li>
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_branches">فروع متعددة وربط
+                  الفروع</span></li>
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_adv_reports">تقارير متقدمة
+                  ولوحات متابعة</span></li>
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_api">تكاملات API وأنظمة
+                  خارجية</span></li>
+              <li><i class="fas fa-check"></i><span data-i18n="webdesign.sys_package_feature_support">دعم فني
+                  مخصص</span></li>
+            </ul>
+            <a class="btn btn-light" href="contact.html?service=pos&package=enterprise"
+              data-i18n="webdesign.sys_package_cta">تواصل لتفاصيل الباقة</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery-section">
+      <div class="container">
+        <div class="gallery-heading">
+          <h2 data-i18n="webdesign.gallery_title">نماذج من أعمالنا</h2>
+        </div>
+        <div class="showcase-card">
+          <div class="showcase-content">
+            <div class="showcase-header">
+              <h3 data-i18n="kasser.title">Kasser Pro - نظام كاشير وإدارة متكامل</h3>
+              <p data-i18n="kasser.subtitle">الحل الأمثل لإدارة المطاعم والكافيهات والمحلات التجارية</p>
+            </div>
+            <div class="showcase-grid-layout">
+              <div class="showcase-details">
+                <ul class="feature-list">
+                  <li><i class="fas fa-check-circle"></i> <span data-i18n="kasser.feature_1">واجهة بيع (POS) سريعة وسهلة
+                      الاستخدام وتدعم اللمس</span></li>
+                  <li><i class="fas fa-check-circle"></i> <span data-i18n="kasser.feature_2">إدارة دقيقة للمنتجات (صور،
+                      أسعار، مخزون، باركود)</span></li>
+                  <li><i class="fas fa-check-circle"></i> <span data-i18n="kasser.feature_3">تقارير مبيعات وفواتير يومية
+                      وشهرية مفصلة</span></li>
+                  <li><i class="fas fa-check-circle"></i> <span data-i18n="kasser.feature_4">دعم كامل للضريبة وسجل
+                      المدفوعات (كاش/فيزا)</span></li>
+                  <li><i class="fas fa-check-circle"></i> <span data-i18n="kasser.feature_5">نظام إدارة الطلبات ومتابعة
+                      حالتها (معلق، مكتمل)</span></li>
+                  <li><i class="fas fa-check-circle"></i> <span data-i18n="kasser.feature_6">لوحة تحكم شاملة للإعدادات
+                      والتصنيفات</span></li>
+                  <li><i class="fas fa-check-circle"></i> <span data-i18n="kasser.feature_7">يعمل بكفاءة على جميع
+                      الأجهزة (كمبيوتر، تابلت، موبايل)</span></li>
+                  <li><i class="fas fa-check-circle"></i> <span data-i18n="kasser.feature_8">تصميم عصري (Dark Mode) مريح
+                      للعين</span></li>
+                  <li><i class="fas fa-check-circle"></i> <span data-i18n="kasser.feature_9">إمكانية إدارة المخزون
+                      وتنبيهات النواقص</span></li>
+                  <li><i class="fas fa-check-circle"></i> <span data-i18n="kasser.feature_10">سرعة فائقة في الأداء
+                      (تطبيق صفحة واحدة SPA)</span></li>
+                </ul>
+                <div class="showcase-actions">
+                  <a href="https://kasserpro-frontend.vercel.app/" target="_blank" class="btn btn-primary"><i
+                      class="fas fa-desktop"></i> <span data-i18n="kasser.demo_btn">معاينة النظام (Demo)</span></a>
+                  <a href="contact.html?service=pos" class="btn btn-outline"><i class="fas fa-comment-dollar"></i> <span
+                      data-i18n="kasser.order_btn">اطلب
+                      نسختك</span></a>
+                </div>
+              </div>
+              <div class="showcase-visuals">
+                <div class="main-preview">
+                  <img src="assets/images/projects/kasser/pos-screen.png" alt="POS Main Interface" id="mainShowcaseImg"
+                    data-i18n-alt="kasser.img_main_alt" />
+                </div>
+                <div class="thumbnails">
+                  <div class="thumb-item"
+                    onclick="document.getElementById('mainShowcaseImg').src='assets/images/projects/kasser/pos-screen.png'">
+                    <img src="assets/images/projects/kasser/pos-screen.png" alt="POS Screen"
+                      data-i18n-alt="kasser.img_pos_alt" />
+                  </div>
+                  <div class="thumb-item"
+                    onclick="document.getElementById('mainShowcaseImg').src='assets/images/projects/kasser/products.png'">
+                    <img src="assets/images/projects/kasser/products.png" alt="Products Management"
+                      data-i18n-alt="kasser.img_products_alt" />
+                  </div>
+                  <div class="thumb-item"
+                    onclick="document.getElementById('mainShowcaseImg').src='assets/images/projects/kasser/orders.png'">
+                    <img src="assets/images/projects/kasser/orders.png" alt="Orders List"
+                      data-i18n-alt="kasser.img_orders_alt" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AZ Showcase Card -->
+        <div class="showcase-card">
+          <div class="showcase-content">
+            <div class="showcase-header">
+              <h3 data-i18n="az.title">AZ International - نظام إدارة شهادات الفحص الهندسي (NDT)</h3>
+              <p data-i18n="az.subtitle">منظومة رقمية متكاملة لإصدار وتتبع ومراقبة شهادات الفحص الهندسي</p>
+            </div>
+            <div class="showcase-grid-layout">
+              <div class="showcase-details">
+                <ul class="feature-list">
+                  <li><i class="fas fa-check-circle"></i> <span data-i18n="az.feature_1">إدارة شاملة لخدمات الفحص
+                      الهندسي (VT, PT, MT, RT, UT)</span></li>
+                  <li><i class="fas fa-check-circle"></i> <span data-i18n="az.feature_2">استيراد ذكي لبيانات الشهادات من
+                      ملفات Excel بكميات ضخمة</span></li>
+                  <li><i class="fas fa-check-circle"></i> <span data-i18n="az.feature_3">نظام تحقق من صحة الشهادات عبر
+                      الرقم التسلسلي (S/N)</span></li>
+                  <li><i class="fas fa-check-circle"></i> <span data-i18n="az.feature_4">تتبع آلي لتواريخ انتهاء
+                      الصلاحية وتنبيهات التجديد</span></li>
+                  <li><i class="fas fa-check-circle"></i> <span data-i18n="az.feature_5">قاعدة بيانات مركزية آمنة لجميع
+                      العملاء والفحوصات</span></li>
+                  <li><i class="fas fa-check-circle"></i> <span data-i18n="az.feature_6">واجهة برمجة تطبيقات (API) للربط
+                      مع الأنظمة الخارجية</span></li>
+                  <li><i class="fas fa-check-circle"></i> <span data-i18n="az.feature_7">إنشاء تقارير فورية ودقيقة
+                      للفحوصات والشهادات المصدرة</span></li>
+                  <li><i class="fas fa-check-circle"></i> <span data-i18n="az.feature_8">دعم كامل لتعدد طرق الفحص
+                      والمعايير الدولية</span></li>
+                  <li><i class="fas fa-check-circle"></i> <span data-i18n="az.feature_9">تخزين سحابي آمن وأرشفة
+                      إلكترونية للوثائق</span></li>
+                  <li><i class="fas fa-check-circle"></i> <span data-i18n="az.feature_10">لوحة تحكم للمديرين وإدارة
+                      صلاحيات المستخدمين</span></li>
+                </ul>
+                <div class="showcase-actions">
+                  <a href="#" class="btn btn-primary disabled"><i class="fas fa-desktop"></i> <span
+                      data-i18n="az.demo_btn">قريباً (Coming Soon)</span></a>
+                  <a href="contact.html?service=ndt" class="btn btn-outline"><i class="fas fa-comment-dollar"></i> <span
+                      data-i18n="az.order_btn">اطلب استشارة</span></a>
+                </div>
+              </div>
+              <div class="showcase-visuals">
+                <div class="main-preview">
+                  <img src="assets/images/projects/az/placeholder.png" alt="AZ System Dashboard"
+                    data-i18n-alt="az.img_main_alt" id="azShowcaseImg" />
+                </div>
+                <!-- Thumbnails can be added later when more images are available -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="faq-heading">
+          <h2 data-i18n="webdesign.faq_title">أسئلة شائعة</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary data-i18n="webdesign.faq_q1">كم يستغرق تنفيذ الموقع؟</summary>
+            <p data-i18n="webdesign.faq_a1">عادة من 10 إلى 20 يومًا حسب حجم المحتوى والخصائص المطلوبة.</p>
+          </details>
+          <details>
+            <summary data-i18n="webdesign.faq_q2">هل أوفر المحتوى والصور؟</summary>
+            <p data-i18n="webdesign.faq_a2">نوفر قوالب ونماذج نصوص، ويمكننا المساعدة في اختيار الصور المناسبة.</p>
+          </details>
+          <details>
+            <summary data-i18n="webdesign.faq_q3">هل الموقع متعدد اللغات؟</summary>
+            <p data-i18n="webdesign.faq_a3">نعم، ندعم العربية والإنجليزية مع هيكل ترجمة بسيط.</p>
+          </details>
+          <details>
+            <summary data-i18n="webdesign.faq_q4">هل أوفر الاستضافة والدومين؟</summary>
+            <p data-i18n="webdesign.faq_a4">يمكننا إدارة الاستضافة والدومين لك أو العمل على مزودك الحالي.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section web-cta">
+      <div class="container">
+        <div class="cta-content-wrapper">
+          <div class="cta-main">
+            <h2 class="cta-title" data-i18n="webdesign.cta_final_title">جاهز لإطلاق موقعك؟</h2>
+          </div>
+          <div class="cta-actions">
+            <a href="contact.html?service=web-design" class="btn btn-light" data-i18n="webdesign.cta_final_button">احصل
+              على عرض خلال 24 ساعة</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <img src="assets/images/logos/logo-arslan-primary.webp" alt="Arslan Tech" class="footer-logo-image"
+            decoding="async" loading="lazy" />
+        </div>
+        <p data-i18n="footer.about">حلول تقنية مبتكرة ومتكاملة تساعد الشركات على تحقيق النمو والازدهار في العصر الرقمي.
+        </p>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer.links_title">روابط سريعة</h4>
+        <ul>
+          <li><a data-i18n="nav.home" href="index.html">الرئيسية</a></li>
+          <li><a data-i18n="nav.about" href="about.html">من نحن</a></li>
+          <li><a data-i18n="nav.services" href="services.html">خدماتنا</a></li>
+          <li><a data-i18n="nav.webdesign" href="web-design.html">تصميم المواقع</a></li>
+          <li><a data-i18n="nav.projects" href="projects.html">سابقة أعمالنا</a></li>
+          <li><a data-i18n="nav.academy" href="academy.html">أرسلان أكاديمي</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4 data-i18n="footer.contact_title">تواصل معنا</h4>
+        <p><i class="fas fa-phone"></i><strong data-i18n="footer.phone">الهاتف:</strong><a
+            href="tel:01014078319">01014078319</a></p>
+        <p><i class="fas fa-envelope"></i><strong data-i18n="footer.email">البريد:</strong><a
+            href="mailto:info@arslantech-eg.com">info@arslantech-eg.com</a></p>
+        <p><i class="fas fa-map-marker-alt"></i><strong data-i18n="contact.address_label">العنوان:</strong><span
+            data-i18n="contact.address">الفيوم المسلة العبودي بجوار محمصات وكافيه شيخ البلد</span></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p data-i18n="footer.copyright">Copyright © 2025 - WebSite Design by Hisham Mohamed</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating-contact-menu" id="floatingContactMenu">
+    <div class="social-icons-group">
+      <a href="https://wa.me/201014078319?text=Web%20Design%20Inquiry" class="social-icon whatsapp" target="_blank"
+        aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://m.me/104783481303669" class="social-icon messenger" target="_blank" aria-label="Messenger"><i
+          class="fab fa-facebook-messenger"></i></a>
+      <a href="tel:01014078319" class="social-icon phone" aria-label="Call Us"><i class="fas fa-phone"></i></a>
+      <a href="mailto:info@arslantech-eg.com" class="social-icon email" aria-label="Email Us"><i
+          class="fas fa-envelope"></i></a>
+    </div>
+    <button class="floating-toggle-btn" id="floatingToggleBtn" aria-label="Toggle Contact Menu"><i
+        class="fas fa-comments" id="floatingIcon"></i></button>
+  </div>
+
+  <button class="scroll-top" id="scrollTop" aria-label="العودة للأعلى" data-i18n-aria="footer.scroll_top"><i
+      class="fas fa-arrow-up"></i></button>
+
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/svg-decorations.js"></script>
+</body>
+
 </html>
