@@ -1,717 +1,597 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <script>
-      (function () {
-        try {
-          var saved = localStorage.getItem("site_lang");
-          var html = document.documentElement;
-          if (saved === "en") {
-            html.lang = "en";
-            html.dir = "ltr";
-            html.classList.add("lang-loading");
-          } else if (saved === "ar") {
-            html.lang = "ar";
-            html.dir = "rtl";
-          }
-        } catch (e) {}
-      })();
-    </script>
-    <title data-i18n="projects.page_title">Projects - Arslan Tech</title>
-    <link
-      rel="icon"
-      type="image/webp"
-      href="assets/images/logos/logo-arslan-primary.webp"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="assets/css/projects.css" />
-    <!-- Added SVG decorations CSS link -->
-    <link rel="stylesheet" href="assets/css/svg-decorations.css" />
-  </head>
-  <body>
-    <header class="topbar">
-      <div class="container">
-        <div class="topbar-inner">
-          <div class="topbar-contact">
-            <i class="fas fa-phone topbar-icon"></i>
-            <a href="tel:01014078319">01014078319</a>
-            <span class="divider"></span>
-            <i class="fas fa-envelope topbar-icon"></i>
-            <a href="mailto:info@arslantech-eg.com">info@arslantech-eg.com</a>
-          </div>
-          <div class="topbar-social">
-            <a
-              href="https://www.linkedin.com/company/arslantech"
-              aria-label="LinkedIn"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-            <a
-              href="https://wa.me/201014078319"
-              aria-label="WhatsApp"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><i class="fab fa-whatsapp"></i
-            ></a>
-            <a
-              href="https://www.facebook.com/Arslantecheg/"
-              aria-label="Facebook"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-          </div>
-          <div
-            class="topbar-lang"
-            id="langToggle"
-            role="navigation"
-            aria-label="Language switcher"
-          >
-            <button class="lang-btn" data-lang="ar">العربية</button>
-            <button class="lang-btn" data-lang="en">EN</button>
-          </div>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("site_lang");
+        var html = document.documentElement;
+        if (saved === "en") {
+          html.lang = "en";
+          html.dir = "ltr";
+          html.classList.add("lang-loading");
+        } else if (saved === "ar") {
+          html.lang = "ar";
+          html.dir = "rtl";
+        }
+      } catch (e) { }
+    })();
+  </script>
+  <title data-i18n="projects.page_title">Projects - Arslan Tech</title>
+  <link rel="icon" type="image/webp" href="assets/images/logos/logo-arslan-primary.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/projects.css" />
+  <!-- Added SVG decorations CSS link -->
+  <link rel="stylesheet" href="assets/css/svg-decorations.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <div class="topbar-contact">
+          <i class="fas fa-phone topbar-icon"></i>
+          <a href="tel:01014078319">01014078319</a>
+          <span class="divider"></span>
+          <i class="fas fa-envelope topbar-icon"></i>
+          <a href="mailto:info@arslantech-eg.com">info@arslantech-eg.com</a>
+        </div>
+        <div class="topbar-social">
+          <a href="https://www.linkedin.com/company/arslantech" aria-label="LinkedIn" target="_blank"
+            rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/201014078319" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i
+              class="fab fa-whatsapp"></i></a>
+          <a href="https://www.facebook.com/Arslantecheg/" aria-label="Facebook" target="_blank"
+            rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <div class="topbar-lang" id="langToggle" role="navigation" aria-label="Language switcher">
+          <button class="lang-btn" data-lang="ar">العربية</button>
+          <button class="lang-btn" data-lang="en">EN</button>
         </div>
       </div>
-    </header>
-
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-      <div class="container">
-        <div class="nav-wrapper">
-          <a class="brand" href="index.html" aria-label="Arslan Tech Home">
-            <img
-              src="assets/images/logos/logo-arslan-primary.webp"
-              alt="Arslan Tech"
-              data-i18n-alt="hero.logo_alt"
-              class="brand-image"
-              decoding="async"
-              loading="lazy"
-            />
-          </a>
-          <button
-            class="menu-toggle"
-            id="menuToggle"
-            aria-label="قائمة التنقل"
-            data-i18n-aria="nav.menu"
-            aria-controls="navLinks"
-            aria-expanded="false"
-          >
-            <span></span><span></span><span></span>
-          </button>
-          <ul class="nav-links" id="navLinks">
-            <li><a href="index.html" data-i18n="nav.home">الرئيسية</a></li>
-            <li><a href="about.html" data-i18n="nav.about">من نحن</a></li>
-            <li>
-              <a href="services.html" data-i18n="nav.services">خدماتنا</a>
-            </li>
-            <li>
-              <a href="web-design.html" data-i18n="nav.webdesign"
-                >تصميم المواقع</a
-              >
-            </li>
-            <li>
-              <a href="projects.html" class="active" data-i18n="nav.projects"
-                >سابقة أعمالنا</a
-              >
-            </li>
-            <li>
-              <a href="products.html" data-i18n="nav.products">المنتجات</a>
-            </li>
-            <li>
-              <a href="academy.html" data-i18n="nav.academy">أرسلان أكاديمي</a>
-            </li>
-            <li>
-              <a href="contact.html" class="btn btn-nav" data-i18n="nav.contact"
-                >تواصل معنا</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <main>
-      <section class="hero" style="padding: 60px 0 40px">
-        <div class="container">
-          <h1
-            class="hero-title"
-            style="color: var(--white)"
-            data-i18n="projects.hero_title"
-          >
-            من أعمالنا
-          </h1>
-          <p
-            class="hero-lead"
-            style="color: rgba(255, 255, 255, 0.85); max-width: 820px"
-            data-i18n="projects.hero_lead"
-          >
-            اكتشف قصص نجاحنا في بناء حلول تكنولوجية متكاملة ومبتكرة.
-          </p>
-        </div>
-      </section>
-
-      <section
-        class="projects"
-        style="padding: 48px 0 80px; background: #f5f7fa"
-      >
-        <div class="container project-grid">
-          <div>
-            <!-- Project entries list -->
-            <article
-              class="project-entry"
-              style="display: grid; grid-template-columns: 1fr; gap: 28px"
-            >
-              <!-- مشروع سوبر زاوي -->
-              <div class="project-card-detailed">
-                <div class="project-header">
-                  <div class="project-logo">
-                    <img
-                      src="assets/images/projects/project-super-zawy.jpg"
-                      alt="سوبر زاوي"
-                    />
-                  </div>
-                  <h2 data-i18n="projects.super_zawy.title">
-                    مطعم سوبر زاوي الفيوم
-                  </h2>
-                </div>
-                <div class="project-body">
-                  <div class="project-section">
-                    <h4 data-i18n="projects.super_zawy.section1.title">
-                      نظام كول سنتر متكامل
-                    </h4>
-                    <ul>
-                      <li data-i18n="projects.super_zawy.section1.item1">
-                        تسجيل المكالمات
-                      </li>
-                      <li data-i18n="projects.super_zawy.section1.item2">
-                        الرد الآلي
-                      </li>
-                      <li data-i18n="projects.super_zawy.section1.item3">
-                        ربط الهوتلاين
-                      </li>
-                      <li data-i18n="projects.super_zawy.section1.item4">
-                        ربط خطوط الموبايل
-                      </li>
-                      <li data-i18n="projects.super_zawy.section1.item5">
-                        تقارير احترافية
-                      </li>
-                      <li data-i18n="projects.super_zawy.section1.item6">
-                        توزيع المكالمات
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="project-section">
-                    <h4 data-i18n="projects.super_zawy.section2.title">
-                      أعمال البنية التحتية وتشغيل الأنظمة
-                    </h4>
-                    <ul>
-                      <li data-i18n="projects.super_zawy.section2.item1">
-                        توريد السرفرات والسويتشات
-                      </li>
-                      <li data-i18n="projects.super_zawy.section2.item2">
-                        ربط الفرع بالكول سنتر عبر VPN
-                      </li>
-                      <li data-i18n="projects.super_zawy.section2.item3">
-                        أجهزة الكاشير
-                      </li>
-                      <li data-i18n="projects.super_zawy.section2.item4">
-                        تركيب وتشغيل نظام الموازين
-                      </li>
-                      <li data-i18n="projects.super_zawy.section2.item5">
-                        أجهزة الكول سنتر والطابعات
-                      </li>
-                      <li data-i18n="projects.super_zawy.section2.item6">
-                        دعم فني مستمر
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="project-section">
-                    <h4 data-i18n="projects.super_zawy.section3.title">
-                      البنية التحتية الكاملة للمقر الإداري
-                    </h4>
-                    <ul>
-                      <li data-i18n="projects.super_zawy.section3.item1">
-                        شبكة داخلية
-                      </li>
-                      <li data-i18n="projects.super_zawy.section3.item2">
-                        ربط المقر بالمطعم
-                      </li>
-                      <li data-i18n="projects.super_zawy.section3.item3">
-                        سيستم كاميرات مراقبة للمقر ومركز التجهيز
-                      </li>
-                      <li data-i18n="projects.super_zawy.section3.item4">
-                        أجهزة الربط والشبكات والراكات
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <!-- مشروع محمصة الجوهرة -->
-              <div class="project-card-detailed">
-                <div class="project-header">
-                  <div class="project-logo">
-                    <img
-                      src="assets/images/projects/project-elgawhra.jpg"
-                      alt="محمصة الجوهرة"
-                    />
-                  </div>
-                  <h2 data-i18n="projects.elgohara.title">
-                    محمصة الجوهرة (السوقاوي) - حلقة الكفور- الكول سنتر -المقر
-                    الإداري
-                  </h2>
-                </div>
-                <div class="project-body">
-                  <div class="project-section">
-                    <h4 data-i18n="projects.elgohara.section1.title">
-                      تطوير البنية التحتية للمقر الإداري وتأسيس فرع الجحدورة
-                      وفرع المسلة والكول سنتر
-                    </h4>
-                    <ul>
-                      <li data-i18n="projects.elgohara.section1.item1">
-                        شبكة داخلية
-                      </li>
-                      <li data-i18n="projects.elgohara.section1.item2">
-                        ربط المقر بالفروع
-                      </li>
-                      <li data-i18n="projects.elgohara.section1.item3">
-                        سيستم كاميرات مراقبة
-                      </li>
-                      <li data-i18n="projects.elgohara.section1.item4">
-                        غرفة تحكم بالكاميرات للفروع
-                      </li>
-                      <li data-i18n="projects.elgohara.section1.item5">
-                        سيستم كول سنتر
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="project-section">
-                    <h4 data-i18n="projects.elgohara.section2.title">
-                      تحديث وتطوير البنية التحتية
-                    </h4>
-                    <ul>
-                      <li data-i18n="projects.elgohara.section2.item1">
-                        ربط VPN بين الفرع والكول سنتر
-                      </li>
-                      <li data-i18n="projects.elgohara.section2.item2">
-                        شبكة داخلية
-                      </li>
-                      <li data-i18n="projects.elgohara.section2.item3">
-                        توريد وتشغيل أجهزة الكاشير والسيرفرات والراكات
-                      </li>
-                      <li data-i18n="projects.elgohara.section2.item4">
-                        سيستم كاميرات مراقبة
-                      </li>
-                    </ul>
-                  </div>
-                  <!-- duplicate 'تحديث وتطوير' removed to match live text structure -->
-                  <div class="project-section">
-                    <h4 data-i18n="projects.elgohara.section3.title">
-                      أعمال التطوير والتحديث
-                    </h4>
-                    <ul>
-                      <li data-i18n="projects.elgohara.section3.item1">
-                        شبكة داخلية
-                      </li>
-                      <li data-i18n="projects.elgohara.section3.item2">
-                        ربط الفرع بالكول سنتر
-                      </li>
-                      <li data-i18n="projects.elgohara.section3.item3">
-                        منظومة كاميرات مراقبة
-                      </li>
-                      <li data-i18n="projects.elgohara.section3.item4">
-                        توريد وتشغيل أجهزة الكاشير
-                      </li>
-                      <li data-i18n="projects.elgohara.section3.item5">
-                        ساوند سيستم
-                      </li>
-                      <li data-i18n="projects.elgohara.section3.item6">
-                        توريد الراكات والسويتشات
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <!-- مشروع كرنشيز -->
-              <div class="project-card-detailed">
-                <div class="project-header">
-                  <div class="project-logo">
-                    <img
-                      src="assets/images/projects/project-crunches.jpg"
-                      alt="كرنشيز"
-                    />
-                  </div>
-                  <h2 data-i18n="projects.crunches.title">
-                    مطعم كرانشيز الفيوم
-                  </h2>
-                </div>
-                <div class="project-body">
-                  <div class="project-section">
-                    <h4 data-i18n="projects.crunches.section1.title">
-                      تطوير وتحديث البنية التحتية
-                    </h4>
-                    <ul>
-                      <li data-i18n="projects.crunches.section1.item1">
-                        شبكة داخلية
-                      </li>
-                      <li data-i18n="projects.crunches.section1.item2">
-                        ربط الفرع بالكول سنتر
-                      </li>
-                      <li data-i18n="projects.crunches.section1.item3">
-                        منظومة كاميرات مراقبة
-                      </li>
-                      <li data-i18n="projects.crunches.section1.item4">
-                        توريد وتشغيل أجهزة الكاشير
-                      </li>
-                      <li data-i18n="projects.crunches.section1.item5">
-                        ساوند سيستم
-                      </li>
-                      <li data-i18n="projects.crunches.section1.item6">
-                        توريد برنترات الكاشير وراك سيرفر
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <!-- مشروع وصاية -->
-              <div class="project-card-detailed">
-                <div class="project-header">
-                  <div class="project-logo">
-                    <img
-                      src="assets/images/projects/project-wesaya.jpg"
-                      alt="وصاية"
-                    />
-                  </div>
-                  <h2 data-i18n="projects.wesaya.title">
-                    سلسلة مطاعم وصاية (وصاية الجحدورة -وصاية المسلة -الكول سنتر
-                    -المقر الإداري )
-                  </h2>
-                </div>
-                <div class="project-body">
-                  <div class="project-section">
-                    <h4 data-i18n="projects.wesaya.section1.title">
-                      تطوير البنية التحتية للمقر الإداري وتأسيس فرع الجحدورة
-                      وفرع المسلة والكول سنتر
-                    </h4>
-                    <ul>
-                      <li data-i18n="projects.wesaya.section1.item1">
-                        شبكة داخلية
-                      </li>
-                      <li data-i18n="projects.wesaya.section1.item2">
-                        ربط المقر بالفروع
-                      </li>
-                      <li data-i18n="projects.wesaya.section1.item3">
-                        سيستم كاميرات مراقبة
-                      </li>
-                      <li data-i18n="projects.wesaya.section1.item4">
-                        غرفة تحكم بالكاميرات للفروع
-                      </li>
-                      <li data-i18n="projects.wesaya.section1.item5">
-                        سيستم كول سنتر
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <!-- مشروع افندينا -->
-              <div class="project-card-detailed">
-                <div class="project-header">
-                  <div class="project-logo">
-                    <img
-                      src="assets/images/projects/project-afandena.jpg"
-                      alt="افندينا"
-                    />
-                  </div>
-                  <h2 data-i18n="projects.afandena.title">
-                    افندينا - سلسلة المطاعم
-                  </h2>
-                </div>
-                <div class="project-body">
-                  <div class="project-section">
-                    <h4 data-i18n="projects.afandena.section1.title">
-                      تطوير البنية التحتية الكاملة للفروع
-                    </h4>
-                    <ul>
-                      <li data-i18n="projects.afandena.section1.item1">
-                        ربط الفروع ونظام مراقبة مركزي
-                      </li>
-                      <li data-i18n="projects.afandena.section1.item2">
-                        إدارة شبكات وأجهزة ومراكز بيانات
-                      </li>
-                      <li data-i18n="projects.afandena.section1.item3">
-                        نظام نقاط بيع وربط التحكم
-                      </li>
-                      <li data-i18n="projects.afandena.section1.item4">
-                        توريد السيرفرات والراكات
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <!-- مشروع ريزو -->
-              <div class="project-card-detailed">
-                <div class="project-header">
-                  <div class="project-logo">
-                    <img
-                      src="assets/images/projects/project-rezo.jpg"
-                      alt="ريزو"
-                    />
-                  </div>
-                  <h2 data-i18n="projects.rezo.title">ريزو الفيوم</h2>
-                </div>
-                <div class="project-body">
-                  <div class="project-section">
-                    <h4 data-i18n="projects.rezo.section1.title">
-                      تطوير وتحديث البنية التحتية
-                    </h4>
-                    <ul>
-                      <li data-i18n="projects.rezo.section1.item1">
-                        توريد وتشغيل أجهزة الكاشير
-                      </li>
-                      <li data-i18n="projects.rezo.section1.item2">
-                        شاشات ومعدات نقاط البيع
-                      </li>
-                      <li data-i18n="projects.rezo.section1.item3">
-                        ربط وتحسين الشبكة الداخلية
-                      </li>
-                      <li data-i18n="projects.rezo.section1.item4">
-                        توريد برنترات الكاشير وراك سيرفر
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <!-- مشروع فندق قارون -->
-              <div class="project-card-detailed">
-                <div class="project-header">
-                  <div class="project-logo">
-                    <img
-                      src="assets/images/projects/project-qaroun-hotel.jpg"
-                      alt="فندق قارون"
-                    />
-                  </div>
-                  <h2 data-i18n="projects.qaroun.title">
-                    فندق ومطعم قارون الفيوم
-                  </h2>
-                </div>
-                <div class="project-body">
-                  <div class="project-section">
-                    <h4 data-i18n="projects.qaroun.section1.title">
-                      إنهاء كامل أعمال البنية التحتية
-                    </h4>
-                    <ul>
-                      <li data-i18n="projects.qaroun.section1.item1">
-                        شبكة داخلية
-                      </li>
-                      <li data-i18n="projects.qaroun.section1.item2">
-                        واي فاي
-                      </li>
-                      <li data-i18n="projects.qaroun.section1.item3">
-                        منظومة مراقبة
-                      </li>
-                      <li data-i18n="projects.qaroun.section1.item4">
-                        توريد وتشغيل أجهزة الكاشير
-                      </li>
-                      <li data-i18n="projects.qaroun.section1.item5">
-                        ساوند سيستم
-                      </li>
-                      <li data-i18n="projects.qaroun.section1.item6">
-                        توريد برنترات الكاشير وراك سيرفر
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <!-- مشروع بيت اللحوم -->
-              <div class="project-card-detailed">
-                <div class="project-header">
-                  <div class="project-logo">
-                    <img
-                      src="assets/images/projects/project-meat-house.jpg"
-                      alt="بيت اللحوم"
-                    />
-                  </div>
-                  <h2 data-i18n="projects.meathouse.title">
-                    بيت اللحوم الفيوم
-                  </h2>
-                </div>
-                <div class="project-body">
-                  <div class="project-section">
-                    <h4 data-i18n="projects.meathouse.section1.title">
-                      تحديث وتطوير البنية التحتية
-                    </h4>
-                    <ul>
-                      <li data-i18n="projects.meathouse.section1.item1">
-                        ربط VPN بين الفرع والكول سنتر
-                      </li>
-                      <li data-i18n="projects.meathouse.section1.item2">
-                        شبكة داخلية
-                      </li>
-                      <li data-i18n="projects.meathouse.section1.item3">
-                        توريد وتشغيل أجهزة الكاشير والسيرفرات والراكات
-                      </li>
-                      <li data-i18n="projects.meathouse.section1.item4">
-                        سيستم كاميرات مراقبة
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="container footer-container">
-        <div class="footer-brand">
-          <div class="brand-logo">
-            <img
-              src="assets/images/logos/logo-arslan-primary.webp"
-              alt="Arslan Tech"
-              data-i18n-alt="hero.logo_alt"
-              class="footer-logo-image"
-              decoding="async"
-              loading="lazy"
-            />
-          </div>
-          <p data-i18n="footer.about">
-            حلول تقنية مبتكرة ومتكاملة تساعد الشركات على تحقيق النمو والازدهار
-            في العصر الرقمي.
-          </p>
-        </div>
-        <div class="footer-links">
-          <h4 data-i18n="footer.links_title">روابط سريعة</h4>
-          <ul>
-            <li><a data-i18n="nav.home" href="index.html">الرئيسية</a></li>
-            <li><a data-i18n="nav.about" href="about.html">من نحن</a></li>
-            <li>
-              <a data-i18n="nav.services" href="services.html">خدماتنا</a>
-            </li>
-            <li>
-              <a data-i18n="nav.webdesign" href="web-design.html"
-                >تصميم المواقع</a
-              >
-            </li>
-            <li>
-              <a data-i18n="nav.projects" href="projects.html">سابقة أعمالنا</a>
-            </li>
-            <li>
-              <a data-i18n="nav.academy" href="academy.html">أرسلان أكاديمي</a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <h4 data-i18n="footer.contact_title">تواصل معنا</h4>
-          <p>
-            <i class="fas fa-phone"></i>
-            <strong data-i18n="footer.phone">الهاتف:</strong>
-            <a href="tel:01014078319">01014078319</a>
-          </p>
-          <p>
-            <i class="fas fa-envelope"></i>
-            <strong data-i18n="footer.email">البريد:</strong>
-            <a href="mailto:info@arslantech-eg.com">info@arslantech-eg.com</a>
-          </p>
-          <p>
-            <i class="fas fa-map-marker-alt"></i>
-            <strong data-i18n="contact.address_label">العنوان:</strong>
-            <span data-i18n="contact.address"
-              >الفيوم المسلة العبودي بجوار محمصات وكافيه شيخ البلد</span
-            >
-          </p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="container">
-          <p data-i18n="footer.copyright">
-            Copyright © 2025 - WebSite Design by
-            <a
-              href="https://wa.me/201112742841"
-              target="_blank"
-              rel="noopener noreferrer"
-              style="color: inherit; text-decoration: underline"
-              >Hisham Mohamed</a
-            >
-          </p>
-        </div>
-      </div>
-    </footer>
-
-    <div class="floating-contact-menu" id="floatingContactMenu">
-      <div class="social-icons-group">
-        <a
-          href="https://wa.me/201014078319"
-          class="social-icon whatsapp"
-          target="_blank"
-          aria-label="WhatsApp"
-        >
-          <i class="fab fa-whatsapp"></i>
-        </a>
-        <a
-          href="https://m.me/104783481303669"
-          class="social-icon messenger"
-          target="_blank"
-          aria-label="Messenger"
-        >
-          <i class="fab fa-facebook-messenger"></i>
-        </a>
-        <a
-          href="tel:01014078319"
-          class="social-icon phone"
-          aria-label="Call Us"
-        >
-          <i class="fas fa-phone"></i>
-        </a>
-        <a
-          href="mailto:info@arslantech-eg.com"
-          class="social-icon email"
-          aria-label="Email Us"
-        >
-          <i class="fas fa-envelope"></i>
-        </a>
-      </div>
-      <button
-        class="floating-toggle-btn"
-        id="floatingToggleBtn"
-        aria-label="Toggle Contact Menu"
-      >
-        <i class="fas fa-comments" id="floatingIcon"></i>
-      </button>
     </div>
+  </header>
 
-    <button
-      class="scroll-top"
-      id="scrollTop"
-      aria-label="العودة للأعلى"
-      data-i18n-aria="footer.scroll_top"
-    >
-      <i class="fas fa-arrow-up"></i>
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a class="brand" href="index.html" aria-label="Arslan Tech Home">
+          <img src="assets/images/logos/logo-arslan-primary.webp" alt="Arslan Tech" data-i18n-alt="hero.logo_alt"
+            class="brand-image" decoding="async" loading="lazy" />
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="قائمة التنقل" data-i18n-aria="nav.menu"
+          aria-controls="navLinks" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" data-i18n="nav.home">الرئيسية</a></li>
+          <li><a href="about.html" data-i18n="nav.about">من نحن</a></li>
+          <li>
+            <a href="services.html" data-i18n="nav.services">خدماتنا</a>
+          </li>
+          <li>
+            <a href="web-design.html" data-i18n="nav.webdesign">تصميم المواقع</a>
+          </li>
+          <li>
+            <a href="systems.html" data-i18n="nav.systems">الأنظمة</a>
+          </li>
+          <li>
+            <a href="projects.html" class="active" data-i18n="nav.projects">سابقة أعمالنا</a>
+          </li>
+          <li>
+            <a href="products.html" data-i18n="nav.products">المنتجات</a>
+          </li>
+          <li>
+            <a href="academy.html" data-i18n="nav.academy">أرسلان أكاديمي</a>
+          </li>
+          <li>
+            <a href="contact.html" class="btn btn-nav" data-i18n="nav.contact">تواصل معنا</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" style="padding: 60px 0 40px">
+      <div class="container">
+        <h1 class="hero-title" style="color: var(--white)" data-i18n="projects.hero_title">
+          من أعمالنا
+        </h1>
+        <p class="hero-lead" style="color: rgba(255, 255, 255, 0.85); max-width: 820px" data-i18n="projects.hero_lead">
+          اكتشف قصص نجاحنا في بناء حلول تكنولوجية متكاملة ومبتكرة.
+        </p>
+      </div>
+    </section>
+
+    <section class="projects" style="padding: 48px 0 80px; background: #f5f7fa">
+      <div class="container project-grid">
+        <div>
+          <!-- Project entries list -->
+          <article class="project-entry" style="display: grid; grid-template-columns: 1fr; gap: 28px">
+            <!-- مشروع سوبر زاوي -->
+            <div class="project-card-detailed">
+              <div class="project-header">
+                <div class="project-logo">
+                  <img src="assets/images/projects/project-super-zawy.jpg" alt="سوبر زاوي" />
+                </div>
+                <h2 data-i18n="projects.super_zawy.title">
+                  مطعم سوبر زاوي الفيوم
+                </h2>
+              </div>
+              <div class="project-body">
+                <div class="project-section">
+                  <h4 data-i18n="projects.super_zawy.section1.title">
+                    نظام كول سنتر متكامل
+                  </h4>
+                  <ul>
+                    <li data-i18n="projects.super_zawy.section1.item1">
+                      تسجيل المكالمات
+                    </li>
+                    <li data-i18n="projects.super_zawy.section1.item2">
+                      الرد الآلي
+                    </li>
+                    <li data-i18n="projects.super_zawy.section1.item3">
+                      ربط الهوتلاين
+                    </li>
+                    <li data-i18n="projects.super_zawy.section1.item4">
+                      ربط خطوط الموبايل
+                    </li>
+                    <li data-i18n="projects.super_zawy.section1.item5">
+                      تقارير احترافية
+                    </li>
+                    <li data-i18n="projects.super_zawy.section1.item6">
+                      توزيع المكالمات
+                    </li>
+                  </ul>
+                </div>
+                <div class="project-section">
+                  <h4 data-i18n="projects.super_zawy.section2.title">
+                    أعمال البنية التحتية وتشغيل الأنظمة
+                  </h4>
+                  <ul>
+                    <li data-i18n="projects.super_zawy.section2.item1">
+                      توريد السرفرات والسويتشات
+                    </li>
+                    <li data-i18n="projects.super_zawy.section2.item2">
+                      ربط الفرع بالكول سنتر عبر VPN
+                    </li>
+                    <li data-i18n="projects.super_zawy.section2.item3">
+                      أجهزة الكاشير
+                    </li>
+                    <li data-i18n="projects.super_zawy.section2.item4">
+                      تركيب وتشغيل نظام الموازين
+                    </li>
+                    <li data-i18n="projects.super_zawy.section2.item5">
+                      أجهزة الكول سنتر والطابعات
+                    </li>
+                    <li data-i18n="projects.super_zawy.section2.item6">
+                      دعم فني مستمر
+                    </li>
+                  </ul>
+                </div>
+                <div class="project-section">
+                  <h4 data-i18n="projects.super_zawy.section3.title">
+                    البنية التحتية الكاملة للمقر الإداري
+                  </h4>
+                  <ul>
+                    <li data-i18n="projects.super_zawy.section3.item1">
+                      شبكة داخلية
+                    </li>
+                    <li data-i18n="projects.super_zawy.section3.item2">
+                      ربط المقر بالمطعم
+                    </li>
+                    <li data-i18n="projects.super_zawy.section3.item3">
+                      سيستم كاميرات مراقبة للمقر ومركز التجهيز
+                    </li>
+                    <li data-i18n="projects.super_zawy.section3.item4">
+                      أجهزة الربط والشبكات والراكات
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- مشروع محمصة الجوهرة -->
+            <div class="project-card-detailed">
+              <div class="project-header">
+                <div class="project-logo">
+                  <img src="assets/images/projects/project-elgawhra.jpg" alt="محمصة الجوهرة" />
+                </div>
+                <h2 data-i18n="projects.elgohara.title">
+                  محمصة الجوهرة (السوقاوي) - حلقة الكفور- الكول سنتر -المقر
+                  الإداري
+                </h2>
+              </div>
+              <div class="project-body">
+                <div class="project-section">
+                  <h4 data-i18n="projects.elgohara.section1.title">
+                    تطوير البنية التحتية للمقر الإداري وتأسيس فرع الجحدورة
+                    وفرع المسلة والكول سنتر
+                  </h4>
+                  <ul>
+                    <li data-i18n="projects.elgohara.section1.item1">
+                      شبكة داخلية
+                    </li>
+                    <li data-i18n="projects.elgohara.section1.item2">
+                      ربط المقر بالفروع
+                    </li>
+                    <li data-i18n="projects.elgohara.section1.item3">
+                      سيستم كاميرات مراقبة
+                    </li>
+                    <li data-i18n="projects.elgohara.section1.item4">
+                      غرفة تحكم بالكاميرات للفروع
+                    </li>
+                    <li data-i18n="projects.elgohara.section1.item5">
+                      سيستم كول سنتر
+                    </li>
+                  </ul>
+                </div>
+                <div class="project-section">
+                  <h4 data-i18n="projects.elgohara.section2.title">
+                    تحديث وتطوير البنية التحتية
+                  </h4>
+                  <ul>
+                    <li data-i18n="projects.elgohara.section2.item1">
+                      ربط VPN بين الفرع والكول سنتر
+                    </li>
+                    <li data-i18n="projects.elgohara.section2.item2">
+                      شبكة داخلية
+                    </li>
+                    <li data-i18n="projects.elgohara.section2.item3">
+                      توريد وتشغيل أجهزة الكاشير والسيرفرات والراكات
+                    </li>
+                    <li data-i18n="projects.elgohara.section2.item4">
+                      سيستم كاميرات مراقبة
+                    </li>
+                  </ul>
+                </div>
+                <!-- duplicate 'تحديث وتطوير' removed to match live text structure -->
+                <div class="project-section">
+                  <h4 data-i18n="projects.elgohara.section3.title">
+                    أعمال التطوير والتحديث
+                  </h4>
+                  <ul>
+                    <li data-i18n="projects.elgohara.section3.item1">
+                      شبكة داخلية
+                    </li>
+                    <li data-i18n="projects.elgohara.section3.item2">
+                      ربط الفرع بالكول سنتر
+                    </li>
+                    <li data-i18n="projects.elgohara.section3.item3">
+                      منظومة كاميرات مراقبة
+                    </li>
+                    <li data-i18n="projects.elgohara.section3.item4">
+                      توريد وتشغيل أجهزة الكاشير
+                    </li>
+                    <li data-i18n="projects.elgohara.section3.item5">
+                      ساوند سيستم
+                    </li>
+                    <li data-i18n="projects.elgohara.section3.item6">
+                      توريد الراكات والسويتشات
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- مشروع كرنشيز -->
+            <div class="project-card-detailed">
+              <div class="project-header">
+                <div class="project-logo">
+                  <img src="assets/images/projects/project-crunches.jpg" alt="كرنشيز" />
+                </div>
+                <h2 data-i18n="projects.crunches.title">
+                  مطعم كرانشيز الفيوم
+                </h2>
+              </div>
+              <div class="project-body">
+                <div class="project-section">
+                  <h4 data-i18n="projects.crunches.section1.title">
+                    تطوير وتحديث البنية التحتية
+                  </h4>
+                  <ul>
+                    <li data-i18n="projects.crunches.section1.item1">
+                      شبكة داخلية
+                    </li>
+                    <li data-i18n="projects.crunches.section1.item2">
+                      ربط الفرع بالكول سنتر
+                    </li>
+                    <li data-i18n="projects.crunches.section1.item3">
+                      منظومة كاميرات مراقبة
+                    </li>
+                    <li data-i18n="projects.crunches.section1.item4">
+                      توريد وتشغيل أجهزة الكاشير
+                    </li>
+                    <li data-i18n="projects.crunches.section1.item5">
+                      ساوند سيستم
+                    </li>
+                    <li data-i18n="projects.crunches.section1.item6">
+                      توريد برنترات الكاشير وراك سيرفر
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- مشروع وصاية -->
+            <div class="project-card-detailed">
+              <div class="project-header">
+                <div class="project-logo">
+                  <img src="assets/images/projects/project-wesaya.jpg" alt="وصاية" />
+                </div>
+                <h2 data-i18n="projects.wesaya.title">
+                  سلسلة مطاعم وصاية (وصاية الجحدورة -وصاية المسلة -الكول سنتر
+                  -المقر الإداري )
+                </h2>
+              </div>
+              <div class="project-body">
+                <div class="project-section">
+                  <h4 data-i18n="projects.wesaya.section1.title">
+                    تطوير البنية التحتية للمقر الإداري وتأسيس فرع الجحدورة
+                    وفرع المسلة والكول سنتر
+                  </h4>
+                  <ul>
+                    <li data-i18n="projects.wesaya.section1.item1">
+                      شبكة داخلية
+                    </li>
+                    <li data-i18n="projects.wesaya.section1.item2">
+                      ربط المقر بالفروع
+                    </li>
+                    <li data-i18n="projects.wesaya.section1.item3">
+                      سيستم كاميرات مراقبة
+                    </li>
+                    <li data-i18n="projects.wesaya.section1.item4">
+                      غرفة تحكم بالكاميرات للفروع
+                    </li>
+                    <li data-i18n="projects.wesaya.section1.item5">
+                      سيستم كول سنتر
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- مشروع افندينا -->
+            <div class="project-card-detailed">
+              <div class="project-header">
+                <div class="project-logo">
+                  <img src="assets/images/projects/project-afandena.jpg" alt="افندينا" />
+                </div>
+                <h2 data-i18n="projects.afandena.title">
+                  افندينا - سلسلة المطاعم
+                </h2>
+              </div>
+              <div class="project-body">
+                <div class="project-section">
+                  <h4 data-i18n="projects.afandena.section1.title">
+                    تطوير البنية التحتية الكاملة للفروع
+                  </h4>
+                  <ul>
+                    <li data-i18n="projects.afandena.section1.item1">
+                      ربط الفروع ونظام مراقبة مركزي
+                    </li>
+                    <li data-i18n="projects.afandena.section1.item2">
+                      إدارة شبكات وأجهزة ومراكز بيانات
+                    </li>
+                    <li data-i18n="projects.afandena.section1.item3">
+                      نظام نقاط بيع وربط التحكم
+                    </li>
+                    <li data-i18n="projects.afandena.section1.item4">
+                      توريد السيرفرات والراكات
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- مشروع ريزو -->
+            <div class="project-card-detailed">
+              <div class="project-header">
+                <div class="project-logo">
+                  <img src="assets/images/projects/project-rezo.jpg" alt="ريزو" />
+                </div>
+                <h2 data-i18n="projects.rezo.title">ريزو الفيوم</h2>
+              </div>
+              <div class="project-body">
+                <div class="project-section">
+                  <h4 data-i18n="projects.rezo.section1.title">
+                    تطوير وتحديث البنية التحتية
+                  </h4>
+                  <ul>
+                    <li data-i18n="projects.rezo.section1.item1">
+                      توريد وتشغيل أجهزة الكاشير
+                    </li>
+                    <li data-i18n="projects.rezo.section1.item2">
+                      شاشات ومعدات نقاط البيع
+                    </li>
+                    <li data-i18n="projects.rezo.section1.item3">
+                      ربط وتحسين الشبكة الداخلية
+                    </li>
+                    <li data-i18n="projects.rezo.section1.item4">
+                      توريد برنترات الكاشير وراك سيرفر
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- مشروع فندق قارون -->
+            <div class="project-card-detailed">
+              <div class="project-header">
+                <div class="project-logo">
+                  <img src="assets/images/projects/project-qaroun-hotel.jpg" alt="فندق قارون" />
+                </div>
+                <h2 data-i18n="projects.qaroun.title">
+                  فندق ومطعم قارون الفيوم
+                </h2>
+              </div>
+              <div class="project-body">
+                <div class="project-section">
+                  <h4 data-i18n="projects.qaroun.section1.title">
+                    إنهاء كامل أعمال البنية التحتية
+                  </h4>
+                  <ul>
+                    <li data-i18n="projects.qaroun.section1.item1">
+                      شبكة داخلية
+                    </li>
+                    <li data-i18n="projects.qaroun.section1.item2">
+                      واي فاي
+                    </li>
+                    <li data-i18n="projects.qaroun.section1.item3">
+                      منظومة مراقبة
+                    </li>
+                    <li data-i18n="projects.qaroun.section1.item4">
+                      توريد وتشغيل أجهزة الكاشير
+                    </li>
+                    <li data-i18n="projects.qaroun.section1.item5">
+                      ساوند سيستم
+                    </li>
+                    <li data-i18n="projects.qaroun.section1.item6">
+                      توريد برنترات الكاشير وراك سيرفر
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- مشروع بيت اللحوم -->
+            <div class="project-card-detailed">
+              <div class="project-header">
+                <div class="project-logo">
+                  <img src="assets/images/projects/project-meat-house.jpg" alt="بيت اللحوم" />
+                </div>
+                <h2 data-i18n="projects.meathouse.title">
+                  بيت اللحوم الفيوم
+                </h2>
+              </div>
+              <div class="project-body">
+                <div class="project-section">
+                  <h4 data-i18n="projects.meathouse.section1.title">
+                    تحديث وتطوير البنية التحتية
+                  </h4>
+                  <ul>
+                    <li data-i18n="projects.meathouse.section1.item1">
+                      ربط VPN بين الفرع والكول سنتر
+                    </li>
+                    <li data-i18n="projects.meathouse.section1.item2">
+                      شبكة داخلية
+                    </li>
+                    <li data-i18n="projects.meathouse.section1.item3">
+                      توريد وتشغيل أجهزة الكاشير والسيرفرات والراكات
+                    </li>
+                    <li data-i18n="projects.meathouse.section1.item4">
+                      سيستم كاميرات مراقبة
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <img src="assets/images/logos/logo-arslan-primary.webp" alt="Arslan Tech" data-i18n-alt="hero.logo_alt"
+            class="footer-logo-image" decoding="async" loading="lazy" />
+        </div>
+        <p data-i18n="footer.about">
+          حلول تقنية مبتكرة ومتكاملة تساعد الشركات على تحقيق النمو والازدهار
+          في العصر الرقمي.
+        </p>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer.links_title">روابط سريعة</h4>
+        <ul>
+          <li><a data-i18n="nav.home" href="index.html">الرئيسية</a></li>
+          <li><a data-i18n="nav.about" href="about.html">من نحن</a></li>
+          <li>
+            <a data-i18n="nav.services" href="services.html">خدماتنا</a>
+          </li>
+          <li>
+            <a data-i18n="nav.webdesign" href="web-design.html">تصميم المواقع</a>
+          </li>
+          <li>
+            <a data-i18n="nav.systems" href="systems.html">الأنظمة</a>
+          </li>
+          <li>
+            <a data-i18n="nav.projects" href="projects.html">سابقة أعمالنا</a>
+          </li>
+          <li>
+            <a data-i18n="nav.academy" href="academy.html">أرسلان أكاديمي</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4 data-i18n="footer.contact_title">تواصل معنا</h4>
+        <p>
+          <i class="fas fa-phone"></i>
+          <strong data-i18n="footer.phone">الهاتف:</strong>
+          <a href="tel:01014078319">01014078319</a>
+        </p>
+        <p>
+          <i class="fas fa-envelope"></i>
+          <strong data-i18n="footer.email">البريد:</strong>
+          <a href="mailto:info@arslantech-eg.com">info@arslantech-eg.com</a>
+        </p>
+        <p>
+          <i class="fas fa-map-marker-alt"></i>
+          <strong data-i18n="contact.address_label">العنوان:</strong>
+          <span data-i18n="contact.address">الفيوم المسلة العبودي بجوار محمصات وكافيه شيخ البلد</span>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p data-i18n="footer.copyright">
+          Copyright © 2025 - WebSite Design by
+          <a href="https://wa.me/201112742841" target="_blank" rel="noopener noreferrer"
+            style="color: inherit; text-decoration: underline">Hisham Mohamed</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating-contact-menu" id="floatingContactMenu">
+    <div class="social-icons-group">
+      <a href="https://wa.me/201014078319" class="social-icon whatsapp" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://m.me/104783481303669" class="social-icon messenger" target="_blank" aria-label="Messenger">
+        <i class="fab fa-facebook-messenger"></i>
+      </a>
+      <a href="tel:01014078319" class="social-icon phone" aria-label="Call Us">
+        <i class="fas fa-phone"></i>
+      </a>
+      <a href="mailto:info@arslantech-eg.com" class="social-icon email" aria-label="Email Us">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+    <button class="floating-toggle-btn" id="floatingToggleBtn" aria-label="Toggle Contact Menu">
+      <i class="fas fa-comments" id="floatingIcon"></i>
     </button>
+  </div>
 
-    <script src="assets/js/script.js"></script>
-    <!-- Added SVG decorations JS script -->
-    <script src="assets/js/svg-decorations.js"></script>
-  </body>
+  <button class="scroll-top" id="scrollTop" aria-label="العودة للأعلى" data-i18n-aria="footer.scroll_top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="assets/js/script.js"></script>
+  <!-- Added SVG decorations JS script -->
+  <script src="assets/js/svg-decorations.js"></script>
+</body>
+
 </html>

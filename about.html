@@ -1,53 +1,40 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>
-      (function () {
-        try {
-          var saved = localStorage.getItem("site_lang");
-          var html = document.documentElement;
-          if (saved === "en") {
-            html.lang = "en";
-            html.dir = "ltr";
-            html.classList.add("lang-loading");
-          } else if (saved === "ar") {
-            html.lang = "ar";
-            html.dir = "rtl";
-          }
-        } catch (e) {}
-      })();
-    </script>
-    <meta
-      name="description"
-      content="تعرف على أرسلان تك - شريكك الموثوق في عالم حلول تكنولوجيا المعلومات المتكاملة"
-    />
-    <title data-i18n="about.page_title">About Us - Arslan Tech</title>
-    <link
-      rel="icon"
-      type="image/webp"
-      href="assets/images/logos/logo-arslan-primary.webp"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <link rel="stylesheet" href="assets/css/about.css" />
-    <!-- Added SVG decorations stylesheet -->
-    <link rel="stylesheet" href="assets/css/svg-decorations.css" />
-    <link rel="canonical" href="https://arslantech-eg.com/about.html" />
-    <script type="application/ld+json">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("site_lang");
+        var html = document.documentElement;
+        if (saved === "en") {
+          html.lang = "en";
+          html.dir = "ltr";
+          html.classList.add("lang-loading");
+        } else if (saved === "ar") {
+          html.lang = "ar";
+          html.dir = "rtl";
+        }
+      } catch (e) { }
+    })();
+  </script>
+  <meta name="description" content="تعرف على أرسلان تك - شريكك الموثوق في عالم حلول تكنولوجيا المعلومات المتكاملة" />
+  <title data-i18n="about.page_title">About Us - Arslan Tech</title>
+  <link rel="icon" type="image/webp" href="assets/images/logos/logo-arslan-primary.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/about.css" />
+  <!-- Added SVG decorations stylesheet -->
+  <link rel="stylesheet" href="assets/css/svg-decorations.css" />
+  <link rel="canonical" href="https://arslantech-eg.com/about.html" />
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "AboutPage",
@@ -60,463 +47,353 @@
         }
       }
     </script>
-  </head>
+</head>
 
-  <body>
-    <header class="topbar">
-      <div class="container">
-        <div class="topbar-inner">
-          <div class="topbar-contact">
-            <i class="fas fa-phone topbar-icon"></i>
-            <a href="tel:01014078319">01014078319</a>
-            <span class="divider"></span>
-            <i class="fas fa-envelope topbar-icon"></i>
-            <a href="mailto:info@arslantech-eg.com">info@arslantech-eg.com</a>
-          </div>
-          <div class="topbar-social">
-            <a
-              href="https://www.linkedin.com/company/arslantech"
-              aria-label="LinkedIn"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-            <a
-              href="https://wa.me/201014078319"
-              aria-label="WhatsApp"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><i class="fab fa-whatsapp"></i
-            ></a>
-            <a
-              href="https://www.facebook.com/Arslantecheg/"
-              aria-label="Facebook"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-          </div>
-          <div
-            class="topbar-lang"
-            id="langToggle"
-            role="navigation"
-            aria-label="Language switcher"
-          >
-            <button class="lang-btn" data-lang="ar">العربية</button>
-            <button class="lang-btn" data-lang="en">EN</button>
-          </div>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <div class="topbar-contact">
+          <i class="fas fa-phone topbar-icon"></i>
+          <a href="tel:01014078319">01014078319</a>
+          <span class="divider"></span>
+          <i class="fas fa-envelope topbar-icon"></i>
+          <a href="mailto:info@arslantech-eg.com">info@arslantech-eg.com</a>
+        </div>
+        <div class="topbar-social">
+          <a href="https://www.linkedin.com/company/arslantech" aria-label="LinkedIn" target="_blank"
+            rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/201014078319" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i
+              class="fab fa-whatsapp"></i></a>
+          <a href="https://www.facebook.com/Arslantecheg/" aria-label="Facebook" target="_blank"
+            rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <div class="topbar-lang" id="langToggle" role="navigation" aria-label="Language switcher">
+          <button class="lang-btn" data-lang="ar">العربية</button>
+          <button class="lang-btn" data-lang="en">EN</button>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <nav
-      class="navbar"
-      id="navbar"
-      role="navigation"
-      aria-label="Main navigation"
-    >
-      <div class="container">
-        <div class="nav-wrapper">
-          <a class="brand" href="index.html" aria-label="Arslan Tech Home">
-            <img
-              src="assets/images/logos/logo-arslan-primary.webp"
-              alt="Arslan Tech"
-              class="brand-image"
-              decoding="async"
-              loading="lazy"
-            />
-          </a>
-          <button
-            class="menu-toggle"
-            id="menuToggle"
-            aria-label="قائمة التنقل"
-            aria-controls="navLinks"
-            aria-expanded="false"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          <ul class="nav-links" id="navLinks">
-            <li><a href="index.html" data-i18n="nav.home">الرئيسية</a></li>
-            <li>
-              <a href="about.html" class="active" data-i18n="nav.about"
-                >من نحن</a
-              >
-            </li>
-            <li>
-              <a href="services.html" data-i18n="nav.services">خدماتنا</a>
-            </li>
-            <li>
-              <a href="web-design.html" data-i18n="nav.webdesign"
-                >تصميم المواقع</a
-              >
-            </li>
-            <li>
-              <a href="projects.html" data-i18n="nav.projects">سابقة أعمالنا</a>
-            </li>
-            <li>
-              <a href="products.html" data-i18n="nav.products">المنتجات</a>
-            </li>
-            <li>
-              <a href="academy.html" data-i18n="nav.academy">أرسلان أكاديمي</a>
-            </li>
-            <li>
-              <a href="contact.html" class="btn btn-nav" data-i18n="nav.contact"
-                >تواصل معنا</a
-              >
-            </li>
-          </ul>
-        </div>
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a class="brand" href="index.html" aria-label="Arslan Tech Home">
+          <img src="assets/images/logos/logo-arslan-primary.webp" alt="Arslan Tech" class="brand-image" decoding="async"
+            loading="lazy" />
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="قائمة التنقل" aria-controls="navLinks"
+          aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" data-i18n="nav.home">الرئيسية</a></li>
+          <li>
+            <a href="about.html" class="active" data-i18n="nav.about">من نحن</a>
+          </li>
+          <li>
+            <a href="services.html" data-i18n="nav.services">خدماتنا</a>
+          </li>
+          <li>
+            <a href="web-design.html" data-i18n="nav.webdesign">تصميم المواقع</a>
+          </li>
+          <li>
+            <a href="systems.html" data-i18n="nav.systems">الأنظمة</a>
+          </li>
+          <li>
+            <a href="projects.html" data-i18n="nav.projects">سابقة أعمالنا</a>
+          </li>
+          <li>
+            <a href="products.html" data-i18n="nav.products">المنتجات</a>
+          </li>
+          <li>
+            <a href="academy.html" data-i18n="nav.academy">أرسلان أكاديمي</a>
+          </li>
+          <li>
+            <a href="contact.html" class="btn btn-nav" data-i18n="nav.contact">تواصل معنا</a>
+          </li>
+        </ul>
       </div>
-    </nav>
-    <main>
-      <!-- About Hero: same layout as projects hero -->
-      <section class="hero" style="padding: 60px 0 40px">
-        <div class="container">
-          <h1
-            class="hero-title"
-            style="color: var(--white)"
-            data-i18n="about_page.hero_title"
-          >
-            من نحن
-          </h1>
-          <p
-            class="hero-lead"
-            style="color: rgba(255, 255, 255, 0.85); max-width: 820px"
-            data-i18n="about_page.hero_lead"
-          >
-            أرسلان تك شركة متخصصة في حلول تكنولوجيا المعلومات المتكاملة، نساعد
-            الشركات على بناء بنية تحتية آمنة ومرنة تدعم نمو أعمالهم.
+    </div>
+  </nav>
+  <main>
+    <!-- About Hero: same layout as projects hero -->
+    <section class="hero" style="padding: 60px 0 40px">
+      <div class="container">
+        <h1 class="hero-title" style="color: var(--white)" data-i18n="about_page.hero_title">
+          من نحن
+        </h1>
+        <p class="hero-lead" style="color: rgba(255, 255, 255, 0.85); max-width: 820px"
+          data-i18n="about_page.hero_lead">
+          أرسلان تك شركة متخصصة في حلول تكنولوجيا المعلومات المتكاملة، نساعد
+          الشركات على بناء بنية تحتية آمنة ومرنة تدعم نمو أعمالهم.
+        </p>
+      </div>
+    </section>
+
+    <!-- Intro: who we are and what we do in short -->
+    <section class="about-intro">
+      <div class="container intro-grid">
+        <div class="intro-content">
+          <h2 data-i18n="about_page.intro_title">
+            شركة تقنية قريبة من واقعك
+          </h2>
+          <p class="lead" data-i18n="about_page.intro_lead">
+            نعمل مع الشركات الصغيرة والمتوسطة والمؤسسات التي تبحث عن شريك تقني
+            يفهم احتياجاتها اليومية، ويقدم حلولاً عملية وليست مجرد منتجات.
           </p>
-        </div>
-      </section>
-
-      <!-- Intro: who we are and what we do in short -->
-      <section class="about-intro">
-        <div class="container intro-grid">
-          <div class="intro-content">
-            <h2 data-i18n="about_page.intro_title">
-              شركة تقنية قريبة من واقعك
-            </h2>
-            <p class="lead" data-i18n="about_page.intro_lead">
-              نعمل مع الشركات الصغيرة والمتوسطة والمؤسسات التي تبحث عن شريك تقني
-              يفهم احتياجاتها اليومية، ويقدم حلولاً عملية وليست مجرد منتجات.
-            </p>
-            <div class="trust-badge">
-              <i class="fas fa-shield-alt"></i>
-              <div>
-                <strong data-i18n="about_page.intro_badge_title"
-                  >خبرة حقيقية في الميدان</strong
-                >
-                <p data-i18n="about_page.intro_badge_text">
-                  تنفيذ مئات المشاريع في الكاميرات، الشبكات، أنظمة الكول سنتر،
-                  وأنظمة التيار الخفيف.
-                </p>
-              </div>
+          <div class="trust-badge">
+            <i class="fas fa-shield-alt"></i>
+            <div>
+              <strong data-i18n="about_page.intro_badge_title">خبرة حقيقية في الميدان</strong>
+              <p data-i18n="about_page.intro_badge_text">
+                تنفيذ مئات المشاريع في الكاميرات، الشبكات، أنظمة الكول سنتر،
+                وأنظمة التيار الخفيف.
+              </p>
             </div>
           </div>
-          <div class="intro-image">
-            <img
-              src="assets/images/about/about-mission.jpg"
-              alt="فريق عمل أرسلان تك"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
         </div>
-      </section>
-
-      <!-- Vision & Mission as two clear cards -->
-      <section class="vision-mission">
-        <div class="container">
-          <div class="vm-grid">
-            <article class="vm-card">
-              <img
-                src="assets/images/about/about-goals.jpg"
-                alt="رؤيتنا في أرسلان تك"
-                class="vm-image"
-                loading="lazy"
-                decoding="async"
-              />
-              <div class="vm-icon"><i class="fas fa-bullseye"></i></div>
-              <h2 data-i18n="about_page.vision_title">رؤيتنا</h2>
-              <p data-i18n="about_page.vision_p1">
-                أن نكون الشريك التقني المفضل للشركات التي تبحث عن حلول آمنة
-                ومرنة تنمو معها على المدى الطويل.
-              </p>
-              <p data-i18n="about_page.vision_p2">
-                نركز على بناء بنية تحتية مستقرة تقلل الأعطال، وترفع كفاءة فريقك
-                بدل أن ترهقه.
-              </p>
-            </article>
-            <article class="vm-card">
-              <img
-                src="assets/images/about/about-faq.jpg"
-                alt="مهمتنا في أرسلان تك"
-                class="vm-image"
-                loading="lazy"
-                decoding="async"
-              />
-              <div class="vm-icon"><i class="fas fa-handshake"></i></div>
-              <h2 data-i18n="about_page.mission_title">مهمتنا</h2>
-              <p data-i18n="about_page.mission_p">
-                تحويل التكنولوجيا من عبء إلى أداة مساعدة في الإدارة، المبيعات،
-                وخدمة العملاء.
-              </p>
-              <ul class="mission-list">
-                <li>
-                  <i class="fas fa-check"></i>
-                  <span data-i18n="about_page.mission_item1"
-                    >تصميم حلول تناسب حجم وطبيعة كل نشاط.</span
-                  >
-                </li>
-                <li>
-                  <i class="fas fa-check"></i>
-                  <span data-i18n="about_page.mission_item2"
-                    >تقديم دعم فني مستمر وليس مرة واحدة عند التركيب.</span
-                  >
-                </li>
-                <li>
-                  <i class="fas fa-check"></i>
-                  <span data-i18n="about_page.mission_item3"
-                    >تبسيط الأنظمة قدر الإمكان لسهولة الاستخدام اليومي.</span
-                  >
-                </li>
-              </ul>
-            </article>
-          </div>
+        <div class="intro-image">
+          <img src="assets/images/about/about-mission.jpg" alt="فريق عمل أرسلان تك" loading="lazy" decoding="async" />
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Why choose us: focused value points -->
-      <section class="why-choose">
-        <div class="container">
-          <h2 class="section-title" data-i18n="about_page.why_title">
-            لماذا تختار أرسلان تك؟
-          </h2>
-          <div class="features-grid">
-            <article class="feature-card">
-              <div class="feature-icon"><i class="fas fa-user-tie"></i></div>
-              <h3 data-i18n="about_page.why_item1_title">
-                استشارة قبل التنفيذ
-              </h3>
-              <p data-i18n="about_page.why_item1_text">
-                نساعدك في اختيار الحل المناسب قبل الشراء أو التركيب، لتتجنب
-                التكاليف غير الضرورية.
-              </p>
-            </article>
-            <article class="feature-card">
-              <div class="feature-icon"><i class="fas fa-tools"></i></div>
-              <h3 data-i18n="about_page.why_item2_title">
-                تنفيذ ومعايرة دقيقة
-              </h3>
-              <p data-i18n="about_page.why_item2_text">
-                نركز على جودة التنفيذ والتوثيق، حتى يسهل تطوير النظام أو صيانته
-                لاحقًا.
-              </p>
-            </article>
-            <article class="feature-card">
-              <div class="feature-icon"><i class="fas fa-headset"></i></div>
-              <h3 data-i18n="about_page.why_item3_title">دعم فني قريب منك</h3>
-              <p data-i18n="about_page.why_item3_text">
-                فريق دعم متاح للاستفسارات والأعطال، مع عقود صيانة تناسب حجم
-                نشاطك.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Simple stats section (lighter than home) -->
-      <section class="stats-section" id="stats">
-        <div class="container">
-          <div class="stats-grid">
-            <article class="stat-card">
-              <div class="stat-icon animate-icon">
-                <i class="fas fa-calendar-alt"></i>
-              </div>
-              <div class="stat-number">+10</div>
-              <h3 data-i18n="about_page.stat_years_title">سنوات خبرة</h3>
-              <p data-i18n="about_page.stat_years_text">
-                خبرة عملية تراكمية في مشاريع تركيب وتشغيل ودعم أنظمة تقنية
-                مختلفة.
-              </p>
-            </article>
-            <article class="stat-card">
-              <div class="stat-icon animate-icon">
-                <i class="fas fa-briefcase"></i>
-              </div>
-              <div class="stat-number">+850</div>
-              <h3 data-i18n="about_page.stat_projects_title">مشروع منجز</h3>
-              <p data-i18n="about_page.stat_projects_text">
-                مشاريع في قطاعات مثل المطاعم، المقرات الإدارية، المتاجر،
-                والمصانع.
-              </p>
-            </article>
-            <article class="stat-card">
-              <div class="stat-icon animate-icon">
-                <i class="fas fa-users"></i>
-              </div>
-              <div class="stat-number">+320</div>
-              <h3 data-i18n="about_page.stat_clients_title">عميل موثوق</h3>
-              <p data-i18n="about_page.stat_clients_text">
-                شركات تعتمد علينا في تشغيل أنظمتها التقنية ومتابعة أدائها.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Final CTA: one clear action -->
-      <section class="cta-section" id="contact-cta">
-        <div class="container">
-          <div class="cta-box">
-            <h2 data-i18n="about_page.cta_title">جاهز لتطوير بنيتك التقنية؟</h2>
-            <p data-i18n="about_page.cta_text">
-              احجز جلسة تواصل سريعة مع فريق أرسلان تك لعرض وضعك الحالي واقتراح
-              حلول عملية تناسب ميزانيتك.
+    <!-- Vision & Mission as two clear cards -->
+    <section class="vision-mission">
+      <div class="container">
+        <div class="vm-grid">
+          <article class="vm-card">
+            <img src="assets/images/about/about-goals.jpg" alt="رؤيتنا في أرسلان تك" class="vm-image" loading="lazy"
+              decoding="async" />
+            <div class="vm-icon"><i class="fas fa-bullseye"></i></div>
+            <h2 data-i18n="about_page.vision_title">رؤيتنا</h2>
+            <p data-i18n="about_page.vision_p1">
+              أن نكون الشريك التقني المفضل للشركات التي تبحث عن حلول آمنة
+              ومرنة تنمو معها على المدى الطويل.
             </p>
-            <a href="index.html#contact" class="btn btn-light btn-large">
-              <i class="fas fa-phone-alt"></i>
-              <span data-i18n="about_page.cta_button"
-                >تواصل مع فريق المبيعات</span
-              >
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="container footer-container">
-        <div class="footer-brand">
-          <div class="brand-logo">
-            <img
-              src="assets/images/logos/logo-arslan-primary.webp"
-              alt="Arslan Tech"
-              data-i18n-alt="hero.logo_alt"
-              class="footer-logo-image"
-              decoding="async"
-              loading="lazy"
-            />
-          </div>
-          <p data-i18n="footer.about">
-            حلول تقنية مبتكرة ومتكاملة تساعد الشركات على تحقيق النمو والازدهار
-            في العصر الرقمي.
-          </p>
-        </div>
-        <div class="footer-links">
-          <h4 data-i18n="footer.links_title">روابط سريعة</h4>
-          <ul>
-            <li><a data-i18n="nav.home" href="index.html">الرئيسية</a></li>
-            <li><a data-i18n="nav.about" href="about.html">من نحن</a></li>
-            <li>
-              <a data-i18n="nav.services" href="services.html">خدماتنا</a>
-            </li>
-            <li>
-              <a data-i18n="nav.webdesign" href="web-design.html"
-                >تصميم المواقع</a
-              >
-            </li>
-            <li>
-              <a data-i18n="nav.projects" href="projects.html">سابقة أعمالنا</a>
-            </li>
-            <li>
-              <a data-i18n="nav.academy" href="academy.html">أرسلان أكاديمي</a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <h4 data-i18n="footer.contact_title">تواصل معنا</h4>
-          <p>
-            <i class="fas fa-phone"></i>
-            <strong data-i18n="footer.phone">الهاتف:</strong>
-            <a href="tel:01014078319">01014078319</a>
-          </p>
-          <p>
-            <i class="fas fa-envelope"></i>
-            <strong data-i18n="footer.email">البريد:</strong>
-            <a href="mailto:info@arslantech-eg.com">info@arslantech-eg.com</a>
-          </p>
-          <p>
-            <i class="fas fa-map-marker-alt"></i>
-            <strong data-i18n="contact.address_label">العنوان:</strong>
-            <span data-i18n="contact.address"
-              >الفيوم المسلة العبودي بجوار محمصات وكافيه شيخ البلد</span
-            >
-          </p>
+            <p data-i18n="about_page.vision_p2">
+              نركز على بناء بنية تحتية مستقرة تقلل الأعطال، وترفع كفاءة فريقك
+              بدل أن ترهقه.
+            </p>
+          </article>
+          <article class="vm-card">
+            <img src="assets/images/about/about-faq.jpg" alt="مهمتنا في أرسلان تك" class="vm-image" loading="lazy"
+              decoding="async" />
+            <div class="vm-icon"><i class="fas fa-handshake"></i></div>
+            <h2 data-i18n="about_page.mission_title">مهمتنا</h2>
+            <p data-i18n="about_page.mission_p">
+              تحويل التكنولوجيا من عبء إلى أداة مساعدة في الإدارة، المبيعات،
+              وخدمة العملاء.
+            </p>
+            <ul class="mission-list">
+              <li>
+                <i class="fas fa-check"></i>
+                <span data-i18n="about_page.mission_item1">تصميم حلول تناسب حجم وطبيعة كل نشاط.</span>
+              </li>
+              <li>
+                <i class="fas fa-check"></i>
+                <span data-i18n="about_page.mission_item2">تقديم دعم فني مستمر وليس مرة واحدة عند التركيب.</span>
+              </li>
+              <li>
+                <i class="fas fa-check"></i>
+                <span data-i18n="about_page.mission_item3">تبسيط الأنظمة قدر الإمكان لسهولة الاستخدام اليومي.</span>
+              </li>
+            </ul>
+          </article>
         </div>
       </div>
-      <div class="footer-bottom">
-        <div class="container">
-          <p data-i18n="footer.copyright">
-            Copyright © 2025 - WebSite Design by
-            <a
-              href="https://wa.me/201112742841"
-              target="_blank"
-              rel="noopener noreferrer"
-              style="color: inherit; text-decoration: underline"
-              >Hisham Mohamed</a
-            >
-          </p>
+    </section>
+
+    <!-- Why choose us: focused value points -->
+    <section class="why-choose">
+      <div class="container">
+        <h2 class="section-title" data-i18n="about_page.why_title">
+          لماذا تختار أرسلان تك؟
+        </h2>
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon"><i class="fas fa-user-tie"></i></div>
+            <h3 data-i18n="about_page.why_item1_title">
+              استشارة قبل التنفيذ
+            </h3>
+            <p data-i18n="about_page.why_item1_text">
+              نساعدك في اختيار الحل المناسب قبل الشراء أو التركيب، لتتجنب
+              التكاليف غير الضرورية.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon"><i class="fas fa-tools"></i></div>
+            <h3 data-i18n="about_page.why_item2_title">
+              تنفيذ ومعايرة دقيقة
+            </h3>
+            <p data-i18n="about_page.why_item2_text">
+              نركز على جودة التنفيذ والتوثيق، حتى يسهل تطوير النظام أو صيانته
+              لاحقًا.
+            </p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon"><i class="fas fa-headset"></i></div>
+            <h3 data-i18n="about_page.why_item3_title">دعم فني قريب منك</h3>
+            <p data-i18n="about_page.why_item3_text">
+              فريق دعم متاح للاستفسارات والأعطال، مع عقود صيانة تناسب حجم
+              نشاطك.
+            </p>
+          </article>
         </div>
       </div>
-    </footer>
+    </section>
 
-    <div class="floating-contact-menu" id="floatingContactMenu">
-      <div class="social-icons-group">
-        <a
-          href="https://wa.me/201014078319"
-          class="social-icon whatsapp"
-          target="_blank"
-          aria-label="WhatsApp"
-        >
-          <i class="fab fa-whatsapp"></i>
-        </a>
-        <a
-          href="https://m.me/104783481303669"
-          class="social-icon messenger"
-          target="_blank"
-          aria-label="Messenger"
-        >
-          <i class="fab fa-facebook-messenger"></i>
-        </a>
-        <a
-          href="tel:01014078319"
-          class="social-icon phone"
-          aria-label="Call Us"
-        >
+    <!-- Simple stats section (lighter than home) -->
+    <section class="stats-section" id="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <article class="stat-card">
+            <div class="stat-icon animate-icon">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div class="stat-number">+10</div>
+            <h3 data-i18n="about_page.stat_years_title">سنوات خبرة</h3>
+            <p data-i18n="about_page.stat_years_text">
+              خبرة عملية تراكمية في مشاريع تركيب وتشغيل ودعم أنظمة تقنية
+              مختلفة.
+            </p>
+          </article>
+          <article class="stat-card">
+            <div class="stat-icon animate-icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <div class="stat-number">+850</div>
+            <h3 data-i18n="about_page.stat_projects_title">مشروع منجز</h3>
+            <p data-i18n="about_page.stat_projects_text">
+              مشاريع في قطاعات مثل المطاعم، المقرات الإدارية، المتاجر،
+              والمصانع.
+            </p>
+          </article>
+          <article class="stat-card">
+            <div class="stat-icon animate-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="stat-number">+320</div>
+            <h3 data-i18n="about_page.stat_clients_title">عميل موثوق</h3>
+            <p data-i18n="about_page.stat_clients_text">
+              شركات تعتمد علينا في تشغيل أنظمتها التقنية ومتابعة أدائها.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA: one clear action -->
+    <section class="cta-section" id="contact-cta">
+      <div class="container">
+        <div class="cta-box">
+          <h2 data-i18n="about_page.cta_title">جاهز لتطوير بنيتك التقنية؟</h2>
+          <p data-i18n="about_page.cta_text">
+            احجز جلسة تواصل سريعة مع فريق أرسلان تك لعرض وضعك الحالي واقتراح
+            حلول عملية تناسب ميزانيتك.
+          </p>
+          <a href="index.html#contact" class="btn btn-light btn-large">
+            <i class="fas fa-phone-alt"></i>
+            <span data-i18n="about_page.cta_button">تواصل مع فريق المبيعات</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <img src="assets/images/logos/logo-arslan-primary.webp" alt="Arslan Tech" data-i18n-alt="hero.logo_alt"
+            class="footer-logo-image" decoding="async" loading="lazy" />
+        </div>
+        <p data-i18n="footer.about">
+          حلول تقنية مبتكرة ومتكاملة تساعد الشركات على تحقيق النمو والازدهار
+          في العصر الرقمي.
+        </p>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer.links_title">روابط سريعة</h4>
+        <ul>
+          <li><a data-i18n="nav.home" href="index.html">الرئيسية</a></li>
+          <li><a data-i18n="nav.about" href="about.html">من نحن</a></li>
+          <li>
+            <a data-i18n="nav.services" href="services.html">خدماتنا</a>
+          </li>
+          <li>
+            <a data-i18n="nav.webdesign" href="web-design.html">تصميم المواقع</a>
+          </li>
+          <li>
+            <a data-i18n="nav.systems" href="systems.html">الأنظمة</a>
+          </li>
+          <li>
+            <a data-i18n="nav.projects" href="projects.html">سابقة أعمالنا</a>
+          </li>
+          <li>
+            <a data-i18n="nav.academy" href="academy.html">أرسلان أكاديمي</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4 data-i18n="footer.contact_title">تواصل معنا</h4>
+        <p>
           <i class="fas fa-phone"></i>
-        </a>
-        <a
-          href="mailto:info@arslantech-eg.com"
-          class="social-icon email"
-          aria-label="Email Us"
-        >
+          <strong data-i18n="footer.phone">الهاتف:</strong>
+          <a href="tel:01014078319">01014078319</a>
+        </p>
+        <p>
           <i class="fas fa-envelope"></i>
-        </a>
+          <strong data-i18n="footer.email">البريد:</strong>
+          <a href="mailto:info@arslantech-eg.com">info@arslantech-eg.com</a>
+        </p>
+        <p>
+          <i class="fas fa-map-marker-alt"></i>
+          <strong data-i18n="contact.address_label">العنوان:</strong>
+          <span data-i18n="contact.address">الفيوم المسلة العبودي بجوار محمصات وكافيه شيخ البلد</span>
+        </p>
       </div>
-      <button
-        class="floating-toggle-btn"
-        id="floatingToggleBtn"
-        aria-label="Toggle Contact Menu"
-      >
-        <i class="fas fa-comments" id="floatingIcon"></i>
-      </button>
     </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p data-i18n="footer.copyright">
+          Copyright © 2025 - WebSite Design by
+          <a href="https://wa.me/201112742841" target="_blank" rel="noopener noreferrer"
+            style="color: inherit; text-decoration: underline">Hisham Mohamed</a>
+        </p>
+      </div>
+    </div>
+  </footer>
 
-    <button
-      class="scroll-top"
-      id="scrollTop"
-      aria-label="العودة للأعلى"
-      data-i18n-aria="footer.scroll_top"
-    >
-      <i class="fas fa-arrow-up"></i>
+  <div class="floating-contact-menu" id="floatingContactMenu">
+    <div class="social-icons-group">
+      <a href="https://wa.me/201014078319" class="social-icon whatsapp" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://m.me/104783481303669" class="social-icon messenger" target="_blank" aria-label="Messenger">
+        <i class="fab fa-facebook-messenger"></i>
+      </a>
+      <a href="tel:01014078319" class="social-icon phone" aria-label="Call Us">
+        <i class="fas fa-phone"></i>
+      </a>
+      <a href="mailto:info@arslantech-eg.com" class="social-icon email" aria-label="Email Us">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+    <button class="floating-toggle-btn" id="floatingToggleBtn" aria-label="Toggle Contact Menu">
+      <i class="fas fa-comments" id="floatingIcon"></i>
     </button>
+  </div>
 
-    <!-- Added SVG decorations script -->
-    <script src="assets/js/svg-decorations.js"></script>
-    <script src="assets/js/script.js"></script>
-  </body>
+  <button class="scroll-top" id="scrollTop" aria-label="العودة للأعلى" data-i18n-aria="footer.scroll_top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="assets/js/script.js"></script>
+</body>
+
 </html>

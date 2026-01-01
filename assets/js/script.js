@@ -59,7 +59,7 @@
   });
 
   const revealItems = document.querySelectorAll(
-    ".service-card, .service-card-enhanced, .testimonial-card, .contact-form, .contact-info, .partner-logo"
+    ".service-card, .service-card-enhanced, .testimonial-card, .contact-form, .contact-info, .partner-logo, .highlight-reveal"
   );
 
   const observer = new IntersectionObserver(
