@@ -426,12 +426,15 @@
 
       // Special handling for footer copyright with link
       if (key === "footer.copyright") {
-        const name = lang === "ar" ? "هشام محمد" : "Hisham Mohamed";
+        const name =
+          lang === "ar"
+            ? "<strong>ارسلان تك</strong>"
+            : "<strong>Arslan Tech</strong>";
         const prefix =
           lang === "ar"
-            ? "جميع الحقوق محفوظة © 2025 - تصميم الموقع بواسطة"
-            : "Copyright © 2025 - WebSite Design by";
-        el.innerHTML = `${prefix} <a href="https://wa.me/201112742841" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">${name}</a>`;
+            ? "جميع الحقوق محفوظة © 2026 - تصميم وتطوير"
+            : "Copyright © 2026 - Developed by";
+        el.innerHTML = `${prefix} <a href="https://wa.me/201014078319" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">${name}</a>`;
       } else {
         el.textContent = txt;
       }
