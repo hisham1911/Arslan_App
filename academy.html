@@ -1,500 +1,678 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("site_lang");
+          var html = document.documentElement;
+          if (saved === "en") {
+            html.lang = "en";
+            html.dir = "ltr";
+            html.classList.add("lang-loading");
+          } else if (saved === "ar") {
+            html.lang = "ar";
+            html.dir = "rtl";
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <title data-i18n="academy.page_title">Arslan Academy - Arslan Tech</title>
+    <link
+      rel="icon"
+      type="image/webp"
+      href="assets/images/logos/logo-arslan-primary.webp"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/academy.css" />
+    <!-- Added SVG decorations CSS link -->
+    <link rel="stylesheet" href="assets/css/svg-decorations.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>
-    (function () {
-      try {
-        var saved = localStorage.getItem("site_lang");
-        var html = document.documentElement;
-        if (saved === "en") {
-          html.lang = "en";
-          html.dir = "ltr";
-          html.classList.add("lang-loading");
-        } else if (saved === "ar") {
-          html.lang = "ar";
-          html.dir = "rtl";
-        }
-      } catch (e) { }
-    })();
-  </script>
-  <title data-i18n="academy.page_title">Arslan Academy - Arslan Tech</title>
-  <link rel="icon" type="image/webp" href="assets/images/logos/logo-arslan-primary.webp" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="stylesheet" href="assets/css/academy.css" />
-  <!-- Added SVG decorations CSS link -->
-  <link rel="stylesheet" href="assets/css/svg-decorations.css" />
-</head>
-
-<body>
-  <header class="topbar">
-    <div class="container">
-      <div class="topbar-inner">
-        <div class="topbar-contact">
-          <i class="fas fa-phone topbar-icon"></i>
-          <a href="tel:01014078319">01014078319</a>
-          <span class="divider"></span>
-          <i class="fas fa-envelope topbar-icon"></i>
-          <a href="mailto:info@arslantech-eg.com">info@arslantech-eg.com</a>
-        </div>
-        <div class="topbar-social">
-          <a href="https://www.linkedin.com/company/arslantech" aria-label="LinkedIn" target="_blank"
-            rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://wa.me/201014078319" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-whatsapp"></i></a>
-          <a href="https://www.facebook.com/Arslantecheg/" aria-label="Facebook" target="_blank"
-            rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-        </div>
-        <div class="topbar-lang" id="langToggle" role="navigation" aria-label="Language switcher">
-          <button class="lang-btn" data-lang="ar">العربية</button>
-          <button class="lang-btn" data-lang="en">EN</button>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
-    <div class="container">
-      <div class="nav-wrapper">
-        <a class="brand" href="index.html" aria-label="Arslan Tech Home">
-          <img src="assets/images/logos/logo-arslan-primary.webp" alt="Arslan Tech" class="brand-image" decoding="async"
-            loading="lazy" />
-        </a>
-        <button class="menu-toggle" id="menuToggle" aria-label="قائمة التنقل" aria-controls="navLinks"
-          aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="index.html" data-i18n="nav.home">الرئيسية</a></li>
-          <li><a href="about.html" data-i18n="nav.about">من نحن</a></li>
-          <li>
-            <a href="services.html" data-i18n="nav.services">خدماتنا</a>
-          </li>
-          <li>
-            <a href="web-design.html" data-i18n="nav.webdesign">تصميم المواقع</a>
-          </li>
-          <li>
-            <a href="systems.html" data-i18n="nav.systems">الأنظمة</a>
-          </li>
-          <li>
-            <a href="projects.html" data-i18n="nav.projects">سابقة أعمالنا</a>
-          </li>
-          <li>
-            <a href="products.html" data-i18n="nav.products">المنتجات</a>
-          </li>
-          <li>
-            <a href="academy.html" class="active" data-i18n="nav.academy">أرسلان أكاديمي</a>
-          </li>
-          <li>
-            <a href="contact.html" class="btn btn-nav" data-i18n="nav.contact">تواصل معنا</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <main>
-    <section class="hero academy-hero">
-      <div class="hero-overlay"></div>
+  <body>
+    <header class="topbar">
       <div class="container">
-        <h1 class="hero-title" data-i18n="academy_page.hero_title">
-          أرسلان أكاديمي | تدريب متخصص في مجال التيار الخفيف والشبكات وخدمات
-          الـ IT
-        </h1>
-        <p class="hero-lead" data-i18n="academy_page.hero_lead">
-          في أرسلان أكاديمي، إيماننا دائمًا أن المعرفة هي أساس النجاح، ولذلك
-          بجانب تقديمنا لحلول متكاملة في البنية التحتية والشبكات وخدمات الـ
-          IT، قررنا أن نشارك خبرتنا الكبيرة مع الشباب والمهتمين بالمجال من
-          خلال برامج تدريب عملية واحترافية.
-        </p>
-        <div class="hero-actions">
-          <a href="contact.html" class="btn btn-primary" data-i18n="academy_page.cta_contact">
-            تواصل معنا
+        <div class="topbar-inner">
+          <div class="topbar-contact">
+            <i class="fas fa-phone topbar-icon"></i>
+            <a href="tel:01014078319">01014078319</a>
+            <span class="divider"></span>
+            <i class="fas fa-envelope topbar-icon"></i>
+            <a href="mailto:info@arslantech-eg.com">info@arslantech-eg.com</a>
+          </div>
+          <div class="topbar-social">
+            <a
+              href="https://www.linkedin.com/company/arslantech"
+              aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a
+              href="https://wa.me/201014078319"
+              aria-label="WhatsApp"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+            <a
+              href="https://www.facebook.com/Arslantecheg/"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+          </div>
+          <div
+            class="topbar-lang"
+            id="langToggle"
+            role="navigation"
+            aria-label="Language switcher"
+          >
+            <button class="lang-btn" data-lang="ar">العربية</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav
+      class="navbar"
+      id="navbar"
+      role="navigation"
+      aria-label="Main navigation"
+    >
+      <div class="container">
+        <div class="nav-wrapper">
+          <a class="brand" href="index.html" aria-label="Arslan Tech Home">
+            <img
+              src="assets/images/logos/logo-arslan-primary.webp"
+              alt="Arslan Tech"
+              class="brand-image"
+              decoding="async"
+              loading="lazy"
+            />
           </a>
+          <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="قائمة التنقل"
+            aria-controls="navLinks"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" data-i18n="nav.home">الرئيسية</a></li>
+            <li><a href="about.html" data-i18n="nav.about">من نحن</a></li>
+            <li>
+              <a href="services.html" data-i18n="nav.services">خدماتنا</a>
+            </li>
+            <li>
+              <a href="web-design.html" data-i18n="nav.webdesign"
+                >تصميم المواقع</a
+              >
+            </li>
+            <li>
+              <a href="systems.html" data-i18n="nav.systems">الأنظمة</a>
+            </li>
+            <li>
+              <a href="projects.html" data-i18n="nav.projects">سابقة أعمالنا</a>
+            </li>
+            <li>
+              <a href="products.html" data-i18n="nav.products">المنتجات</a>
+            </li>
+            <li>
+              <a href="academy.html" class="active" data-i18n="nav.academy"
+                >أرسلان أكاديمي</a
+              >
+            </li>
+            <li>
+              <a href="contact.html" class="btn btn-nav" data-i18n="nav.contact"
+                >تواصل معنا</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
-    </section>
+    </nav>
 
-    <section class="academy-programs">
-      <div class="container">
-        <div class="section-heading">
-          <span class="badge badge-muted" data-i18n="academy_page.programs_badge">
-            برامجنا التدريبية
-          </span>
-          <h2 data-i18n="academy_page.programs_title">
-            ماذا نقدم في أرسلان أكاديمي؟
-          </h2>
-        </div>
-
-        <div class="programs-grid">
-          <article class="program-card">
-            <div class="program-icon">
-              <i class="fas fa-laptop-code"></i>
-            </div>
-            <h3 data-i18n="academy_page.it_services_title">
-              🔹 خدمات الـ IT الشاملة:
-            </h3>
-            <ul class="program-list">
-              <li data-i18n="academy_page.it_1">إدارة السيرفرات.</li>
-              <li data-i18n="academy_page.it_2">
-                أنظمة الكاشير والبرامج المحاسبية.
-              </li>
-              <li data-i18n="academy_page.it_3">
-                الدعم الفني وحلول الصيانة.
-              </li>
-            </ul>
-          </article>
-
-          <article class="program-card">
-            <div class="program-icon">
-              <i class="fas fa-network-wired"></i>
-            </div>
-            <h3 data-i18n="academy_page.networking_title">
-              🔹 الشبكات (Networking):
-            </h3>
-            <ul class="program-list">
-              <li data-i18n="academy_page.net_1">
-                تصميم وتنفيذ الشبكات الداخلية.
-              </li>
-              <li data-i18n="academy_page.net_2">
-                إدارة أجهزة الراوتر والسويتش.
-              </li>
-              <li data-i18n="academy_page.net_3">
-                إعدادات الـ VPN وربط الفروع.
-              </li>
-              <li data-i18n="academy_page.net_4">حماية وتأمين الشبكات.</li>
-            </ul>
-          </article>
-
-          <article class="program-card">
-            <div class="program-icon">
-              <i class="fas fa-video"></i>
-            </div>
-            <h3 data-i18n="academy_page.low_current_title">
-              🔹 التيار الخفيف (Low Current Systems):
-            </h3>
-            <ul class="program-list">
-              <li data-i18n="academy_page.low_1">
-                أنظمة كاميرات المراقبة (CCTV).
-              </li>
-              <li data-i18n="academy_page.low_2">
-                أنظمة الإنذار ضد السرقة والحريق.
-              </li>
-              <li data-i18n="academy_page.low_3">
-                أنظمة الصوت (Sound Systems).
-              </li>
-              <li data-i18n="academy_page.low_4">السنترالات الداخلية.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="academy-advantages">
-      <div class="container">
-        <div class="section-heading">
-          <h2 data-i18n="academy_page.advantages_title">
-            مميزات التدريب مع أرسلان تك
-          </h2>
-          <p data-i18n="academy_page.advantages_lead">
-            نقدم تجربة تدريبية فريدة تجمع بين النظرية والتطبيق العملي
+    <main>
+      <section class="hero academy-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+          <h1 class="hero-title" data-i18n="academy_page.hero_title">
+            أرسلان أكاديمي | تدريب متخصص في مجال التيار الخفيف والشبكات وخدمات
+            الـ IT
+          </h1>
+          <p class="hero-lead" data-i18n="academy_page.hero_lead">
+            في أرسلان أكاديمي، إيماننا دائمًا أن المعرفة هي أساس النجاح، ولذلك
+            بجانب تقديمنا لحلول متكاملة في البنية التحتية والشبكات وخدمات الـ
+            IT، قررنا أن نشارك خبرتنا الكبيرة مع الشباب والمهتمين بالمجال من
+            خلال برامج تدريب عملية واحترافية.
           </p>
-        </div>
-
-        <div class="advantages-grid">
-          <div class="advantage-card">
-            <div class="advantage-icon">
-              <i class="fas fa-check-circle"></i>
-            </div>
-            <h3 data-i18n="academy_page.adv_1_title">
-              تدريب عملي على مشاريع حقيقية
-            </h3>
-            <p data-i18n="academy_page.adv_1_text">
-              اكتسب خبرة عملية من خلال العمل على مشاريع واقعية تعكس متطلبات
-              سوق العمل.
-            </p>
-          </div>
-
-          <div class="advantage-card">
-            <div class="advantage-icon">
-              <i class="fas fa-chalkboard-teacher"></i>
-            </div>
-            <h3 data-i18n="academy_page.adv_2_title">
-              محاضرين بخبرة ميدانية طويلة
-            </h3>
-            <p data-i18n="academy_page.adv_2_text">
-              تعلم من خبراء متخصصين لديهم سنوات من الخبرة العملية في المجال.
-            </p>
-          </div>
-
-          <div class="advantage-card">
-            <div class="advantage-icon">
-              <i class="fas fa-sync-alt"></i>
-            </div>
-            <h3 data-i18n="academy_page.adv_3_title">
-              محتوى محدث طبقًا لمتطلبات السوق
-            </h3>
-            <p data-i18n="academy_page.adv_3_text">
-              برامج تدريبية متجددة تواكب أحدث التطورات والتقنيات في المجال.
-            </p>
-          </div>
-
-          <div class="advantage-card">
-            <div class="advantage-icon">
-              <i class="fas fa-certificate"></i>
-            </div>
-            <h3 data-i18n="academy_page.adv_4_title">شهادات معتمدة</h3>
-            <p data-i18n="academy_page.adv_4_text">
-              احصل على شهادات معتمدة تعزز فرصك في سوق العمل وتثبت كفاءتك.
-            </p>
-          </div>
-
-          <div class="advantage-card">
-            <div class="advantage-icon">
-              <i class="fas fa-briefcase"></i>
-            </div>
-            <h3 data-i18n="academy_page.adv_5_title">فرص عمل حقيقية</h3>
-            <p data-i18n="academy_page.adv_5_text">
-              إمكانية الالتحاق بفرص عمل ضمن مشروعاتنا وشركائنا بعد إتمام
-              التدريب.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="academy-registration" id="academy-register">
-      <div class="container">
-        <div class="registration-header section-heading">
-          <span class="badge badge-muted" data-i18n="academy_page.register_badge">سجل الآن</span>
-          <h2 data-i18n="academy_page.register_title">
-            سجل في البرامج التدريبية
-          </h2>
-          <p data-i18n="academy_page.register_lead">
-            املأ البيانات التالية وسيقوم فريق الأكاديمية بالتواصل معك لتأكيد
-            التسجيل وتحديد أقرب دفعة.
-          </p>
-        </div>
-        <div class="registration-grid">
-          <div class="registration-form-wrapper">
-            <form id="academyRegisterForm" method="POST" novalidate>
-              <div class="form-group">
-                <label for="regName" data-i18n="academy_page.form.name">الاسم الكامل</label>
-                <input type="text" id="regName" name="name" required minlength="3" placeholder="الاسم الكامل"
-                  data-i18n-placeholder="academy_page.form.name_ph" />
-              </div>
-              <div class="form-group">
-                <label for="regPhone" data-i18n="academy_page.form.phone">رقم الهاتف</label>
-                <input type="tel" id="regPhone" name="phone" required placeholder="010xxxxxxxx"
-                  data-i18n-placeholder="academy_page.form.phone_ph" />
-              </div>
-              <div class="form-group">
-                <label for="regEmail" data-i18n="academy_page.form.email">البريد الإلكتروني</label>
-                <input type="email" id="regEmail" name="email" required placeholder="example@email.com"
-                  data-i18n-placeholder="academy_page.form.email_ph" />
-              </div>
-              <div class="form-group">
-                <label for="regTrack" data-i18n="academy_page.form.track">المسار التدريبي</label>
-                <select id="regTrack" name="track" required>
-                  <option value="" data-i18n="academy_page.form.track_ph">
-                    اختر المسار
-                  </option>
-                  <option value="it" data-i18n="academy_page.form.track_option_it">
-                    خدمات الـ IT
-                  </option>
-                  <option value="network" data-i18n="academy_page.form.track_option_network">
-                    الشبكات
-                  </option>
-                  <option value="low" data-i18n="academy_page.form.track_option_low">
-                    التيار الخفيف
-                  </option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="regMode" data-i18n="academy_page.form.mode">نظام الدراسة</label>
-                <select id="regMode" name="mode" required>
-                  <option value="" data-i18n="academy_page.form.mode_ph">
-                    اختر النظام
-                  </option>
-                  <option value="offline" data-i18n="academy_page.form.mode_option_offline">
-                    حضوري
-                  </option>
-                  <option value="online" data-i18n="academy_page.form.mode_option_online">
-                    أونلاين مباشر
-                  </option>
-                </select>
-              </div>
-              <div class="form-group full-width">
-                <label for="regNotes" data-i18n="academy_page.form.notes">ملاحظات إضافية</label>
-                <textarea id="regNotes" name="notes" rows="4" placeholder="اكتب أي تفاصيل أو أسئلة"
-                  data-i18n-placeholder="academy_page.form.notes_ph"></textarea>
-              </div>
-              <!-- Honeypot Field -->
-              <input type="text" name="website" style="display: none" tabindex="-1" autocomplete="off" />
-              <div class="form-group full-width">
-                <button type="submit" class="btn btn-primary btn-block" data-i18n="academy_page.form.submit">
-                  إرسال طلب التسجيل
-                </button>
-              </div>
-              <p id="academyFormStatus" class="form-status" aria-live="polite"></p>
-            </form>
-          </div>
-          <div class="registration-info">
-            <h3 data-i18n="academy_page.register_side_title">
-              لماذا تختار أرسلان أكاديمي؟
-            </h3>
-            <ul class="registration-points">
-              <li data-i18n="academy_page.register_point_1">
-                محتوى عملي يجهزك لسوق العمل مباشرة.
-              </li>
-              <li data-i18n="academy_page.register_point_2">
-                دعم ومتابعة بعد انتهاء الدورة.
-              </li>
-              <li data-i18n="academy_page.register_point_3">
-                تحديث مستمر للمناهج حسب أحدث التقنيات.
-              </li>
-              <li data-i18n="academy_page.register_point_4">
-                إمكانية الحصول على فرص عمل ضمن شبكة شركائنا.
-              </li>
-              <li data-i18n="academy_page.register_point_5">
-                شهادات معتمدة تعزز ملفك المهني.
-              </li>
-            </ul>
-            <div class="registration-contact-inline">
-              <a href="tel:01014078319" class="link-arrow"><span
-                  data-i18n="academy_page.cta_call">01014078319</span></a>
-              <a href="contact.html" class="btn btn-outline" data-i18n="academy_page.cta_contact">تواصل معنا</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="academy-cta">
-      <div class="container">
-        <div class="cta-content">
-          <h2 data-i18n="academy_page.cta_title">
-            ابدأ رحلتك التعليمية معنا اليوم
-          </h2>
-          <p data-i18n="academy_page.cta_text">
-            انضم إلى أرسلان أكاديمي واحصل على التدريب الذي يؤهلك للنجاح في سوق
-            العمل
-          </p>
-          <div class="cta-actions">
-            <a href="contact.html" class="btn btn-primary btn-large" data-i18n="academy_page.cta_contact">
-              تواصل معنا الآن
-            </a>
-            <a href="tel:01014078319" class="btn btn-outline btn-large">
-              <i class="fas fa-phone"></i>
-              <span data-i18n="academy_page.cta_call">01014078319</span>
+          <div class="hero-actions">
+            <a
+              href="contact.html"
+              class="btn btn-primary"
+              data-i18n="academy_page.cta_contact"
+            >
+              تواصل معنا
             </a>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <footer class="footer">
-    <div class="container footer-container">
-      <div class="footer-brand">
-        <div class="brand-logo">
-          <img src="assets/images/logos/logo-arslan-primary.webp" alt="Arslan Tech" data-i18n-alt="hero.logo_alt"
-            class="footer-logo-image" decoding="async" loading="lazy" />
+      <section class="academy-programs">
+        <div class="container">
+          <div class="section-heading">
+            <span
+              class="badge badge-muted"
+              data-i18n="academy_page.programs_badge"
+            >
+              برامجنا التدريبية
+            </span>
+            <h2 data-i18n="academy_page.programs_title">
+              ماذا نقدم في أرسلان أكاديمي؟
+            </h2>
+          </div>
+
+          <div class="programs-grid">
+            <article class="program-card">
+              <div class="program-icon">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <h3 data-i18n="academy_page.it_services_title">
+                🔹 خدمات الـ IT الشاملة:
+              </h3>
+              <ul class="program-list">
+                <li data-i18n="academy_page.it_1">إدارة السيرفرات.</li>
+                <li data-i18n="academy_page.it_2">
+                  أنظمة الكاشير والبرامج المحاسبية.
+                </li>
+                <li data-i18n="academy_page.it_3">
+                  الدعم الفني وحلول الصيانة.
+                </li>
+              </ul>
+            </article>
+
+            <article class="program-card">
+              <div class="program-icon">
+                <i class="fas fa-network-wired"></i>
+              </div>
+              <h3 data-i18n="academy_page.networking_title">
+                🔹 الشبكات (Networking):
+              </h3>
+              <ul class="program-list">
+                <li data-i18n="academy_page.net_1">
+                  تصميم وتنفيذ الشبكات الداخلية.
+                </li>
+                <li data-i18n="academy_page.net_2">
+                  إدارة أجهزة الراوتر والسويتش.
+                </li>
+                <li data-i18n="academy_page.net_3">
+                  إعدادات الـ VPN وربط الفروع.
+                </li>
+                <li data-i18n="academy_page.net_4">حماية وتأمين الشبكات.</li>
+              </ul>
+            </article>
+
+            <article class="program-card">
+              <div class="program-icon">
+                <i class="fas fa-video"></i>
+              </div>
+              <h3 data-i18n="academy_page.low_current_title">
+                🔹 التيار الخفيف (Low Current Systems):
+              </h3>
+              <ul class="program-list">
+                <li data-i18n="academy_page.low_1">
+                  أنظمة كاميرات المراقبة (CCTV).
+                </li>
+                <li data-i18n="academy_page.low_2">
+                  أنظمة الإنذار ضد السرقة والحريق.
+                </li>
+                <li data-i18n="academy_page.low_3">
+                  أنظمة الصوت (Sound Systems).
+                </li>
+                <li data-i18n="academy_page.low_4">السنترالات الداخلية.</li>
+              </ul>
+            </article>
+          </div>
         </div>
-        <p data-i18n="footer.about">
-          حلول تقنية مبتكرة ومتكاملة تساعد الشركات على تحقيق النمو والازدهار
-          في العصر الرقمي.
-        </p>
+      </section>
+
+      <section class="academy-advantages">
+        <div class="container">
+          <div class="section-heading">
+            <h2 data-i18n="academy_page.advantages_title">
+              مميزات التدريب مع أرسلان تك
+            </h2>
+            <p data-i18n="academy_page.advantages_lead">
+              نقدم تجربة تدريبية فريدة تجمع بين النظرية والتطبيق العملي
+            </p>
+          </div>
+
+          <div class="advantages-grid">
+            <div class="advantage-card">
+              <div class="advantage-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <h3 data-i18n="academy_page.adv_1_title">
+                تدريب عملي على مشاريع حقيقية
+              </h3>
+              <p data-i18n="academy_page.adv_1_text">
+                اكتسب خبرة عملية من خلال العمل على مشاريع واقعية تعكس متطلبات
+                سوق العمل.
+              </p>
+            </div>
+
+            <div class="advantage-card">
+              <div class="advantage-icon">
+                <i class="fas fa-chalkboard-teacher"></i>
+              </div>
+              <h3 data-i18n="academy_page.adv_2_title">
+                محاضرين بخبرة ميدانية طويلة
+              </h3>
+              <p data-i18n="academy_page.adv_2_text">
+                تعلم من خبراء متخصصين لديهم سنوات من الخبرة العملية في المجال.
+              </p>
+            </div>
+
+            <div class="advantage-card">
+              <div class="advantage-icon">
+                <i class="fas fa-sync-alt"></i>
+              </div>
+              <h3 data-i18n="academy_page.adv_3_title">
+                محتوى محدث طبقًا لمتطلبات السوق
+              </h3>
+              <p data-i18n="academy_page.adv_3_text">
+                برامج تدريبية متجددة تواكب أحدث التطورات والتقنيات في المجال.
+              </p>
+            </div>
+
+            <div class="advantage-card">
+              <div class="advantage-icon">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <h3 data-i18n="academy_page.adv_4_title">شهادات معتمدة</h3>
+              <p data-i18n="academy_page.adv_4_text">
+                احصل على شهادات معتمدة تعزز فرصك في سوق العمل وتثبت كفاءتك.
+              </p>
+            </div>
+
+            <div class="advantage-card">
+              <div class="advantage-icon">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <h3 data-i18n="academy_page.adv_5_title">فرص عمل حقيقية</h3>
+              <p data-i18n="academy_page.adv_5_text">
+                إمكانية الالتحاق بفرص عمل ضمن مشروعاتنا وشركائنا بعد إتمام
+                التدريب.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="academy-registration" id="academy-register">
+        <div class="container">
+          <div class="registration-header section-heading">
+            <span
+              class="badge badge-muted"
+              data-i18n="academy_page.register_badge"
+              >سجل الآن</span
+            >
+            <h2 data-i18n="academy_page.register_title">
+              سجل في البرامج التدريبية
+            </h2>
+            <p data-i18n="academy_page.register_lead">
+              املأ البيانات التالية وسيقوم فريق الأكاديمية بالتواصل معك لتأكيد
+              التسجيل وتحديد أقرب دفعة.
+            </p>
+          </div>
+          <div class="registration-grid">
+            <div class="registration-form-wrapper">
+              <form id="academyRegisterForm" method="POST" novalidate>
+                <div class="form-group">
+                  <label for="regName" data-i18n="academy_page.form.name"
+                    >الاسم الكامل</label
+                  >
+                  <input
+                    type="text"
+                    id="regName"
+                    name="name"
+                    required
+                    minlength="3"
+                    placeholder="الاسم الكامل"
+                    data-i18n-placeholder="academy_page.form.name_ph"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="regPhone" data-i18n="academy_page.form.phone"
+                    >رقم الهاتف</label
+                  >
+                  <input
+                    type="tel"
+                    id="regPhone"
+                    name="phone"
+                    required
+                    placeholder="010xxxxxxxx"
+                    data-i18n-placeholder="academy_page.form.phone_ph"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="regEmail" data-i18n="academy_page.form.email"
+                    >البريد الإلكتروني</label
+                  >
+                  <input
+                    type="email"
+                    id="regEmail"
+                    name="email"
+                    required
+                    placeholder="example@email.com"
+                    data-i18n-placeholder="academy_page.form.email_ph"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="regTrack" data-i18n="academy_page.form.track"
+                    >المسار التدريبي</label
+                  >
+                  <select id="regTrack" name="track" required>
+                    <option value="" data-i18n="academy_page.form.track_ph">
+                      اختر المسار
+                    </option>
+                    <option
+                      value="it"
+                      data-i18n="academy_page.form.track_option_it"
+                    >
+                      خدمات الـ IT
+                    </option>
+                    <option
+                      value="network"
+                      data-i18n="academy_page.form.track_option_network"
+                    >
+                      الشبكات
+                    </option>
+                    <option
+                      value="low"
+                      data-i18n="academy_page.form.track_option_low"
+                    >
+                      التيار الخفيف
+                    </option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="regMode" data-i18n="academy_page.form.mode"
+                    >نظام الدراسة</label
+                  >
+                  <select id="regMode" name="mode" required>
+                    <option value="" data-i18n="academy_page.form.mode_ph">
+                      اختر النظام
+                    </option>
+                    <option
+                      value="offline"
+                      data-i18n="academy_page.form.mode_option_offline"
+                    >
+                      حضوري
+                    </option>
+                    <option
+                      value="online"
+                      data-i18n="academy_page.form.mode_option_online"
+                    >
+                      أونلاين مباشر
+                    </option>
+                  </select>
+                </div>
+                <div class="form-group full-width">
+                  <label for="regNotes" data-i18n="academy_page.form.notes"
+                    >ملاحظات إضافية</label
+                  >
+                  <textarea
+                    id="regNotes"
+                    name="notes"
+                    rows="4"
+                    placeholder="اكتب أي تفاصيل أو أسئلة"
+                    data-i18n-placeholder="academy_page.form.notes_ph"
+                  ></textarea>
+                </div>
+                <!-- Honeypot Field -->
+                <input
+                  type="text"
+                  name="website"
+                  style="display: none"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
+                <div class="form-group full-width">
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-block"
+                    data-i18n="academy_page.form.submit"
+                  >
+                    إرسال طلب التسجيل
+                  </button>
+                </div>
+                <p
+                  id="academyFormStatus"
+                  class="form-status"
+                  aria-live="polite"
+                ></p>
+              </form>
+            </div>
+            <div class="registration-info">
+              <h3 data-i18n="academy_page.register_side_title">
+                لماذا تختار أرسلان أكاديمي؟
+              </h3>
+              <ul class="registration-points">
+                <li data-i18n="academy_page.register_point_1">
+                  محتوى عملي يجهزك لسوق العمل مباشرة.
+                </li>
+                <li data-i18n="academy_page.register_point_2">
+                  دعم ومتابعة بعد انتهاء الدورة.
+                </li>
+                <li data-i18n="academy_page.register_point_3">
+                  تحديث مستمر للمناهج حسب أحدث التقنيات.
+                </li>
+                <li data-i18n="academy_page.register_point_4">
+                  إمكانية الحصول على فرص عمل ضمن شبكة شركائنا.
+                </li>
+                <li data-i18n="academy_page.register_point_5">
+                  شهادات معتمدة تعزز ملفك المهني.
+                </li>
+              </ul>
+              <div class="registration-contact-inline">
+                <a href="tel:01014078319" class="link-arrow"
+                  ><span data-i18n="academy_page.cta_call">01014078319</span></a
+                >
+                <a
+                  href="contact.html"
+                  class="btn btn-outline"
+                  data-i18n="academy_page.cta_contact"
+                  >تواصل معنا</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="academy-cta">
+        <div class="container">
+          <div class="cta-content">
+            <h2 data-i18n="academy_page.cta_title">
+              ابدأ رحلتك التعليمية معنا اليوم
+            </h2>
+            <p data-i18n="academy_page.cta_text">
+              انضم إلى أرسلان أكاديمي واحصل على التدريب الذي يؤهلك للنجاح في سوق
+              العمل
+            </p>
+            <div class="cta-actions">
+              <a
+                href="contact.html"
+                class="btn btn-primary btn-large"
+                data-i18n="academy_page.cta_contact"
+              >
+                تواصل معنا الآن
+              </a>
+              <a href="tel:01014078319" class="btn btn-outline btn-large">
+                <i class="fas fa-phone"></i>
+                <span data-i18n="academy_page.cta_call">01014078319</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <img
+              src="assets/images/logos/logo-arslan-primary.webp"
+              alt="Arslan Tech"
+              data-i18n-alt="hero.logo_alt"
+              class="footer-logo-image"
+              decoding="async"
+              loading="lazy"
+            />
+          </div>
+          <p data-i18n="footer.about">
+            حلول تقنية مبتكرة ومتكاملة تساعد الشركات على تحقيق النمو والازدهار
+            في العصر الرقمي.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h4 data-i18n="footer.links_title">روابط سريعة</h4>
+          <ul>
+            <li><a data-i18n="nav.home" href="index.html">الرئيسية</a></li>
+            <li><a data-i18n="nav.about" href="about.html">من نحن</a></li>
+            <li>
+              <a data-i18n="nav.services" href="services.html">خدماتنا</a>
+            </li>
+            <li>
+              <a data-i18n="nav.webdesign" href="web-design.html"
+                >تصميم المواقع</a
+              >
+            </li>
+            <li>
+              <a data-i18n="nav.systems" href="systems.html">الأنظمة</a>
+            </li>
+            <li>
+              <a data-i18n="nav.projects" href="projects.html">سابقة أعمالنا</a>
+            </li>
+            <li>
+              <a data-i18n="nav.academy" href="academy.html">أرسلان أكاديمي</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4 data-i18n="footer.contact_title">تواصل معنا</h4>
+          <p>
+            <i class="fas fa-phone"></i>
+            <strong data-i18n="footer.phone">الهاتف:</strong>
+            <a href="tel:01014078319">01014078319</a>
+          </p>
+          <p>
+            <i class="fas fa-envelope"></i>
+            <strong data-i18n="footer.email">البريد:</strong>
+            <a href="mailto:info@arslantech-eg.com">info@arslantech-eg.com</a>
+          </p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i>
+            <strong data-i18n="contact.address_label">العنوان:</strong>
+            <span data-i18n="contact.address"
+              >الفيوم المسله العبودي امام مستشفي الندي</span
+            >
+          </p>
+        </div>
       </div>
-      <div class="footer-links">
-        <h4 data-i18n="footer.links_title">روابط سريعة</h4>
-        <ul>
-          <li><a data-i18n="nav.home" href="index.html">الرئيسية</a></li>
-          <li><a data-i18n="nav.about" href="about.html">من نحن</a></li>
-          <li>
-            <a data-i18n="nav.services" href="services.html">خدماتنا</a>
-          </li>
-          <li>
-            <a data-i18n="nav.webdesign" href="web-design.html">تصميم المواقع</a>
-          </li>
-          <li>
-            <a data-i18n="nav.systems" href="systems.html">الأنظمة</a>
-          </li>
-          <li>
-            <a data-i18n="nav.projects" href="projects.html">سابقة أعمالنا</a>
-          </li>
-          <li>
-            <a data-i18n="nav.academy" href="academy.html">أرسلان أكاديمي</a>
-          </li>
-        </ul>
+      <div class="footer-bottom">
+        <div class="container">
+          <p data-i18n="footer.copyright">
+            جميع الحقوق محفوظة © 2026 - تصميم وتطوير
+            <a
+              href="https://wa.me/201014078319"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="color: inherit; text-decoration: underline"
+              ><strong>ارسلان تك</strong></a
+            >
+          </p>
+        </div>
       </div>
-      <div class="footer-contact">
-        <h4 data-i18n="footer.contact_title">تواصل معنا</h4>
-        <p>
+    </footer>
+
+    <div class="floating-contact-menu" id="floatingContactMenu">
+      <div class="social-icons-group">
+        <a
+          href="https://wa.me/201014078319"
+          class="social-icon whatsapp"
+          target="_blank"
+          aria-label="WhatsApp"
+        >
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a
+          href="https://m.me/104783481303669"
+          class="social-icon messenger"
+          target="_blank"
+          aria-label="Messenger"
+        >
+          <i class="fab fa-facebook-messenger"></i>
+        </a>
+        <a
+          href="tel:01014078319"
+          class="social-icon phone"
+          aria-label="Call Us"
+        >
           <i class="fas fa-phone"></i>
-          <strong data-i18n="footer.phone">الهاتف:</strong>
-          <a href="tel:01014078319">01014078319</a>
-        </p>
-        <p>
+        </a>
+        <a
+          href="mailto:info@arslantech-eg.com"
+          class="social-icon email"
+          aria-label="Email Us"
+        >
           <i class="fas fa-envelope"></i>
-          <strong data-i18n="footer.email">البريد:</strong>
-          <a href="mailto:info@arslantech-eg.com">info@arslantech-eg.com</a>
-        </p>
-        <p>
-          <i class="fas fa-map-marker-alt"></i>
-          <strong data-i18n="contact.address_label">العنوان:</strong>
-          <span data-i18n="contact.address">الفيوم المسله العبودي امام مستشفي الندي</span>
-        </p>
+        </a>
       </div>
+      <button
+        class="floating-toggle-btn"
+        id="floatingToggleBtn"
+        aria-label="Toggle Contact Menu"
+      >
+        <i class="fas fa-comments" id="floatingIcon"></i>
+      </button>
     </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <p data-i18n="footer.copyright">
-          جميع الحقوق محفوظة © 2026 - تصميم وتطوير
-          <a href="https://wa.me/201014078319" target="_blank" rel="noopener noreferrer"
-            style="color: inherit; text-decoration: underline"><strong>ارسلان تك</strong></a>
-        </p>
-      </div>
-    </div>
-  </footer>
 
-  <div class="floating-contact-menu" id="floatingContactMenu">
-    <div class="social-icons-group">
-      <a href="https://wa.me/201014078319" class="social-icon whatsapp" target="_blank" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-      <a href="https://m.me/104783481303669" class="social-icon messenger" target="_blank" aria-label="Messenger">
-        <i class="fab fa-facebook-messenger"></i>
-      </a>
-      <a href="tel:01014078319" class="social-icon phone" aria-label="Call Us">
-        <i class="fas fa-phone"></i>
-      </a>
-      <a href="mailto:info@arslantech-eg.com" class="social-icon email" aria-label="Email Us">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </div>
-    <button class="floating-toggle-btn" id="floatingToggleBtn" aria-label="Toggle Contact Menu">
-      <i class="fas fa-comments" id="floatingIcon"></i>
+    <button
+      class="scroll-top"
+      id="scrollTop"
+      aria-label="العودة للأعلى"
+      data-i18n-aria="footer.scroll_top"
+    >
+      <i class="fas fa-arrow-up"></i>
     </button>
-  </div>
 
-  <button class="scroll-top" id="scrollTop" aria-label="العودة للأعلى" data-i18n-aria="footer.scroll_top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-
-  <script src="assets/js/script.js"></script>
-  <!-- Added SVG decorations JS script -->
-  <script src="assets/js/svg-decorations.js"></script>
-</body>
-
+    <script src="assets/js/script.js"></script>
+    <!-- Added SVG decorations JS script -->
+    <script src="assets/js/svg-decorations.js"></script>
+  </body>
 </html>
