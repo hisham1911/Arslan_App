@@ -12,9 +12,13 @@
 .hero-badge {
   display: inline-block;
   padding: 8px 20px;
-  background: rgba(14, 184, 226, 0.15);
-  border: 1px solid rgba(14, 184, 226, 0.3);
-  color: var(--accent-400);
+  background: linear-gradient(
+    135deg,
+    rgba(14, 184, 226, 0.16),
+    rgba(242, 169, 59, 0.16)
+  );
+  border: 1px solid rgba(242, 169, 59, 0.22);
+  color: var(--white);
   font-weight: 700;
   font-size: 0.9rem;
   border-radius: 50px;
@@ -131,7 +135,7 @@
 /* === Services Showcase === */
 .services-showcase {
   padding: 60px 0 50px;
-  background: linear-gradient(180deg, var(--white) 0%, #f8fafc 100%);
+  background: var(--surface-soft);
   position: relative;
 }
 
@@ -209,7 +213,7 @@
   border-radius: 24px;
   padding: 36px 28px;
   overflow: hidden;
-  border: 1px solid rgba(18, 59, 115, 0.08);
+  border: 1px solid var(--line-subtle);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   opacity: 0;
@@ -223,8 +227,8 @@
 
 .service-card-enhanced:hover {
   transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 32px 64px rgba(18, 59, 115, 0.15);
-  border-color: rgba(14, 184, 226, 0.3);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--line-accent);
 }
 
 /* Background Pattern */
@@ -416,7 +420,7 @@
 /* === Value Section === */
 .value-section {
   padding: 50px 0;
-  background: linear-gradient(135deg, #f0f7ff 0%, #fff 100%);
+  background: var(--surface-soft-alt);
   position: relative;
   overflow: hidden;
 }
@@ -519,8 +523,8 @@
 .value-tag {
   display: inline-block;
   padding: 8px 20px;
-  background: rgba(14, 184, 226, 0.1);
-  color: var(--accent-500);
+  background: var(--warm-surface);
+  color: var(--sun-600);
   font-weight: 700;
   font-size: 0.85rem;
   border-radius: 50px;
@@ -556,14 +560,14 @@
   padding: 24px;
   background: var(--white);
   border-radius: 16px;
-  border: 1px solid rgba(18, 59, 115, 0.08);
-  transition: all 0.3s ease;
+  border: 1px solid var(--line-subtle);
+  transition: var(--transition);
 }
 
 .highlight-item:hover {
   transform: translateX(-8px);
-  box-shadow: 0 12px 32px rgba(18, 59, 115, 0.12);
-  border-color: rgba(14, 184, 226, 0.3);
+  box-shadow: var(--shadow-md);
+  border-color: var(--line-accent);
 }
 
 .highlight-item i {
@@ -581,6 +585,24 @@
   border-radius: 12px;
   font-size: 1.6rem;
   flex-shrink: 0;
+}
+
+.highlight-item:nth-child(2) i {
+  background: linear-gradient(
+    135deg,
+    rgba(242, 169, 59, 0.18),
+    rgba(255, 208, 123, 0.1)
+  );
+  color: var(--sun-600);
+}
+
+.highlight-item:nth-child(3) i {
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.16),
+    rgba(16, 185, 129, 0.06)
+  );
+  color: var(--success);
 }
 
 .highlight-item h4 {
@@ -621,11 +643,11 @@
 .clients-card {
   max-width: 1100px;
   margin: 0 auto;
-  background: linear-gradient(135deg, #f8fbff 0%, #fff 100%);
-  border-radius: 32px;
+  background: var(--surface-soft-alt);
+  border-radius: var(--radius-xl);
   padding: 60px 50px;
-  border: 1px solid rgba(18, 59, 115, 0.08);
-  box-shadow: 0 24px 48px rgba(18, 59, 115, 0.08);
+  border: 1px solid var(--line-subtle);
+  box-shadow: var(--shadow-lg);
   position: relative;
   overflow: hidden;
 }
@@ -639,7 +661,7 @@
   background: linear-gradient(
     135deg,
     rgba(14, 184, 226, 0.08),
-    rgba(34, 101, 194, 0.08)
+    rgba(242, 169, 59, 0.14)
   );
   border-radius: 50%;
   display: flex;
@@ -700,7 +722,7 @@
   gap: 10px;
   padding: 14px 28px;
   background: var(--white);
-  border: 2px solid rgba(14, 184, 226, 0.2);
+  border: 2px solid var(--line-accent);
   border-radius: 50px;
   color: var(--primary-700);
   font-weight: 600;
@@ -708,11 +730,11 @@
 }
 
 .feature-badge:hover {
-  background: linear-gradient(135deg, var(--accent-500), var(--primary-600));
+  background: linear-gradient(135deg, var(--accent-500), var(--sun-500));
   color: var(--white);
   border-color: transparent;
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(14, 184, 226, 0.3);
+  box-shadow: var(--shadow-sm);
 }
 
 .feature-badge i {
@@ -751,7 +773,7 @@
 /* === CTA Section === */
 .cta-section {
   padding: 50px 0;
-  background: linear-gradient(135deg, var(--primary-900), #0a1628);
+  background: var(--hero-gradient);
   position: relative;
   overflow: hidden;
 }
@@ -1028,5 +1050,65 @@ html[dir="rtl"] .clients-icon-bg {
     width: 48px;
     height: 48px;
     font-size: 1.3rem;
+  }
+
+  .services-hero-enhanced {
+    padding-bottom: 56px !important;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .service-card-enhanced {
+    padding: 28px 20px;
+    border-radius: 20px;
+  }
+
+  .service-number {
+    top: 18px;
+    left: 18px;
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
+  }
+
+  html[dir="rtl"] .service-number {
+    right: 18px;
+  }
+
+  .value-section,
+  .clients-section,
+  .cta-section {
+    padding: 40px 0;
+  }
+
+  .value-grid {
+    gap: 40px;
+  }
+
+  .highlight-item {
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .clients-card {
+    padding: 32px 18px;
+    border-radius: 24px;
+  }
+
+  .feature-badge,
+  .cta-phone,
+  .btn-whatsapp,
+  .clients-cta .btn,
+  .cta-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cta-phone {
+    font-size: 1.1rem;
+    padding: 14px 18px;
   }
 }

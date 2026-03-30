@@ -5,6 +5,83 @@
   const navLinks = document.getElementById("navLinks");
   const navbar = document.getElementById("navbar");
   const scrollTopBtn = document.getElementById("scrollTop");
+  const reducedMotionQuery = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  );
+  const prefersReducedMotion = reducedMotionQuery.matches;
+
+  if (!prefersReducedMotion) {
+    document.documentElement.classList.add("js-motion");
+  }
+
+  const triggerMotion = (element, className) => {
+    if (!element || prefersReducedMotion) return;
+    element.classList.remove(className);
+    void element.offsetWidth;
+    element.classList.add(className);
+    element.addEventListener(
+      "animationend",
+      () => element.classList.remove(className),
+      { once: true }
+    );
+  };
+
+  const stampHeroMotion = () => {
+    const heroGroups = document.querySelectorAll(".hero, .systems-hero");
+    heroGroups.forEach((group) => {
+      const targets = group.querySelectorAll(
+        ".hero-content > *, .hero-card, .hero-stats > div, .hero-meta > *, .systems-hero-content > *, .systems-hero-actions > *, .hero-badge-wrapper > *"
+      );
+      targets.forEach((target, index) => {
+        target.style.setProperty("--motion-index", String(index));
+      });
+    });
+  };
+
+  const armTapFeedback = () => {
+    const tapTargets = document.querySelectorAll(
+      ".btn, .product-btn, .btn-submit, .btn-outline-dark, .btn-whatsapp, .cta-phone, .feature-badge, .floating-toggle-btn, .scroll-top"
+    );
+
+    tapTargets.forEach((target) => {
+      target.classList.add("motion-tap-target");
+      target.addEventListener("pointerdown", (event) => {
+        if (prefersReducedMotion) return;
+        const rect = target.getBoundingClientRect();
+        const ripple = document.createElement("span");
+        const size = Math.max(rect.width, rect.height) * 1.15;
+        ripple.className = "motion-ripple";
+        ripple.style.width = `${size}px`;
+        ripple.style.height = `${size}px`;
+        ripple.style.left = `${event.clientX - rect.left}px`;
+        ripple.style.top = `${event.clientY - rect.top}px`;
+        target.appendChild(ripple);
+        triggerMotion(target, "motion-press");
+        ripple.addEventListener("animationend", () => ripple.remove(), {
+          once: true,
+        });
+      });
+    });
+  };
+
+  if (!prefersReducedMotion) {
+    stampHeroMotion();
+    armTapFeedback();
+
+    const startMotion = () => {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          document.body.classList.add("motion-ready");
+        });
+      });
+    };
+
+    if (document.readyState === "complete") {
+      startMotion();
+    } else {
+      window.addEventListener("load", startMotion, { once: true });
+    }
+  }
 
   // Accessible menu toggle
   if (menuToggle && navLinks) {
@@ -58,36 +135,45 @@
     });
   });
 
-  const revealItems = document.querySelectorAll(
-    ".service-card, .service-card-enhanced, .testimonial-card, .contact-form, .contact-info, .partner-logo, .highlight-reveal"
-  );
+  const revealSelector =
+    ".service-card, .service-card-enhanced, .testimonial-card, .contact-form, .contact-info, .partner-logo, .highlight-reveal, .product-card, .info-block, .vm-card, .feature-card, .service-detail, .partner-item, .highlight-item";
+  const revealItems = Array.from(document.querySelectorAll(revealSelector));
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          // Add stagger delay for partner logos
-          if (entry.target.classList.contains("partner-logo")) {
-            const delay =
-              Array.from(entry.target.parentElement.children).indexOf(
-                entry.target
-              ) * 100;
-            setTimeout(() => {
-              entry.target.classList.add("in-view");
-            }, delay);
-          } else {
+  revealItems.forEach((item) => {
+    item.classList.add("reveal-item");
+    const parent = item.parentElement;
+    const siblingIndex = parent
+      ? Array.from(parent.children)
+          .filter((child) => child.matches(revealSelector))
+          .indexOf(item)
+      : 0;
+
+    item.style.setProperty(
+      "--reveal-delay",
+      `${Math.max(0, Math.min(siblingIndex, 5)) * 85}ms`
+    );
+  });
+
+  if (prefersReducedMotion) {
+    revealItems.forEach((item) => item.classList.add("in-view"));
+  } else {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
             entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
           }
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.2,
-    }
-  );
+        });
+      },
+      {
+        threshold: 0.18,
+        rootMargin: "0px 0px -8% 0px",
+      }
+    );
 
-  revealItems.forEach((item) => observer.observe(item));
+    revealItems.forEach((item) => observer.observe(item));
+  }
 
   const counters = document.querySelectorAll(".count-up");
 
@@ -170,6 +256,7 @@
           "جارٍ إرسال الرسالة...";
         statusEl.classList.remove("error");
         statusEl.classList.add("pending");
+        triggerMotion(statusEl, "motion-pop");
       }
 
       const formData = new FormData(supportForm);
@@ -193,6 +280,7 @@
             statusEl.textContent = successMsg;
             statusEl.classList.remove("pending", "error");
             statusEl.classList.add("success");
+            triggerMotion(statusEl, "motion-pop");
           } else {
             alert(successMsg);
           }
@@ -207,6 +295,7 @@
           statusEl.textContent = errorMsg;
           statusEl.classList.remove("pending", "success");
           statusEl.classList.add("error");
+          triggerMotion(statusEl, "motion-pop");
         } else {
           alert(errorMsg);
         }
@@ -228,6 +317,9 @@
       }
       field.classList.toggle("error", !valid);
       field.classList.toggle("valid", valid);
+      if (!valid) {
+        triggerMotion(field, "motion-shake");
+      }
       return valid;
     };
 
@@ -259,6 +351,7 @@
           currentLang === "ar" ? "جارٍ الإرسال..." : "Sending..."
         );
         academyStatus.className = "form-status pending";
+        triggerMotion(academyStatus, "motion-pop");
       }
 
       const formData = new FormData(academyForm);
@@ -280,6 +373,7 @@
                 : "Received successfully"
             );
             academyStatus.className = "form-status success";
+            triggerMotion(academyStatus, "motion-pop");
           }
         } else throw new Error("Request failed");
       } catch (err) {
@@ -289,6 +383,7 @@
             currentLang === "ar" ? "تعذر الإرسال حالياً" : "Could not send now"
           );
           academyStatus.className = "form-status error";
+          triggerMotion(academyStatus, "motion-pop");
         }
       }
     });
@@ -565,6 +660,10 @@
         }
       }
 
+      if (!isValid) {
+        triggerMotion(field, "motion-shake");
+      }
+
       return isValid;
     };
 
@@ -600,6 +699,7 @@
         // Scroll to first error
         const firstError = salesForm.querySelector(".error");
         if (firstError) {
+          triggerMotion(firstError, "motion-shake");
           firstError.scrollIntoView({ behavior: "smooth", block: "center" });
           firstError.focus();
         }
@@ -629,6 +729,7 @@
           // Success
           salesForm.reset();
           successAlert.classList.add("show");
+          triggerMotion(successAlert, "motion-pop");
 
           // Scroll to success message
           successAlert.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -657,6 +758,7 @@
             "تعذر إرسال الطلب، برجاء المحاولة مرة أخرى.";
         }
         errorAlert.classList.add("show");
+        triggerMotion(errorAlert, "motion-pop");
 
         // Scroll to error message
         errorAlert.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -680,6 +782,10 @@
   const floatingContactMenu = document.getElementById("floatingContactMenu");
   const floatingIcon = document.getElementById("floatingIcon");
   const socialIconsGroup = document.querySelector(".social-icons-group");
+
+  document.querySelectorAll(".social-icon").forEach((icon, index) => {
+    icon.style.setProperty("--icon-index", String(index));
+  });
 
   if (floatingToggleBtn && socialIconsGroup && floatingIcon) {
     floatingToggleBtn.addEventListener("click", () => {

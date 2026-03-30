@@ -277,3 +277,56 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+@media (max-width: 480px) {
+  .projects-hero {
+    padding: 72px 0 44px;
+  }
+
+  .projects-hero h1 {
+    font-size: 1.85rem;
+    line-height: 1.35;
+  }
+
+  .projects-hero p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .project-modal {
+    padding: 18px 12px;
+  }
+
+  .modal-content {
+    margin: 14px auto;
+    border-radius: 22px;
+  }
+
+  .modal-header {
+    padding: 18px 16px;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .modal-title {
+    font-size: 1.35rem;
+    line-height: 1.4;
+  }
+
+  .modal-body {
+    padding: 20px 16px;
+    gap: 20px;
+  }
+
+  .main-image {
+    height: 240px;
+  }
+
+  .thumbnail-grid {
+    gap: 8px;
+  }
+
+  .tech-stack {
+    gap: 8px;
+  }
+}

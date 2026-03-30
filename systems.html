@@ -276,105 +276,9 @@
       <!-- Hero Section -->
       <!-- Creative Hero Section for Systems -->
       <section class="systems-hero">
-        <div class="systems-hero-bg">
-          <div class="glow-sphere sphere-1"></div>
-          <div class="glow-sphere sphere-2"></div>
-          <div class="grid-overlay"></div>
-          <!-- Animated Systems Background -->
-          <div class="systems-animated-bg">
-            <svg
-              class="circuit-svg"
-              preserveAspectRatio="none"
-              viewBox="0 0 100 100"
-            >
-              <defs>
-                <filter id="glow-packet">
-                  <feGaussianBlur stdDeviation="0.8" result="coloredBlur" />
-                  <feMerge>
-                    <feMergeNode in="coloredBlur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-              </defs>
-
-              <!-- Circuit Paths connecting system nodes -->
-              <path class="circuit-path" d="M 15 25 L 30 25 L 40 45 L 80 45" />
-              <path class="circuit-path" d="M 85 80 L 70 80 L 60 60 L 25 60" />
-              <path class="circuit-path" d="M 50 90 L 50 70 L 80 45" />
-              <path class="circuit-path" d="M 50 10 L 50 30 L 25 60" />
-              <path class="circuit-path" d="M 15 75 L 25 60" />
-
-              <!-- Moving Data Packets -->
-              <circle r="0.8" fill="#0eb8e2" filter="url(#glow-packet)">
-                <animateMotion
-                  dur="4s"
-                  repeatCount="indefinite"
-                  path="M 15 25 L 30 25 L 40 45 L 80 45"
-                />
-              </circle>
-              <circle r="0.8" fill="#67d3f2" filter="url(#glow-packet)">
-                <animateMotion
-                  dur="5s"
-                  repeatCount="indefinite"
-                  path="M 85 80 L 70 80 L 60 60 L 25 60 L 15 75"
-                />
-              </circle>
-              <circle r="0.8" fill="#10b981" filter="url(#glow-packet)">
-                <animateMotion
-                  dur="3.5s"
-                  repeatCount="indefinite"
-                  path="M 50 90 L 50 70 L 80 45"
-                />
-              </circle>
-              <circle r="0.8" fill="#10b981" filter="url(#glow-packet)">
-                <animateMotion
-                  dur="4.2s"
-                  repeatCount="indefinite"
-                  path="M 50 10 L 50 30 L 25 60"
-                />
-              </circle>
-              <circle r="0.6" fill="#ffffff" filter="url(#glow-packet)">
-                <animateMotion
-                  dur="6s"
-                  repeatCount="indefinite"
-                  path="M 80 45 L 40 45 L 30 25 L 15 25"
-                />
-              </circle>
-              <circle r="0.6" fill="#ffffff" filter="url(#glow-packet)">
-                <animateMotion
-                  dur="4.5s"
-                  repeatCount="indefinite"
-                  path="M 25 60 L 60 60 L 70 80 L 85 80"
-                />
-              </circle>
-            </svg>
-
-            <!-- System Nodes (Icons) -->
-            <div class="sys-node sys-node-server" title="Server">
-              <i class="fas fa-server"></i>
-            </div>
-            <div class="sys-node sys-node-db" title="Database">
-              <i class="fas fa-database"></i>
-            </div>
-            <div class="sys-node sys-node-desktop" title="POS/Terminal">
-              <i class="fas fa-desktop"></i>
-            </div>
-            <div class="sys-node sys-node-cloud" title="Cloud Sync">
-              <i class="fas fa-cloud"></i>
-            </div>
-            <div class="sys-node sys-node-pos" title="Cash Register">
-              <i class="fas fa-cash-register"></i>
-            </div>
-            <div class="sys-node sys-node-mobile" title="Mobile App">
-              <i class="fas fa-mobile-alt"></i>
-            </div>
-            <div class="sys-node sys-node-terminal" title="Branch Terminal">
-              <i class="fas fa-network-wired"></i>
-            </div>
-          </div>
-        </div>
+        <div class="systems-hero-bg" aria-hidden="true"></div>
         <div class="container systems-hero-container">
-          <div class="systems-hero-content text-center">
+          <div class="systems-hero-content">
             <div class="hero-badge-wrapper">
               <span class="badge premium-badge" data-i18n="systems.hero_badge">
                 <i class="fas fa-microchip"></i> أنظمة ذكية
@@ -443,6 +347,60 @@
                   >رضا العملاء</span
                 >
               </div>
+            </div>
+          </div>
+          <div class="systems-hero-visual" aria-hidden="true">
+            <div class="systems-board">
+              <div class="systems-board-head">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="systems-board-highlight">
+                <div class="systems-board-icon">
+                  <i class="fas fa-layer-group"></i>
+                </div>
+                <div class="systems-board-copy">
+                  <span class="systems-board-line systems-board-line-strong"></span>
+                  <span class="systems-board-line"></span>
+                </div>
+                <div class="systems-board-value">24/7</div>
+              </div>
+              <div class="systems-board-grid">
+                <div class="systems-mini-card">
+                  <span class="systems-mini-icon"><i class="fas fa-store"></i></span>
+                  <span class="systems-mini-bar"></span>
+                  <span class="systems-mini-bar systems-mini-bar-short"></span>
+                </div>
+                <div class="systems-mini-card">
+                  <span class="systems-mini-icon"><i class="fas fa-boxes-stacked"></i></span>
+                  <span class="systems-mini-bar"></span>
+                  <span class="systems-mini-bar systems-mini-bar-medium"></span>
+                </div>
+                <div class="systems-mini-card">
+                  <span class="systems-mini-icon"><i class="fas fa-receipt"></i></span>
+                  <span class="systems-mini-bar"></span>
+                  <span class="systems-mini-bar systems-mini-bar-short"></span>
+                </div>
+                <div class="systems-mini-card">
+                  <span class="systems-mini-icon"><i class="fas fa-chart-line"></i></span>
+                  <span class="systems-mini-bar"></span>
+                  <span class="systems-mini-bar systems-mini-bar-medium"></span>
+                </div>
+              </div>
+              <div class="systems-board-tracks">
+                <span class="systems-track systems-track-1"></span>
+                <span class="systems-track systems-track-2"></span>
+                <span class="systems-track systems-track-3"></span>
+              </div>
+            </div>
+            <div class="systems-floating-chip systems-floating-chip-top">
+              <i class="fas fa-cloud"></i>
+              <span>24/7</span>
+            </div>
+            <div class="systems-floating-chip systems-floating-chip-bottom">
+              <i class="fas fa-shield-alt"></i>
+              <span>100%</span>
             </div>
           </div>
         </div>

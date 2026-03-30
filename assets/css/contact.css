@@ -4,7 +4,7 @@
 
 .contact-intro {
   padding: 60px 0 30px;
-  background: linear-gradient(180deg, #ffffff, #f7fbff);
+  background: var(--surface-soft);
 }
 
 .intro-heading {
@@ -41,10 +41,10 @@
 
 .info-block {
   background: var(--white);
-  border: 1px solid rgba(18, 59, 115, 0.08);
+  border: 1px solid var(--line-subtle);
   padding: 28px 24px;
   border-radius: var(--radius-md);
-  box-shadow: 0 16px 38px rgba(18, 59, 115, 0.08);
+  box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -54,7 +54,7 @@
 
 .info-block:hover {
   transform: translateY(-8px);
-  box-shadow: 0 24px 48px rgba(18, 59, 115, 0.14);
+  box-shadow: var(--shadow-lg);
 }
 
 .info-block h3 {
@@ -106,7 +106,7 @@
 .direct-contact {
   margin-top: 30px;
   padding-top: 24px;
-  border-top: 1px solid rgba(18, 59, 115, 0.08);
+  border-top: 1px solid var(--line-subtle);
 }
 .direct-contact h4 {
   margin: 0 0 14px;
@@ -164,6 +164,43 @@
     grid-template-columns: 1fr;
   }
   /* unified hero now uses .hero from global styles */
+}
+
+@media (max-width: 480px) {
+  .contact-intro {
+    padding: 46px 0 24px;
+  }
+
+  .intro-heading {
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .intro-heading h2 {
+    font-size: 1.65rem;
+    line-height: 1.35;
+  }
+
+  .info-block {
+    padding: 22px 18px;
+  }
+
+  .contact-page-section .contact-form {
+    padding: 30px 20px;
+  }
+
+  .contact-page-section .contact-info {
+    padding: 28px 20px;
+  }
+
+  .direct-contact {
+    margin-top: 24px;
+    padding-top: 20px;
+  }
+
+  .map-embed {
+    margin-top: 26px;
+  }
 }
 
 html[dir="rtl"] .info-block {
