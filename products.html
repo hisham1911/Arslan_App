@@ -94,8 +94,8 @@
             role="navigation"
             aria-label="Language switcher"
           >
-            <button class="lang-btn" data-lang="ar">العربية</button>
-            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="ar" data-i18n="lang.switch_ar">العربية</button>
+            <button class="lang-btn" data-lang="en" data-i18n="lang.switch_en">EN</button>
           </div>
         </div>
       </div>
@@ -122,6 +122,7 @@
             class="menu-toggle"
             id="menuToggle"
             aria-label="قائمة التنقل"
+            data-i18n-aria="nav.menu"
             aria-controls="navLinks"
             aria-expanded="false"
           >
@@ -129,9 +130,8 @@
             <span></span>
             <span></span>
           </button>
-          <ul class="nav-links" id="navLinks">
+<ul class="nav-links" id="navLinks">
             <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-            <li><a href="about.html" data-i18n="nav.about">About</a></li>
             <li>
               <a href="services.html" data-i18n="nav.services">Services</a>
             </li>
@@ -142,16 +142,17 @@
               <a href="systems.html" data-i18n="nav.systems">Systems</a>
             </li>
             <li>
-              <a href="projects.html" data-i18n="nav.projects">Projects</a>
-            </li>
-            <li>
               <a href="products.html" class="active" data-i18n="nav.products"
                 >Products</a
               >
             </li>
             <li>
+              <a href="projects.html" data-i18n="nav.projects">Projects</a>
+            </li>
+            <li>
               <a href="academy.html" data-i18n="nav.academy">Arslan Academy</a>
             </li>
+            <li><a href="about.html" data-i18n="nav.about">About</a></li>
             <li>
               <a href="contact.html" class="btn btn-nav" data-i18n="nav.contact"
                 >Contact</a
@@ -216,6 +217,7 @@
                 <img
                   src="assets/images/products/attendance.png"
                   alt="أجهزة الحضور والانصراف"
+                  data-i18n-alt="products.attendance_title"
                   loading="lazy"
                 />
               </div>
@@ -241,6 +243,7 @@
                 <img
                   src="assets/images/products/computers.png"
                   alt="أجهزة الكمبيوتر واللاب توب"
+                  data-i18n-alt="products.computers_title"
                   loading="lazy"
                 />
               </div>
@@ -265,6 +268,7 @@
                 <img
                   src="assets/images/products/printers.png"
                   alt="الطابعات وماكينات التصوير"
+                  data-i18n-alt="products.printers_title"
                   loading="lazy"
                 />
               </div>
@@ -289,6 +293,7 @@
                 <img
                   src="assets/images/products/pbx.png"
                   alt="أجهزة السنترالات"
+                  data-i18n-alt="products.pbx_title"
                   loading="lazy"
                 />
               </div>
@@ -314,6 +319,7 @@
                 <img
                   src="assets/images/products/callcenter.png"
                   alt="أجهزة الكول سنتر"
+                  data-i18n-alt="products.callcenter_title"
                   loading="lazy"
                 />
               </div>
@@ -338,6 +344,7 @@
                 <img
                   src="assets/images/products/servers.png"
                   alt="أجهزة السيرفرات"
+                  data-i18n-alt="products.servers_title"
                   loading="lazy"
                 />
               </div>
@@ -363,6 +370,7 @@
                 <img
                   src="assets/images/products/racks.png"
                   alt="راكات وباتش بانل"
+                  data-i18n-alt="products.racks_title"
                   loading="lazy"
                 />
               </div>
@@ -388,6 +396,7 @@
                 <img
                   src="assets/images/products/network.jpg"
                   alt="أجهزة الشبكات"
+                  data-i18n-alt="products.network_title"
                   loading="lazy"
                 />
               </div>
@@ -412,6 +421,7 @@
                 <img
                   src="assets/images/products/cctv.jpg"
                   alt="كاميرات المراقبة"
+                  data-i18n-alt="products.cctv_title"
                   loading="lazy"
                 />
               </div>

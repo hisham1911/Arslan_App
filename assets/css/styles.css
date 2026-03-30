@@ -495,14 +495,6 @@ html[dir="rtl"] .nav-wrapper {
   direction: rtl;
 }
 
-html[dir="rtl"] .nav-wrapper .brand {
-  order: 2;
-}
-
-html[dir="rtl"] .nav-wrapper .menu-toggle {
-  order: 1;
-}
-
 /* Make sure text in service-cards and about-content is right-aligned in RTL */
 html[dir="rtl"] .about-content,
 html[dir="rtl"] .service-card,

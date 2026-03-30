@@ -76,8 +76,8 @@
             rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
         </div>
         <div class="topbar-lang" id="langToggle" role="navigation" aria-label="Language switcher">
-          <button class="lang-btn" data-lang="ar">العربية</button>
-          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="ar" data-i18n="lang.switch_ar">العربية</button>
+          <button class="lang-btn" data-lang="en" data-i18n="lang.switch_en">EN</button>
         </div>
       </div>
     </div>
@@ -90,17 +90,16 @@
           <img src="assets/images/logos/logo-arslan-primary.webp" alt="Arslan Tech" data-i18n-alt="hero.logo_alt"
             class="brand-image" decoding="async" loading="lazy" />
         </a>
-              <span class="number count-up" data-target="10" data-prefix="+">+10</span>
+        <button class="menu-toggle" id="menuToggle" aria-label="قائمة التنقل" data-i18n-aria="nav.menu"
           aria-controls="navLinks" aria-expanded="false">
           <span></span>
           <span></span>
           <span></span>
         </button>
-        <ul class="nav-links" id="navLinks">
+<ul class="nav-links" id="navLinks">
           <li>
             <a href="index.html" class="active" data-i18n="nav.home">الرئيسية</a>
           </li>
-          <li><a href="about.html" data-i18n="nav.about">من نحن</a></li>
           <li>
             <a href="services.html" data-i18n="nav.services">خدماتنا</a>
           </li>
@@ -111,14 +110,15 @@
             <a href="systems.html" data-i18n="nav.systems">الأنظمة</a>
           </li>
           <li>
-            <a href="projects.html" data-i18n="nav.projects">سابقة أعمالنا</a>
+            <a href="products.html" data-i18n="nav.products">المنتجات</a>
           </li>
           <li>
-            <a href="products.html" data-i18n="nav.products">المنتجات</a>
+            <a href="projects.html" data-i18n="nav.projects">سابقة أعمالنا</a>
           </li>
           <li>
             <a href="academy.html" data-i18n="nav.academy">أرسلان أكاديمي</a>
           </li>
+          <li><a href="about.html" data-i18n="nav.about">من نحن</a></li>
           <li>
             <a href="contact.html" class="btn btn-nav" data-i18n="nav.contact">تواصل معنا</a>
           </li>
@@ -435,14 +435,17 @@
         <div class="testimonials-grid">
           <article class="testimonial-card">
             <img src="assets/images/testimonials/testimonial-meat-house.jpg" alt="تقييم بيت اللحوم - Meat House"
+              data-i18n-alt="testimonials.alt_meathouse"
               class="testimonial-image" loading="lazy" />
           </article>
           <article class="testimonial-card">
             <img src="assets/images/testimonials/testimonial-elgawhra.jpg"
-              alt="تقييم محمصة الجوهرة - El Gawhra Roastery" class="testimonial-image" loading="lazy" />
+              alt="تقييم محمصة الجوهرة - El Gawhra Roastery" data-i18n-alt="testimonials.alt_elgohara"
+              class="testimonial-image" loading="lazy" />
           </article>
           <article class="testimonial-card">
             <img src="assets/images/testimonials/testimonial-wesaya.jpg" alt="تقييم وصاية - Wesaya"
+              data-i18n-alt="testimonials.alt_wesaya"
               class="testimonial-image" loading="lazy" />
           </article>
         </div>

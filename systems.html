@@ -198,8 +198,8 @@
             role="navigation"
             aria-label="Language switcher"
           >
-            <button class="lang-btn" data-lang="ar">العربية</button>
-            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="ar" data-i18n="lang.switch_ar">العربية</button>
+            <button class="lang-btn" data-lang="en" data-i18n="lang.switch_en">EN</button>
           </div>
         </div>
       </div>
@@ -235,11 +235,10 @@
             <span></span>
             <span></span>
           </button>
-          <ul class="nav-links" id="navLinks">
+<ul class="nav-links" id="navLinks">
             <li>
               <a href="index.html" data-i18n="nav.home">الرئيسية</a>
             </li>
-            <li><a href="about.html" data-i18n="nav.about">من نحن</a></li>
             <li>
               <a href="services.html" data-i18n="nav.services">خدماتنا</a>
             </li>
@@ -254,14 +253,15 @@
               >
             </li>
             <li>
-              <a href="projects.html" data-i18n="nav.projects">سابقة أعمالنا</a>
+              <a href="products.html" data-i18n="nav.products">المنتجات</a>
             </li>
             <li>
-              <a href="products.html" data-i18n="nav.products">المنتجات</a>
+              <a href="projects.html" data-i18n="nav.projects">سابقة أعمالنا</a>
             </li>
             <li>
               <a href="academy.html" data-i18n="nav.academy">أرسلان أكاديمي</a>
             </li>
+            <li><a href="about.html" data-i18n="nav.about">من نحن</a></li>
             <li>
               <a href="contact.html" class="btn btn-nav" data-i18n="nav.contact"
                 >تواصل معنا</a
@@ -386,8 +386,9 @@
               >
             </h1>
             <p class="systems-hero-lead" data-i18n="systems.hero_lead">
-              حلول برمجية ذكية مصممة لتبسيط عملياتك اليومية، من إدارة المخازن
-              إلى أنظمة المحاسبة ونقاط البيع.
+              نبني أنظمة مخصصة للمطاعم، المتاجر، الشركات الصغيرة والمتوسطة،
+              والأنشطة الخدمية، من نقاط البيع وإدارة الطلبات إلى أنظمة التشغيل
+              الداخلي والمخزون والحسابات.
             </p>
 
             <div class="systems-hero-actions">
@@ -462,8 +463,9 @@
               تقنية، كفاءة، وابتكار
             </h2>
             <p class="section-lead" data-i18n="systems.services_lead">
-              نقدم حلول أنظمة إدارية متكاملة تجمع بين السهولة والقوة التقنية
-              لرفع كفاءة أعمالك وإدارتها باحترافية
+              لا نقدم POS فقط، بل نطوّر أنظمة تناسب طبيعة نشاطك، من البيع
+              والتشغيل اليومي إلى الإدارة الداخلية والتقارير والربط بين الفروع
+              أو الأقسام.
             </p>
           </div>
 
@@ -475,28 +477,28 @@
                 <i class="fas fa-cash-register"></i>
                 <div class="icon-ring"></div>
               </div>
-              <h3 data-i18n="systems.service_pos_title">أنظمة نقاط البيع</h3>
+              <h3 data-i18n="systems.service_pos_title">أنظمة البيع والتشغيل</h3>
               <p data-i18n="systems.service_pos_desc">
-                حلول POS متطورة تدعم جميع أنواع الأعمال مع واجهات سهلة وسريعة
-                لمعالجة الطلبات بكفاءة عالية.
+                حلول للمطاعم، الكافيهات، المحلات، وأي نشاط يحتاج شاشة بيع أو
+                إدارة طلبات وتشغيل يومي سريع.
               </p>
               <ul class="feature-list">
                 <li>
                   <i class="fas fa-check-circle"></i>
                   <span data-i18n="systems.service_pos_feature_1"
-                    >واجهة لمس سريعة</span
+                    >نقطة بيع وطلبات</span
                   >
                 </li>
                 <li>
                   <i class="fas fa-check-circle"></i>
                   <span data-i18n="systems.service_pos_feature_2"
-                    >إدارة المبيعات</span
+                    >عملاء ومدفوعات</span
                   >
                 </li>
                 <li>
                   <i class="fas fa-check-circle"></i>
                   <span data-i18n="systems.service_pos_feature_3"
-                    >فواتير إلكترونية</span
+                    >فواتير وطباعة</span
                   >
                 </li>
               </ul>
@@ -509,28 +511,28 @@
                 <i class="fas fa-warehouse"></i>
                 <div class="icon-ring"></div>
               </div>
-              <h3 data-i18n="systems.service_inventory_title">إدارة المخازن</h3>
+              <h3 data-i18n="systems.service_inventory_title">أنظمة إدارة الأعمال</h3>
               <p data-i18n="systems.service_inventory_desc">
-                نظام شامل لإدارة المخزون مع تتبع دقيق وتنبيهات ذكية للحفاظ على
-                الموارد وتجنب النقص.
+                أنظمة للشركات الصغيرة والمتوسطة لإدارة الأصناف أو الخدمات
+                والمخزون والموردين والمصروفات بشكل منظم.
               </p>
               <ul class="feature-list">
                 <li>
                   <i class="fas fa-check-circle"></i>
                   <span data-i18n="systems.service_inventory_feature_1"
-                    >تتبع المخزون اللحظي</span
+                    >مخزون أو خدمات</span
                   >
                 </li>
                 <li>
                   <i class="fas fa-check-circle"></i>
                   <span data-i18n="systems.service_inventory_feature_2"
-                    >تنبيهات النواقص</span
+                    >مشتريات وموردون</span
                   >
                 </li>
                 <li>
                   <i class="fas fa-check-circle"></i>
                   <span data-i18n="systems.service_inventory_feature_3"
-                    >جرد وتقييم المخزون</span
+                    >مصروفات وخزائن</span
                   >
                 </li>
               </ul>
@@ -544,29 +546,29 @@
                 <div class="icon-ring"></div>
               </div>
               <h3 data-i18n="systems.service_analytics_title">
-                تحليلات وتقارير
+                أنظمة مخصصة حسب نشاطك
               </h3>
               <p data-i18n="systems.service_analytics_desc">
-                لوحات تحكم ذكية وتقارير تفصيلية لاتخاذ قرارات مدروسة ومبنية على
-                بيانات دقيقة لحظية.
+                إذا كان نشاطك يحتاج Workflow خاص، نبني لك نظاماً مناسباً من
+                الصفر حسب طريقة عملك وليس قالباً ثابتاً.
               </p>
               <ul class="feature-list">
                 <li>
                   <i class="fas fa-check-circle"></i>
                   <span data-i18n="systems.service_analytics_feature_1"
-                    >لوحات تحكم تفاعلية</span
+                    >صلاحيات وأدوار</span
                   >
                 </li>
                 <li>
                   <i class="fas fa-check-circle"></i>
                   <span data-i18n="systems.service_analytics_feature_2"
-                    >تقارير أرباح ومصروفات</span
+                    >تقارير ولوحات متابعة</span
                   >
                 </li>
                 <li>
                   <i class="fas fa-check-circle"></i>
                   <span data-i18n="systems.service_analytics_feature_3"
-                    >تصدير لملفات Excel/PDF</span
+                    >ربط فروع أو أقسام</span
                   >
                 </li>
               </ul>
@@ -600,9 +602,9 @@
             <div class="sys-package-card">
               <div class="pkg-header">
                 <div class="pkg-icon"><i class="fas fa-rocket"></i></div>
-                <h3 data-i18n="systems.package_basic_title">POS أساسي</h3>
+                <h3 data-i18n="systems.package_basic_title">النظام الأساسي</h3>
                 <p data-i18n="systems.package_basic_desc">
-                  مثالي للشركات الصغيرة والمشاريع الناشئة.
+                  مناسب للمطاعم والمشاريع الصغيرة والمتاجر الناشئة.
                 </p>
               </div>
               <div class="pkg-body">
@@ -610,13 +612,13 @@
                   <li>
                     <i class="fas fa-check"></i>
                     <span data-i18n="systems.package_feature_sales"
-                      >مبيعات وفواتير</span
+                      >عمليات وفواتير</span
                     >
                   </li>
                   <li>
                     <i class="fas fa-check"></i>
                     <span data-i18n="systems.package_feature_inventory"
-                      >إدارة الأصناف والمخزون</span
+                      >أصناف أو خدمات ومخزون</span
                     >
                   </li>
                   <li>
@@ -635,7 +637,7 @@
               </div>
               <div class="pkg-footer">
                 <a
-                  href="contact.html?service=pos&package=basic"
+                  href="contact.html?service=systems&package=basic"
                   class="btn btn-outline-dynamic"
                 >
                   <span data-i18n="systems.package_cta">ابدأ الآن</span>
@@ -646,13 +648,13 @@
 
             <!-- Business Package (Premium/Featured) -->
             <div class="sys-package-card premium-card">
-              <div class="premium-label">الأكثر مبيعاً</div>
+              <div class="premium-label" data-i18n="systems.package_business_badge">الأكثر مبيعاً</div>
               <div class="card-glow-aurora"></div>
               <div class="pkg-header">
                 <div class="pkg-icon"><i class="fas fa-building"></i></div>
-                <h3 data-i18n="systems.package_business_title">POS بيزنس</h3>
+                <h3 data-i18n="systems.package_business_title">نظام الأعمال</h3>
                 <p data-i18n="systems.package_business_desc">
-                  الحل الأمثل للشركات المتوسطة والكبيرة.
+                  مناسب للشركات المتوسطة والأنشطة متعددة الأقسام أو الفروع.
                 </p>
               </div>
               <div class="pkg-body">
@@ -660,19 +662,19 @@
                   <li>
                     <i class="fas fa-check"></i>
                     <span data-i18n="systems.package_feature_sales"
-                      >مبيعات وفواتير</span
+                      >عمليات وفواتير</span
                     >
                   </li>
                   <li>
                     <i class="fas fa-check"></i>
                     <span data-i18n="systems.package_feature_inventory"
-                      >إدارة الأصناف والمخزون</span
+                      >أصناف أو خدمات ومخزون</span
                     >
                   </li>
                   <li>
                     <i class="fas fa-check"></i>
                     <span data-i18n="systems.package_feature_branches"
-                      >فروع متعددة وربط الفروع</span
+                      >فروع أو أقسام متعددة</span
                     >
                   </li>
                   <li>
@@ -685,7 +687,7 @@
               </div>
               <div class="pkg-footer">
                 <a
-                  href="contact.html?service=pos&package=business"
+                  href="contact.html?service=systems&package=business"
                   class="btn btn-glow-solid"
                 >
                   <span data-i18n="systems.package_cta">ابدأ الآن</span>
@@ -698,11 +700,11 @@
             <div class="sys-package-card">
               <div class="pkg-header">
                 <div class="pkg-icon"><i class="fas fa-crown"></i></div>
-                <h3 data-i18n="systems.package_enterprise_title">
-                  POS إنتربرايز
+                  <h3 data-i18n="systems.package_enterprise_title">
+                  النظام المؤسسي
                 </h3>
                 <p data-i18n="systems.package_enterprise_desc">
-                  حل شامل للمؤسسات الكبيرة والسلاسل التجارية.
+                  حل مخصص للمؤسسات الكبيرة والسلاسل والعمليات المعقدة.
                 </p>
               </div>
               <div class="pkg-body">
@@ -710,32 +712,32 @@
                   <li>
                     <i class="fas fa-check"></i>
                     <span data-i18n="systems.package_feature_sales"
-                      >مبيعات وفواتير</span
+                      >عمليات وفواتير</span
                     >
                   </li>
                   <li>
                     <i class="fas fa-check"></i>
                     <span data-i18n="systems.package_feature_branches"
-                      >فروع متعددة وربط الفروع</span
+                      >فروع أو أقسام متعددة</span
                     >
                   </li>
                   <li>
                     <i class="fas fa-check"></i>
                     <span data-i18n="systems.package_feature_api"
-                      >تكاملات API وأنظمة خارجية</span
+                      >تكاملات وربط مع أنظمة خارجية</span
                     >
                   </li>
                   <li>
                     <i class="fas fa-check"></i>
                     <span data-i18n="systems.package_feature_support"
-                      >دعم فني مخصص (VIP)</span
+                      >دعم فني وتطوير مستمر</span
                     >
                   </li>
                 </ul>
               </div>
               <div class="pkg-footer">
                 <a
-                  href="contact.html?service=pos&package=enterprise"
+                  href="contact.html?service=systems&package=enterprise"
                   class="btn btn-outline-dynamic"
                 >
                   <span data-i18n="systems.package_cta">ابدأ الآن</span>
@@ -774,7 +776,7 @@
                 <div class="project-tags">
                   <span class="sys-tag"
                     ><i class="fas fa-crown"></i>
-                    <span>نظام مؤسسي (ERP)</span></span
+                    <span data-i18n="systems.erp_badge">نظام مؤسسي (ERP)</span></span
                   >
                   <span class="sys-tag sys-tag-outline">Cloud-Native SaaS</span>
                 </div>
@@ -887,7 +889,7 @@
                     href="contact.html?service=systems"
                     class="btn btn-glow-solid"
                   >
-                    <span>احجز العرض التوضيحي للـ ERP</span>
+                    <span data-i18n="systems.erp_demo_cta">احجز العرض التوضيحي للـ ERP</span>
                     <i class="fas fa-arrow-left"></i>
                   </a>
                 </div>
@@ -904,10 +906,10 @@
                     loading="lazy"
                   />
                   <div class="floating-badge badge-top">
-                    <i class="fas fa-check-circle"></i> تحكم كامل
+                    <i class="fas fa-check-circle"></i> <span data-i18n="systems.erp_visual_badge_top">تحكم كامل</span>
                   </div>
                   <div class="floating-badge badge-bottom">
-                    <i class="fas fa-sync-alt"></i> مزامنة سحابية
+                    <i class="fas fa-sync-alt"></i> <span data-i18n="systems.erp_visual_badge_bottom">مزامنة سحابية</span>
                   </div>
                 </div>
                 <div class="visuals-thumbnails" id="erp-thumbs">
@@ -1150,10 +1152,10 @@
                     loading="lazy"
                   />
                   <div class="floating-badge badge-top">
-                    <i class="fas fa-check-circle"></i> مبيعات سريعة
+                    <i class="fas fa-check-circle"></i> <span data-i18n="systems.kasser_visual_badge_top">مبيعات سريعة</span>
                   </div>
                   <div class="floating-badge badge-bottom">
-                    <i class="fas fa-sync-alt"></i> مزامنة سحابية
+                    <i class="fas fa-sync-alt"></i> <span data-i18n="systems.kasser_visual_badge_bottom">مزامنة سحابية</span>
                   </div>
                 </div>
                 <div class="visuals-thumbnails" id="kasser-thumbs">
@@ -1458,12 +1460,12 @@
                 معنا.
               </p>
               <div class="sys-faq-contact-box">
-                <p>لم تجد إجابتك؟</p>
+                <p data-i18n="systems.faq_contact_prompt">لم تجد إجابتك؟</p>
                 <a
                   href="contact.html?service=systems"
                   class="btn btn-outline-dynamic"
                 >
-                  تواصل مع الدعم الفني <i class="fas fa-headset"></i>
+                  <span data-i18n="systems.faq_contact_button">تواصل مع الدعم الفني</span> <i class="fas fa-headset"></i>
                 </a>
               </div>
             </div>
@@ -1573,7 +1575,7 @@
         <div class="container relative-z">
           <div class="sys-cta-content text-center">
             <span class="badge premium-badge" style="margin-bottom: 20px">
-              <i class="fas fa-rocket"></i> انطلق نحو المستقبل
+              <i class="fas fa-rocket"></i> <span data-i18n="systems.cta_badge">انطلق نحو المستقبل</span>
             </span>
             <h2 data-i18n="systems.cta_title">جاهز لتطوير نظامك الإداري؟</h2>
             <p data-i18n="systems.cta_lead">

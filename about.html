@@ -102,8 +102,8 @@
             role="navigation"
             aria-label="Language switcher"
           >
-            <button class="lang-btn" data-lang="ar">العربية</button>
-            <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="ar" data-i18n="lang.switch_ar">العربية</button>
+          <button class="lang-btn" data-lang="en" data-i18n="lang.switch_en">EN</button>
           </div>
         </div>
       </div>
@@ -130,6 +130,7 @@
             class="menu-toggle"
             id="menuToggle"
             aria-label="قائمة التنقل"
+            data-i18n-aria="nav.menu"
             aria-controls="navLinks"
             aria-expanded="false"
           >
@@ -137,13 +138,8 @@
             <span></span>
             <span></span>
           </button>
-          <ul class="nav-links" id="navLinks">
+<ul class="nav-links" id="navLinks">
             <li><a href="index.html" data-i18n="nav.home">الرئيسية</a></li>
-            <li>
-              <a href="about.html" class="active" data-i18n="nav.about"
-                >من نحن</a
-              >
-            </li>
             <li>
               <a href="services.html" data-i18n="nav.services">خدماتنا</a>
             </li>
@@ -156,13 +152,18 @@
               <a href="systems.html" data-i18n="nav.systems">الأنظمة</a>
             </li>
             <li>
-              <a href="projects.html" data-i18n="nav.projects">سابقة أعمالنا</a>
-            </li>
-            <li>
               <a href="products.html" data-i18n="nav.products">المنتجات</a>
             </li>
             <li>
+              <a href="projects.html" data-i18n="nav.projects">سابقة أعمالنا</a>
+            </li>
+            <li>
               <a href="academy.html" data-i18n="nav.academy">أرسلان أكاديمي</a>
+            </li>
+            <li>
+              <a href="about.html" class="active" data-i18n="nav.about"
+                >من نحن</a
+              >
             </li>
             <li>
               <a href="contact.html" class="btn btn-nav" data-i18n="nav.contact"
@@ -223,6 +224,7 @@
             <img
               src="assets/images/about/about-mission.jpg"
               alt="فريق عمل أرسلان تك"
+              data-i18n-alt="about_page.team_img_alt"
               loading="lazy"
               decoding="async"
             />
@@ -238,6 +240,7 @@
               <img
                 src="assets/images/about/about-goals.jpg"
                 alt="رؤيتنا في أرسلان تك"
+                data-i18n-alt="about_page.vision_img_alt"
                 class="vm-image"
                 loading="lazy"
                 decoding="async"
@@ -257,6 +260,7 @@
               <img
                 src="assets/images/about/about-faq.jpg"
                 alt="مهمتنا في أرسلان تك"
+                data-i18n-alt="about_page.mission_img_alt"
                 class="vm-image"
                 loading="lazy"
                 decoding="async"
