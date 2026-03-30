@@ -2,6 +2,8 @@
 // إعداد الجلسة
 session_start();
 
+header('X-Robots-Tag: noindex, nofollow', true);
+
 // إعداد ترميز UTF-8
 header('Content-Type: application/json; charset=utf-8');
 

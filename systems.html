@@ -6,118 +6,74 @@
     <script>
       (function () {
         try {
-          var saved = localStorage.getItem("site_lang");
+          var saved = localStorage.getItem("site_lang") || "en";
           var html = document.documentElement;
-          if (saved === "en") {
-            html.lang = "en";
-            html.dir = "ltr";
-            html.classList.add("lang-loading");
-          } else if (saved === "ar") {
-            html.lang = "ar";
-            html.dir = "rtl";
-          }
+          html.lang = saved === "ar" ? "ar" : "en";
+          html.dir = saved === "ar" ? "rtl" : "ltr";
+          html.classList.add("lang-loading");
         } catch (e) {}
       })();
     </script>
-    <title data-i18n="systems.page_title">أنظمة الشركات - أرسلان تك</title>
     <meta
       name="description"
-      content="أرسلان تك - أنظمة إدارية متكاملة وحلول POS ذكية للمطاعم والشركات، مع تقنيات حديثة وأداء فائق. باقات مرنة وأسعار تنافسية."
+      content="Arslan Tech builds POS and business management systems for restaurants, retail, and service companies, covering sales, inventory, operations, and reporting."
     />
-    <meta
-      name="keywords"
-      content="أنظمة إدارية, كاشير, POS, إدارة مخازن, محاسبة, برامج مطاعم, أرسلان تك"
-    />
-    <meta name="author" content="Arslan Tech" />
     <meta name="robots" content="index, follow" />
+    <meta name="author" content="Arslan Tech" />
+    <title data-i18n="systems.page_title">Business Systems - Arslan Tech</title>
     <link rel="canonical" href="https://arslantech-eg.com/systems.html" />
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="أنظمة الشركات - أرسلان تك" />
-    <meta
-      property="og:description"
-      content="أنظمة إدارية متكاملة وحلول POS ذكية بأداء فائق وأسعار تنافسية."
-    />
-    <meta
-      property="og:image"
-      content="https://arslantech-eg.com/assets/images/logos/logo-arslan-primary.webp"
-    />
-    <meta property="og:url" content="https://arslantech-eg.com/systems.html" />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://arslantech-eg.com/systems.html" />
+    <meta property="og:title" content="Business Systems - Arslan Tech" />
+    <meta property="og:description" content="Arslan Tech builds POS and business management systems for restaurants, retail, and service companies, covering sales, inventory, operations, and reporting." />
+    <meta property="og:image" content="https://arslantech-eg.com/assets/images/logos/og-image-1200x630.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Arslan Tech preview image" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ar_EG" />
     <meta property="og:site_name" content="Arslan Tech" />
-
-    <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="أنظمة الشركات - أرسلان تك" />
-    <meta
-      name="twitter:description"
-      content="أنظمة إدارية متكاملة وحلول POS ذكية بأداء فائق وأسعار تنافسية."
-    />
-    <meta
-      name="twitter:image"
-      content="https://arslantech-eg.com/assets/images/logos/logo-arslan-primary.webp"
-    />
-
-    <!-- Assets -->
-    <link
-      rel="icon"
-      type="image/webp"
-      href="assets/images/logos/logo-arslan-primary.webp"
-    />
+    <meta name="twitter:title" content="Business Systems - Arslan Tech" />
+    <meta name="twitter:description" content="Arslan Tech builds POS and business management systems for restaurants, retail, and service companies, covering sales, inventory, operations, and reporting." />
+    <meta name="twitter:image" content="https://arslantech-eg.com/assets/images/logos/og-image-1200x630.png" />
+    <meta name="twitter:image:alt" content="Arslan Tech preview image" />
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap"
-      as="style"
-      onload="
-        this.onload = null;
-        this.rel = 'stylesheet';
-      "
-    />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap"
-      />
-    </noscript>
-    <link
-      rel="preload"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      as="style"
-      onload="
-        this.onload = null;
-        this.rel = 'stylesheet';
-      "
-    />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      />
-    </noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" /></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" /></noscript>
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/systems.css" />
     <link rel="stylesheet" href="assets/css/svg-decorations.css" />
-
-    <!-- SEO and Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Service",
-        "name": "أنظمة الشركات - أرسلان تك",
-        "description": "أنظمة إدارية متكاملة وحلول POS ذكية للمطاعم والشركات بأداء فائق وأسعار تنافسية",
+        "name": "Business Systems - Arslan Tech",
+        "description": "Arslan Tech builds POS and business management systems for restaurants, retail, and service companies, covering sales, inventory, operations, and reporting.",
+        "url": "https://arslantech-eg.com/systems.html",
+        "inLanguage": [
+          "en",
+          "ar"
+        ],
         "provider": {
           "@type": "Organization",
           "name": "Arslan Tech",
-          "url": "https://arslantech-eg.com",
-          "logo": "https://arslantech-eg.com/assets/images/logos/logo-arslan-primary.webp",
+          "url": "https://arslantech-eg.com/",
+          "logo": "https://arslantech-eg.com/assets/images/logos/logo-arslan-square-512.png",
           "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+20-101-407-8319",
             "contactType": "customer service",
             "areaServed": "EG",
-            "availableLanguage": ["Arabic", "English"]
+            "availableLanguage": [
+              "English",
+              "Arabic"
+            ]
           },
           "sameAs": [
             "https://www.facebook.com/Arslantecheg/",
@@ -132,28 +88,23 @@
         "offers": [
           {
             "@type": "Offer",
-            "name": "POS أساسي",
-            "description": "نظام نقاط بيع أساسي للشركات الصغيرة",
+            "name": "Starter System",
+            "description": "Suitable for restaurants, small projects, and growing stores",
             "category": "POS System"
           },
           {
             "@type": "Offer",
-            "name": "POS بيزنس",
-            "description": "نظام متقدم للشركات المتوسطة والكبيرة",
+            "name": "Business System",
+            "description": "Suitable for mid-sized companies and businesses with multiple departments or branches",
             "category": "POS System"
           },
           {
             "@type": "Offer",
-            "name": "POS إنتربرايز",
-            "description": "حل شامل للمؤسسات الكبيرة",
+            "name": "Enterprise System",
+            "description": "A tailored solution for large organizations, chains, and complex operations",
             "category": "Enterprise System"
           }
-        ],
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "5",
-          "reviewCount": "300"
-        }
+        ]
       }
     </script>
   </head>
@@ -219,8 +170,7 @@
               alt="Arslan Tech"
               data-i18n-alt="hero.logo_alt"
               class="brand-image"
-              decoding="async"
-              loading="lazy"
+              decoding="async" width="284" height="300"
             />
           </a>
           <button

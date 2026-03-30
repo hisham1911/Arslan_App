@@ -8,6 +8,7 @@
  */
 
 // إعداد الترميز
+header('X-Robots-Tag: noindex, nofollow', true);
 header('Content-Type: text/html; charset=utf-8');
 ?>
 <!DOCTYPE html>
@@ -15,6 +16,7 @@ header('Content-Type: text/html; charset=utf-8');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
     <title>اختبار إرسال البريد - Email Test</title>
     <style>
         * {

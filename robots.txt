@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /send_mail.php
+Disallow: /csrf.php
+Disallow: /test-email.php
 
 Sitemap: https://arslantech-eg.com/sitemap.xml

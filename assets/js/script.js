@@ -248,7 +248,7 @@
 
     supportForm.addEventListener("submit", async (event) => {
       event.preventDefault();
-      const currentLang = localStorage.getItem("site_lang") || "ar";
+      const currentLang = localStorage.getItem("site_lang") || "en";
 
       if (statusEl) {
         statusEl.textContent =
@@ -332,7 +332,7 @@
 
     academyForm.addEventListener("submit", async (ev) => {
       ev.preventDefault();
-      const currentLang = localStorage.getItem("site_lang") || "ar";
+      const currentLang = localStorage.getItem("site_lang") || "en";
       const t = (k, fallback) =>
         (translations[currentLang] && translations[currentLang][k]) || fallback;
 
@@ -488,10 +488,8 @@
     }
     // Apply initial language (reads localStorage)
     const saved = localStorage.getItem("site_lang");
-    const defaultLang =
-      saved ||
-      (navigator.language && navigator.language.startsWith("ar") ? "ar" : "en");
-    setLanguage(defaultLang || "en");
+    const defaultLang = saved || "en";
+    setLanguage(defaultLang);
 
     // language is now applied, show content if it was hidden during initialization
     document.documentElement.classList.remove("lang-loading");
@@ -615,7 +613,7 @@
       const errorEl = document.getElementById(`${field.id}-error`);
       let isValid = true;
       let errorMsg = "";
-      const currentLang = localStorage.getItem("site_lang") || "ar";
+      const currentLang = localStorage.getItem("site_lang") || "en";
 
       if (field.hasAttribute("required") && !field.value.trim()) {
         isValid = false;
@@ -750,7 +748,7 @@
         }
       } catch (err) {
         // Error
-        const currentLang = localStorage.getItem("site_lang") || "ar";
+        const currentLang = localStorage.getItem("site_lang") || "en";
         if (errorMessage) {
           errorMessage.textContent =
             err.message ||
