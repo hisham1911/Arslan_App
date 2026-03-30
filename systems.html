@@ -192,537 +192,665 @@
 
   <main>
     <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-overlay"></div>
-      <div class="container hero-container">
-        <div class="hero-content">
-          <span class="badge badge-muted" data-i18n="systems.hero_badge">أنظمة ذكية</span>
-          <h1 class="hero-title highlight-animate">
+    <!-- Creative Hero Section for Systems -->
+    <section class="systems-hero">
+      <div class="systems-hero-bg">
+        <div class="glow-sphere sphere-1"></div>
+        <div class="glow-sphere sphere-2"></div>
+        <div class="grid-overlay"></div>
+        <!-- Animated Systems Background -->
+        <div class="systems-animated-bg">
+          <svg class="circuit-svg" preserveAspectRatio="none" viewBox="0 0 100 100">
+            <defs>
+              <filter id="glow-packet">
+                <feGaussianBlur stdDeviation="0.8" result="coloredBlur" />
+                <feMerge>
+                  <feMergeNode in="coloredBlur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            <!-- Circuit Paths connecting system nodes -->
+            <path class="circuit-path" d="M 15 25 L 30 25 L 40 45 L 80 45" />
+            <path class="circuit-path" d="M 85 80 L 70 80 L 60 60 L 25 60" />
+            <path class="circuit-path" d="M 50 90 L 50 70 L 80 45" />
+            <path class="circuit-path" d="M 50 10 L 50 30 L 25 60" />
+            <path class="circuit-path" d="M 15 75 L 25 60" />
+
+            <!-- Moving Data Packets -->
+            <circle r="0.8" fill="#0eb8e2" filter="url(#glow-packet)">
+              <animateMotion dur="4s" repeatCount="indefinite" path="M 15 25 L 30 25 L 40 45 L 80 45" />
+            </circle>
+            <circle r="0.8" fill="#67d3f2" filter="url(#glow-packet)">
+              <animateMotion dur="5s" repeatCount="indefinite" path="M 85 80 L 70 80 L 60 60 L 25 60 L 15 75" />
+            </circle>
+            <circle r="0.8" fill="#10b981" filter="url(#glow-packet)">
+              <animateMotion dur="3.5s" repeatCount="indefinite" path="M 50 90 L 50 70 L 80 45" />
+            </circle>
+            <circle r="0.8" fill="#10b981" filter="url(#glow-packet)">
+              <animateMotion dur="4.2s" repeatCount="indefinite" path="M 50 10 L 50 30 L 25 60" />
+            </circle>
+            <circle r="0.6" fill="#ffffff" filter="url(#glow-packet)">
+              <animateMotion dur="6s" repeatCount="indefinite" path="M 80 45 L 40 45 L 30 25 L 15 25" />
+            </circle>
+            <circle r="0.6" fill="#ffffff" filter="url(#glow-packet)">
+              <animateMotion dur="4.5s" repeatCount="indefinite" path="M 25 60 L 60 60 L 70 80 L 85 80" />
+            </circle>
+          </svg>
+
+          <!-- System Nodes (Icons) -->
+          <div class="sys-node sys-node-server" title="Server"><i class="fas fa-server"></i></div>
+          <div class="sys-node sys-node-db" title="Database"><i class="fas fa-database"></i></div>
+          <div class="sys-node sys-node-desktop" title="POS/Terminal"><i class="fas fa-desktop"></i></div>
+          <div class="sys-node sys-node-cloud" title="Cloud Sync"><i class="fas fa-cloud"></i></div>
+          <div class="sys-node sys-node-pos" title="Cash Register"><i class="fas fa-cash-register"></i></div>
+          <div class="sys-node sys-node-mobile" title="Mobile App"><i class="fas fa-mobile-alt"></i></div>
+          <div class="sys-node sys-node-terminal" title="Branch Terminal"><i class="fas fa-network-wired"></i></div>
+        </div>
+      </div>
+      <div class="container systems-hero-container">
+        <div class="systems-hero-content text-center">
+          <div class="hero-badge-wrapper">
+            <span class="badge premium-badge" data-i18n="systems.hero_badge">
+              <i class="fas fa-microchip"></i> أنظمة ذكية
+            </span>
+          </div>
+          <h1 class="systems-hero-title">
             <span data-i18n="systems.hero_title">أنظمة إدارية متكاملة لنمو أعمالك</span>
           </h1>
-          <p class="hero-lead highlight-animate" style="--reveal-delay: 0.2s" data-i18n="systems.hero_lead">
+          <p class="systems-hero-lead" data-i18n="systems.hero_lead">
             حلول برمجية ذكية مصممة لتبسيط عملياتك اليومية، من إدارة المخازن
             إلى أنظمة المحاسبة ونقاط البيع.
           </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" data-i18n="systems.cta_primary" href="contact.html?service=systems">
-              ابدأ نظامك اليوم
+
+          <div class="systems-hero-actions">
+            <a class="btn btn-glow" data-i18n="systems.cta_primary" href="contact.html?service=systems">
+              ابدأ نظامك اليوم <i class="fas fa-arrow-left arrow-icon" style="margin-right: 8px;"></i>
             </a>
-            <a class="btn btn-outline" data-i18n="systems.cta_demo" href="#showcase">
-              شاهد العروض التوضيحية
+            <a class="btn btn-glass" data-i18n="systems.cta_demo" href="#showcase">
+              <i class="fas fa-play" style="margin-left: 8px;"></i> شاهد العروض التوضيحية
             </a>
           </div>
-          <div class="hero-stats">
-            <div>
+
+          <div class="systems-stats-cards">
+            <div class="stat-card glass-card">
+              <div class="stat-icon"><i class="fas fa-network-wired"></i></div>
               <span class="number count-up" data-target="5" data-prefix="+">+5</span>
               <span class="label" data-i18n="systems.stat_systems">نظام منجز</span>
             </div>
-            <div>
+            <div class="stat-card glass-card">
+              <div class="stat-icon"><i class="fas fa-bolt"></i></div>
               <span class="number count-up" data-target="7" data-prefix="">7</span>
               <span class="label" data-i18n="systems.stat_days">أيام تطوير</span>
             </div>
-            <div>
+            <div class="stat-card glass-card">
+              <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
               <span class="number count-up" data-target="100" data-prefix="">100%</span>
               <span class="label" data-i18n="systems.stat_satisfaction">رضا العملاء</span>
             </div>
           </div>
         </div>
-        <div class="hero-card">
-          <div class="floating-card">
-            <img src="assets/images/logos/logo-arslan-primary.webp" alt="Arslan Tech Logo" class="hero-logo"
-              decoding="async" loading="lazy" />
-            <p data-i18n="systems.hero_card_text">
-              أنظمتنا ليست مجرد برامج، بل هي حلول ذكية تساعد في تنظيم عملك
-              وزيادة الإنتاجية. نضمن لك تجربة استخدام سهلة مع أداء فائق ودعم
-              فني مستمر.
-            </p>
-            <a class="link-arrow" data-i18n="systems.hero_card_cta" href="contact.html?service=systems">احصل على عرض</a>
-            <div class="mini-avatars">
-              <a href="#showcase" class="avatar-link" title="Systems Showcase">
-                <img src="assets/images/logos/logo-arslan-primary.webp" alt="Systems" class="avatar-img"
-                  loading="lazy" />
-              </a>
-              <span class="text" data-i18n="systems.hero_mini_text">موثوق من أكثر من 140 شركة</span>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
+    <!-- Systems Features Section -->
+    <section class="sys-features-section" id="services">
       <div class="container">
-        <div class="section-heading">
-          <span class="badge badge-muted" data-i18n="systems.services_badge">خدماتنا</span>
-          <h2 data-i18n="systems.services_title">تقنية، كفاءة، وابتكار</h2>
-          <p data-i18n="systems.services_lead">
-            نقدم حلول أنظمة إدارية متكاملة تجمع بين السهولة والقوة التقنية
+        <div class="section-heading text-center">
+          <span class="badge premium-badge" data-i18n="systems.services_badge" style="margin-bottom: 16px;">
+            <i class="fas fa-layer-group"></i> خدماتنا
+          </span>
+          <h2 class="section-title" data-i18n="systems.services_title">تقنية، كفاءة، وابتكار</h2>
+          <p class="section-lead" data-i18n="systems.services_lead">
+            نقدم حلول أنظمة إدارية متكاملة تجمع بين السهولة والقوة التقنية لرفع كفاءة أعمالك وإدارتها باحترافية
           </p>
         </div>
 
-        <div class="services-grid">
-          <article class="service-card">
-            <div class="icon-circle">
+        <div class="sys-features-grid">
+          <!-- Feature Card 1 -->
+          <div class="sys-feature-card">
+            <div class="card-glow"></div>
+            <div class="feature-icon-wrapper">
               <i class="fas fa-cash-register"></i>
+              <div class="icon-ring"></div>
             </div>
             <h3 data-i18n="systems.service_pos_title">أنظمة نقاط البيع</h3>
             <p data-i18n="systems.service_pos_desc">
-              حلول POS متطورة تدعم جميع أنواع الأعمال مع واجهات سهلة وسريعة
+              حلول POS متطورة تدعم جميع أنواع الأعمال مع واجهات سهلة وسريعة لمعالجة الطلبات بكفاءة عالية.
             </p>
-            <ul class="service-features">
-              <li>
-                <i class="fas fa-check"></i>
-                <span data-i18n="systems.service_pos_feature_1">واجهة لمس سريعة</span>
-              </li>
-              <li>
-                <i class="fas fa-check"></i>
-                <span data-i18n="systems.service_pos_feature_2">إدارة المخزون</span>
-              </li>
-              <li>
-                <i class="fas fa-check"></i>
-                <span data-i18n="systems.service_pos_feature_3">تقارير مفصلة</span>
-              </li>
+            <ul class="feature-list">
+              <li><i class="fas fa-check-circle"></i> <span data-i18n="systems.service_pos_feature_1">واجهة لمس
+                  سريعة</span></li>
+              <li><i class="fas fa-check-circle"></i> <span data-i18n="systems.service_pos_feature_2">إدارة
+                  المبيعات</span></li>
+              <li><i class="fas fa-check-circle"></i> <span data-i18n="systems.service_pos_feature_3">فواتير
+                  إلكترونية</span></li>
             </ul>
-          </article>
+          </div>
 
-          <article class="service-card">
-            <div class="icon-circle"><i class="fas fa-warehouse"></i></div>
+          <!-- Feature Card 2 -->
+          <div class="sys-feature-card" style="transition-delay: 0.1s;">
+            <div class="card-glow"></div>
+            <div class="feature-icon-wrapper">
+              <i class="fas fa-warehouse"></i>
+              <div class="icon-ring"></div>
+            </div>
             <h3 data-i18n="systems.service_inventory_title">إدارة المخازن</h3>
             <p data-i18n="systems.service_inventory_desc">
-              نظام شامل لإدارة المخزون مع تتبع دقيق وتنبيهات ذكية
+              نظام شامل لإدارة المخزون مع تتبع دقيق وتنبيهات ذكية للحفاظ على الموارد وتجنب النقص.
             </p>
-            <ul class="service-features">
-              <li>
-                <i class="fas fa-check"></i>
-                <span data-i18n="systems.service_inventory_feature_1">تتبع المخزون</span>
-              </li>
-              <li>
-                <i class="fas fa-check"></i>
-                <span data-i18n="systems.service_inventory_feature_2">تنبيهات النواقص</span>
-              </li>
-              <li>
-                <i class="fas fa-check"></i>
-                <span data-i18n="systems.service_inventory_feature_3">إدارة الموردين</span>
-              </li>
+            <ul class="feature-list">
+              <li><i class="fas fa-check-circle"></i> <span data-i18n="systems.service_inventory_feature_1">تتبع المخزون
+                  اللحظي</span></li>
+              <li><i class="fas fa-check-circle"></i> <span data-i18n="systems.service_inventory_feature_2">تنبيهات
+                  النواقص</span></li>
+              <li><i class="fas fa-check-circle"></i> <span data-i18n="systems.service_inventory_feature_3">جرد وتقييم
+                  المخزون</span></li>
             </ul>
-          </article>
+          </div>
 
-          <article class="service-card">
-            <div class="icon-circle"><i class="fas fa-chart-line"></i></div>
-            <h3 data-i18n="systems.service_analytics_title">
-              تحليلات وتقارير
-            </h3>
+          <!-- Feature Card 3 -->
+          <div class="sys-feature-card" style="transition-delay: 0.2s;">
+            <div class="card-glow"></div>
+            <div class="feature-icon-wrapper">
+              <i class="fas fa-chart-pie"></i>
+              <div class="icon-ring"></div>
+            </div>
+            <h3 data-i18n="systems.service_analytics_title">تحليلات وتقارير</h3>
             <p data-i18n="systems.service_analytics_desc">
-              لوحات تحكم ذكية وتقارير تفصيلية لاتخاذ قرارات مدروسة
+              لوحات تحكم ذكية وتقارير تفصيلية لاتخاذ قرارات مدروسة ومبنية على بيانات دقيقة لحظية.
             </p>
-            <ul class="service-features">
-              <li>
-                <i class="fas fa-check"></i>
-                <span data-i18n="systems.service_analytics_feature_1">لوحات تحكم تفاعلية</span>
-              </li>
-              <li>
-                <i class="fas fa-check"></i>
-                <span data-i18n="systems.service_analytics_feature_2">تقارير مخصصة</span>
-              </li>
-              <li>
-                <i class="fas fa-check"></i>
-                <span data-i18n="systems.service_analytics_feature_3">تحليل الأداء</span>
-              </li>
+            <ul class="feature-list">
+              <li><i class="fas fa-check-circle"></i> <span data-i18n="systems.service_analytics_feature_1">لوحات تحكم
+                  تفاعلية</span></li>
+              <li><i class="fas fa-check-circle"></i> <span data-i18n="systems.service_analytics_feature_2">تقارير أرباح
+                  ومصروفات</span></li>
+              <li><i class="fas fa-check-circle"></i> <span data-i18n="systems.service_analytics_feature_3">تصدير لملفات
+                  Excel/PDF</span></li>
             </ul>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Packages Section -->
-    <section class="services" id="packages">
+    <section class="sys-packages-section" id="packages">
       <div class="container">
-        <div class="section-heading">
-          <span class="badge badge-muted" data-i18n="systems.packages_badge">باقاتنا</span>
-          <h2 data-i18n="systems.packages_title">باقات تناسب حجم عملك</h2>
-          <p data-i18n="systems.packages_lead">
-            اختر الباقة المناسبة لنشاطك مع أسعار تنافسية وجودة مضمونة
+        <div class="section-heading text-center">
+          <span class="badge premium-badge" data-i18n="systems.packages_badge" style="margin-bottom: 16px;">
+            <i class="fas fa-box-open"></i> باقاتنا
+          </span>
+          <h2 class="section-title" data-i18n="systems.packages_title">باقات تناسب حجم عملك</h2>
+          <p class="section-lead" data-i18n="systems.packages_lead">
+            اختر الباقة المناسبة لنشاطك مع أسعار تنافسية، تقنيات حديثة، وجودة لا تُضاهى.
           </p>
         </div>
 
-        <div class="services-grid">
-          <article class="service-card">
-            <div class="icon-circle"><i class="fas fa-rocket"></i></div>
-            <h3 data-i18n="systems.package_basic_title">POS أساسي</h3>
-            <p data-i18n="systems.package_basic_desc">
-              مثالي للشركات الصغيرة والمشاريع الناشئة
-            </p>
-            <ul class="service-features">
-              <li>
-                <i class="fas fa-check"></i>
-                <span data-i18n="systems.package_feature_sales">مبيعات وفواتير</span>
-              </li>
-              <li>
-                <i class="fas fa-check"></i>
-                <span data-i18n="systems.package_feature_inventory">إدارة الأصناف والمخزون</span>
-              </li>
-              <li>
-                <i class="fas fa-check"></i>
-                <span data-i18n="systems.package_feature_users">مستخدمين وصلاحيات</span>
-              </li>
-              <li>
-                <i class="fas fa-check"></i>
-                <span data-i18n="systems.package_feature_reports">تقارير أساسية</span>
-              </li>
-            </ul>
-            <a href="contact.html?service=pos&package=basic" class="btn btn-outline">
-              <span data-i18n="systems.package_cta">ابدأ الآن</span>
-            </a>
-          </article>
+        <div class="sys-packages-grid">
+          <!-- Basic Package -->
+          <div class="sys-package-card">
+            <div class="pkg-header">
+              <div class="pkg-icon"><i class="fas fa-rocket"></i></div>
+              <h3 data-i18n="systems.package_basic_title">POS أساسي</h3>
+              <p data-i18n="systems.package_basic_desc">مثالي للشركات الصغيرة والمشاريع الناشئة.</p>
+            </div>
+            <div class="pkg-body">
+              <ul class="pkg-features">
+                <li><i class="fas fa-check"></i> <span data-i18n="systems.package_feature_sales">مبيعات وفواتير</span>
+                </li>
+                <li><i class="fas fa-check"></i> <span data-i18n="systems.package_feature_inventory">إدارة الأصناف
+                    والمخزون</span></li>
+                <li><i class="fas fa-check"></i> <span data-i18n="systems.package_feature_users">مستخدمين
+                    وصلاحيات</span></li>
+                <li><i class="fas fa-check"></i> <span data-i18n="systems.package_feature_reports">تقارير أساسية</span>
+                </li>
+              </ul>
+            </div>
+            <div class="pkg-footer">
+              <a href="contact.html?service=pos&package=basic" class="btn btn-outline-dynamic">
+                <span data-i18n="systems.package_cta">ابدأ الآن</span> <i class="fas fa-arrow-left"></i>
+              </a>
+            </div>
+          </div>
 
-          <article class="service-card featured">
-            <div class="icon-circle"><i class="fas fa-building"></i></div>
-            <h3 data-i18n="systems.package_business_title">POS بيزنس</h3>
-            <p data-i18n="systems.package_business_desc">
-              الحل الأمثل للشركات المتوسطة والكبيرة
-            </p>
-            <ul class="service-features">
-              <li>
-                <i class="fas fa-check"></i>
-                <span data-i18n="systems.package_feature_sales">مبيعات وفواتير</span>
-              </li>
-              <li>
-                <i class="fas fa-check"></i>
-                <span data-i18n="systems.package_feature_inventory">إدارة الأصناف والمخزون</span>
-              </li>
-              <li>
-                <i class="fas fa-check"></i>
-                <span data-i18n="systems.package_feature_branches">فروع متعددة وربط الفروع</span>
-              </li>
-              <li>
-                <i class="fas fa-check"></i>
-                <span data-i18n="systems.package_feature_advanced_reports">تقارير متقدمة ولوحات متابعة</span>
-              </li>
-            </ul>
-            <a href="contact.html?service=pos&package=business" class="btn btn-primary">
-              <span data-i18n="systems.package_cta">ابدأ الآن</span>
-            </a>
-          </article>
+          <!-- Business Package (Premium/Featured) -->
+          <div class="sys-package-card premium-card">
+            <div class="premium-label">الأكثر مبيعاً</div>
+            <div class="card-glow-aurora"></div>
+            <div class="pkg-header">
+              <div class="pkg-icon"><i class="fas fa-building"></i></div>
+              <h3 data-i18n="systems.package_business_title">POS بيزنس</h3>
+              <p data-i18n="systems.package_business_desc">الحل الأمثل للشركات المتوسطة والكبيرة.</p>
+            </div>
+            <div class="pkg-body">
+              <ul class="pkg-features">
+                <li><i class="fas fa-check"></i> <span data-i18n="systems.package_feature_sales">مبيعات وفواتير</span>
+                </li>
+                <li><i class="fas fa-check"></i> <span data-i18n="systems.package_feature_inventory">إدارة الأصناف
+                    والمخزون</span></li>
+                <li><i class="fas fa-check"></i> <span data-i18n="systems.package_feature_branches">فروع متعددة وربط
+                    الفروع</span></li>
+                <li><i class="fas fa-check"></i> <span data-i18n="systems.package_feature_advanced_reports">تقارير
+                    متقدمة ولوحات متابعة</span></li>
+              </ul>
+            </div>
+            <div class="pkg-footer">
+              <a href="contact.html?service=pos&package=business" class="btn btn-glow-solid">
+                <span data-i18n="systems.package_cta">ابدأ الآن</span> <i class="fas fa-arrow-left"></i>
+              </a>
+            </div>
+          </div>
 
-          <article class="service-card">
-            <div class="icon-circle"><i class="fas fa-crown"></i></div>
-            <h3 data-i18n="systems.package_enterprise_title">
-              POS إنتربرايز
-            </h3>
-            <p data-i18n="systems.package_enterprise_desc">
-              حل شامل للمؤسسات الكبيرة والسلاسل التجارية
-            </p>
-            <ul class="service-features">
-              <li>
-                <i class="fas fa-check"></i>
-                <span data-i18n="systems.package_feature_sales">مبيعات وفواتير</span>
-              </li>
-              <li>
-                <i class="fas fa-check"></i>
-                <span data-i18n="systems.package_feature_branches">فروع متعددة وربط الفروع</span>
-              </li>
-              <li>
-                <i class="fas fa-check"></i>
-                <span data-i18n="systems.package_feature_api">تكاملات API وأنظمة خارجية</span>
-              </li>
-              <li>
-                <i class="fas fa-check"></i>
-                <span data-i18n="systems.package_feature_support">دعم فني مخصص</span>
-              </li>
-            </ul>
-            <a href="contact.html?service=pos&package=enterprise" class="btn btn-outline">
-              <span data-i18n="systems.package_cta">ابدأ الآن</span>
-            </a>
-          </article>
+          <!-- Enterprise Package -->
+          <div class="sys-package-card">
+            <div class="pkg-header">
+              <div class="pkg-icon"><i class="fas fa-crown"></i></div>
+              <h3 data-i18n="systems.package_enterprise_title">POS إنتربرايز</h3>
+              <p data-i18n="systems.package_enterprise_desc">حل شامل للمؤسسات الكبيرة والسلاسل التجارية.</p>
+            </div>
+            <div class="pkg-body">
+              <ul class="pkg-features">
+                <li><i class="fas fa-check"></i> <span data-i18n="systems.package_feature_sales">مبيعات وفواتير</span>
+                </li>
+                <li><i class="fas fa-check"></i> <span data-i18n="systems.package_feature_branches">فروع متعددة وربط
+                    الفروع</span></li>
+                <li><i class="fas fa-check"></i> <span data-i18n="systems.package_feature_api">تكاملات API وأنظمة
+                    خارجية</span></li>
+                <li><i class="fas fa-check"></i> <span data-i18n="systems.package_feature_support">دعم فني مخصص
+                    (VIP)</span></li>
+              </ul>
+            </div>
+            <div class="pkg-footer">
+              <a href="contact.html?service=pos&package=enterprise" class="btn btn-outline-dynamic">
+                <span data-i18n="systems.package_cta">ابدأ الآن</span> <i class="fas fa-arrow-left"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Showcase Section -->
-    <section class="services" id="showcase">
+    <section class="sys-showcase-section" id="showcase">
       <div class="container">
-        <div class="section-heading">
-          <span class="badge badge-muted" data-i18n="systems.showcase_badge">أنظمتنا</span>
-          <h2 data-i18n="systems.showcase_title">
-            نماذج من أنظمتنا المتطورة
-          </h2>
-          <p data-i18n="systems.showcase_lead">
-            اكتشف حلولنا البرمجية المتقدمة وكيف ساعدنا عملاءنا في تحسين كفاءة
-            أعمالهم
+        <div class="section-heading text-center">
+          <span class="badge premium-badge" data-i18n="systems.showcase_badge" style="margin-bottom: 16px;">
+            <i class="fas fa-laptop-code"></i> أنظمتنا
+          </span>
+          <h2 class="section-title" data-i18n="systems.showcase_title">نماذج من أنظمتنا المتطورة</h2>
+          <p class="section-lead" data-i18n="systems.showcase_lead">
+            اكتشف حلولنا البرمجية المتقدمة وكيف ساعدت عملاءنا في تحسين كفاءة أعمالهم بتصميمات عصرية وأداء استثنائي.
           </p>
         </div>
 
-        <!-- Kasser Pro System Card -->
-        <div class="showcase-card" id="kasser-card">
-          <div class="showcase-header">
-            <span class="badge" data-i18n="kasser.badge">نظام رائد</span>
-            <h3 data-i18n="kasser.title">
-              Kasser Pro - نظام كاشير وإدارة متكامل
-            </h3>
-            <p data-i18n="kasser.subtitle">
-              الحل الأمثل لإدارة المطاعم والكافيهات والمحلات التجارية. نظام
-              متكامل يجمع بين السهولة والقوة التقنية.
-            </p>
-          </div>
-
-          <div class="showcase-content">
-            <!-- Main Preview Image -->
-            <div class="showcase-preview">
-              <div class="main-image">
-                <img id="kasser-main-img" src="assets/images/projects/kasser/pos-screen.png" alt="Kasser Pro POS Screen"
-                  class="preview-image" decoding="async" loading="lazy" />
+        <div class="sys-showcase-container">
+          <!-- Kasser ERP System Card -->
+          <div class="sys-project-card" id="erp-card">
+            <div class="sys-project-content">
+              <div class="project-tags">
+                <span class="sys-tag"><i class="fas fa-crown"></i> <span>نظام مؤسسي (ERP)</span></span>
+                <span class="sys-tag sys-tag-outline">Cloud-Native SaaS</span>
+              </div>
+              <h3 class="sys-project-title" data-i18n="tager_erp.title">تاجر برو ERP - المنظومة الإدارية المتكاملة</h3>
+              <p class="sys-project-desc" data-i18n="tager_erp.desc">
+                ليس مجرد تطبيق كاشير، بل هو نظام شامل (ERP) مصمم ليدير فروع متعددة. يجمع بين قوة إدارة المبيعات اللحظية، والتحكم العميق في المشتريات، المخزون، المصروفات، والورديات، معززاً بأكثر من 23 تقرير مالي وإداري.
+              </p>
+              
+              <div class="sys-project-features">
+                <div class="feat-badge"><i class="fas fa-boxes"></i> <span data-i18n="tager_erp.feature_1">مبيعات ومخزون</span></div>
+                <div class="feat-badge"><i class="fas fa-barcode"></i> <span data-i18n="tager_erp.feature_2">باركود وتسعير مرن</span></div>
+                <div class="feat-badge"><i class="fas fa-chart-pie"></i> <span data-i18n="tager_erp.feature_3">23+ تقرير متصل</span></div>
+                <div class="feat-badge"><i class="fas fa-truck-loading"></i> <span data-i18n="tager_erp.feature_4">مشتريات وموردون</span></div>
+                <div class="feat-badge"><i class="fas fa-cash-register"></i> <span data-i18n="tager_erp.feature_5">ورديات وخزينة</span></div>
+                <div class="feat-badge"><i class="fas fa-file-invoice-dollar"></i> <span data-i18n="tager_erp.feature_6">فواتير ضريبية</span></div>
               </div>
 
-              <!-- Thumbnail Gallery -->
-              <div class="thumbnail-gallery" id="kasser-thumbs">
-                <div class="thumbnail active"
-                  onclick="changeKasserImage(this, 'assets/images/projects/kasser/pos-screen.png')">
-                  <img src="assets/images/projects/kasser/pos-screen.png" alt="POS Screen" loading="lazy" />
+              <div class="sys-project-detail-grid">
+                <div class="sys-detail-panel">
+                  <h4 class="sys-detail-title" data-i18n="tager_erp.panel_1_title">إدارة البيع والمنتجات</h4>
+                  <ul class="feature-list sys-detail-list">
+                    <li><i class="fas fa-check-circle"></i> <span data-i18n="tager_erp.panel_1_item_1">إدارة الأصناف والتصنيفات والأسعار والباركود من شاشة واحدة سهلة وسريعة.</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span data-i18n="tager_erp.panel_1_item_2">مناسب للمطاعم والكافيهات والسوبر ماركت والمحلات مع مرونة في طريقة التشغيل.</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span data-i18n="tager_erp.panel_1_item_3">إعدادات ضريبة وفاتورة وطباعة قابلة للتهيئة حسب طبيعة النشاط.</span></li>
+                  </ul>
                 </div>
-                <div class="thumbnail" onclick="changeKasserImage(this, 'assets/images/projects/kasser/products.png')">
-                  <img src="assets/images/projects/kasser/products.png" alt="Products Management" loading="lazy" />
-                </div>
-                <div class="thumbnail" onclick="changeKasserImage(this, 'assets/images/projects/kasser/orders.png')">
-                  <img src="assets/images/projects/kasser/orders.png" alt="Orders Management" loading="lazy" />
-                </div>
-                <div class="thumbnail" onclick="changeKasserImage(this, 'assets/images/projects/kasser/settings.png')">
-                  <img src="assets/images/projects/kasser/settings.png" alt="System Settings" loading="lazy" />
-                </div>
-              </div>
-            </div>
-
-            <!-- System Features -->
-            <div class="showcase-details">
-              <h4 data-i18n="systems.showcase_features_title">
-                الميزات الرئيسية
-              </h4>
-              <div class="features-grid">
-                <div class="feature-item">
-                  <i class="fas fa-cash-register"></i>
-                  <span data-i18n="kasser.feature_1">واجهة بيع (POS) سريعة وسهلة الاستخدام وتدعم اللمس</span>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-boxes"></i>
-                  <span data-i18n="kasser.feature_2">إدارة دقيقة للمنتجات (صور، أسعار، مخزون، باركود)</span>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-chart-line"></i>
-                  <span data-i18n="kasser.feature_3">تقارير مبيعات وفواتير يومية وشهرية مفصلة</span>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-file-invoice-dollar"></i>
-                  <span data-i18n="kasser.feature_4">دعم كامل للضريبة وسجل المدفوعات (كاش/فيزا)</span>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-tasks"></i>
-                  <span data-i18n="kasser.feature_5">نظام إدارة الطلبات ومتابعة حالتها (معلق، مكتمل)</span>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-bolt"></i>
-                  <span data-i18n="kasser.feature_10">سرعة فائقة في الأداء (تطبيق صفحة واحدة SPA)</span>
+                <div class="sys-detail-panel">
+                  <h4 class="sys-detail-title" data-i18n="tager_erp.panel_2_title">تشغيل مالي وتشغيلي متكامل</h4>
+                  <ul class="feature-list sys-detail-list">
+                    <li><i class="fas fa-check-circle"></i> <span data-i18n="tager_erp.panel_2_item_1">موردون وفواتير شراء ومصروفات وربط مباشر بحركة المخزون والتكلفة الفعلية.</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span data-i18n="tager_erp.panel_2_item_2">ورديات، خزينة، وحركة كاش كاملة مع رقابة يومية على فتح وإغلاق الشفت.</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span data-i18n="tager_erp.panel_2_item_3">تقارير متخصصة للمبيعات، الربحية، العملاء، الموردين، الموظفين، والمخزون.</span></li>
+                  </ul>
                 </div>
               </div>
 
-              <div class="showcase-actions">
-                <a href="https://kasserpro-frontend.vercel.app/" class="btn btn-primary" target="_blank"
-                  rel="noopener noreferrer">
-                  <i class="fas fa-external-link-alt"></i>
-                  <span data-i18n="kasser.demo_btn">Live Demo</span>
+              <div class="sys-project-actions">
+                <a href="contact.html?service=systems" class="btn btn-glow-solid">
+                  <span>احجز العرض التوضيحي للـ ERP</span> <i class="fas fa-arrow-left"></i>
                 </a>
               </div>
             </div>
-          </div>
-        </div>
 
-        <!-- AZ International System Card -->
-        <div class="showcase-card" id="az-card">
-          <div class="showcase-header">
-            <span class="badge" data-i18n="az.badge">مشروع رائد</span>
-            <h3 data-i18n="az.title">
-              AZ International - نظام إدارة شهادات الفحص الهندسي (NDT)
-            </h3>
-            <p data-i18n="az.subtitle">
-              منظومة رقمية متكاملة لإصدار وتتبع ومراقبة شهادات الفحص الهندسي.
-              حل احترافي يضمن الدقة والأمان.
-            </p>
+            <div class="sys-project-visuals">
+              <div class="visuals-frame">
+                <img id="erp-main-img" src="assets/images/projects/kasserpro-erp/screen-1.jpeg" alt="KasserPro ERP Dashboard" class="main-screen-img" decoding="async" loading="lazy" />
+                <div class="floating-badge badge-top"><i class="fas fa-check-circle"></i> تحكم كامل</div>
+                <div class="floating-badge badge-bottom"><i class="fas fa-sync-alt"></i> مزامنة سحابية</div>
+              </div>
+              <div class="visuals-thumbnails" id="erp-thumbs">
+                <div class="sys-thumb active" onclick="changeERPImage(this, 'assets/images/projects/kasserpro-erp/screen-1.jpeg')">
+                  <img src="assets/images/projects/kasserpro-erp/screen-1.jpeg" alt="Thumbnail 1" loading="lazy" />
+                </div>
+                <div class="sys-thumb" onclick="changeERPImage(this, 'assets/images/projects/kasserpro-erp/screen-2.jpeg')">
+                  <img src="assets/images/projects/kasserpro-erp/screen-2.jpeg" alt="Thumbnail 2" loading="lazy" />
+                </div>
+                <div class="sys-thumb" onclick="changeERPImage(this, 'assets/images/projects/kasserpro-erp/screen-3.jpeg')">
+                  <img src="assets/images/projects/kasserpro-erp/screen-3.jpeg" alt="Thumbnail 3" loading="lazy" />
+                </div>
+                <div class="sys-thumb" onclick="changeERPImage(this, 'assets/images/projects/kasserpro-erp/screen-6.jpeg')">
+                  <img src="assets/images/projects/kasserpro-erp/screen-6.jpeg" alt="Thumbnail 4" loading="lazy" />
+                </div>
+                <div class="sys-thumb" onclick="changeERPImage(this, 'assets/images/projects/kasserpro-erp/screen-7.jpeg')">
+                  <img src="assets/images/projects/kasserpro-erp/screen-7.jpeg" alt="Thumbnail 5" loading="lazy" />
+                </div>
+                <div class="sys-thumb" onclick="changeERPImage(this, 'assets/images/projects/kasserpro-erp/screen-8.jpeg')">
+                  <img src="assets/images/projects/kasserpro-erp/screen-8.jpeg" alt="Thumbnail 6" loading="lazy" />
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="showcase-content">
-            <!-- Main Preview Image -->
-            <div class="showcase-preview">
-              <div class="main-image">
-                <img id="az-main-img" src="assets/images/projects/az/main.png" alt="AZ International System Dashboard"
-                  class="preview-image" decoding="async" loading="lazy" />
+
+          <!-- Kasser Pro System Card -->
+          <div class="sys-project-card" id="kasser-card">
+            <div class="sys-project-content">
+              <div class="project-tags">
+                <span class="sys-tag"><i class="fas fa-star"></i> <span data-i18n="kasser.badge">نظام رائد</span></span>
+                <span class="sys-tag sys-tag-outline">SaaS</span>
+              </div>
+              <h3 class="sys-project-title" data-i18n="kasser.title">Cashier</h3>
+              <p class="sys-project-desc" data-i18n="kasser.subtitle">
+                نظام كاشير حديث للمطاعم والكافيهات والوجبات السريعة، يربط شاشة البيع مع الطلبات والعملاء والمنتجات
+                والإعدادات في تجربة تشغيل سريعة وواضحة.
+              </p>
+
+              <div class="sys-project-features">
+                <div class="feat-badge"><i class="fas fa-bolt"></i> <span data-i18n="kasser.feature_10">نقطة بيع سريعة</span></div>
+                <div class="feat-badge"><i class="fas fa-box-open"></i> <span data-i18n="kasser.feature_2">منتجات وتصنيفات وأسعار</span></div>
+                <div class="feat-badge"><i class="fas fa-clipboard-list"></i> <span data-i18n="kasser.feature_3">سجل طلبات ومتابعة حالة</span></div>
+                <div class="feat-badge"><i class="fas fa-file-invoice-dollar"></i> <span
+                    data-i18n="kasser.feature_4">ضريبة وفواتير وطباعة</span></div>
+                <div class="feat-badge"><i class="fas fa-users"></i> <span
+                    data-i18n="kasser.feature_11">عملاء وبحث بالتليفون</span></div>
+                <div class="feat-badge"><i class="fas fa-motorcycle"></i> <span
+                    data-i18n="kasser.feature_12">صالة، تيك أواي، دليفري</span></div>
               </div>
 
-              <!-- Thumbnail Gallery -->
-              <div class="thumbnail-gallery" id="az-thumbs">
-                <div class="thumbnail active" onclick="changeAZImage(this, 'assets/images/projects/az/main.png')">
+              <div class="sys-project-detail-grid">
+                <div class="sys-detail-panel">
+                  <h4 class="sys-detail-title" data-i18n="kasser.panel_1_title">تشغيل البيع من شاشة واحدة</h4>
+                  <ul class="feature-list sys-detail-list">
+                    <li><i class="fas fa-check-circle"></i> <span data-i18n="kasser.panel_1_item_1">سلة ذكية مع ملاحظات على الأصناف وخصومات وحساب تلقائي للإجمالي.</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span data-i18n="kasser.panel_1_item_2">أنواع طلبات متعددة: صالة برقم طاولة، تيك أواي، ودليفري بعنوان ورسوم توصيل.</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span data-i18n="kasser.panel_1_item_3">دفع بكاش أو بطاقة أو محفظة مع إنهاء الطلب وطباعة الفاتورة مباشرة.</span></li>
+                  </ul>
+                </div>
+                <div class="sys-detail-panel">
+                  <h4 class="sys-detail-title" data-i18n="kasser.panel_2_title">إدارة وتشغيل يومي</h4>
+                  <ul class="feature-list sys-detail-list">
+                    <li><i class="fas fa-check-circle"></i> <span data-i18n="kasser.panel_2_item_1">إدارة المنتجات والتصنيفات مع إتاحة أو إيقاف المنتج وتحديث الأسعار بسهولة.</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span data-i18n="kasser.panel_2_item_2">شاشة عملاء بالبحث بالاسم أو الهاتف مع إضافة وتعديل وحفظ بيانات التوصيل.</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span data-i18n="kasser.panel_2_item_3">إعدادات للضريبة وبيانات المطعم ورسوم التوصيل الافتراضية والطباعة الحرارية.</span></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="sys-project-actions">
+                <a href="https://kasserpro-frontend.vercel.app/" class="btn btn-glow-solid" target="_blank"
+                  rel="noopener noreferrer">
+                  <span data-i18n="kasser.demo_btn">Live Demo</span> <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="sys-project-visuals">
+              <div class="visuals-frame">
+                <img id="kasser-main-img" src="assets/images/projects/kasser/pos-screen.jpeg" alt="Cashier POS Screen"
+                  class="main-screen-img" decoding="async" loading="lazy" />
+                <div class="floating-badge badge-top"><i class="fas fa-check-circle"></i> مبيعات سريعة</div>
+                <div class="floating-badge badge-bottom"><i class="fas fa-sync-alt"></i> مزامنة سحابية</div>
+              </div>
+              <div class="visuals-thumbnails" id="kasser-thumbs">
+                <div class="sys-thumb active"
+                  onclick="changeKasserImage(this, 'assets/images/projects/kasser/pos-screen.jpeg')">
+                  <img src="assets/images/projects/kasser/pos-screen.jpeg" alt="POS Screen" loading="lazy" />
+                </div>
+                <div class="sys-thumb" onclick="changeKasserImage(this, 'assets/images/projects/kasser/products.jpeg')">
+                  <img src="assets/images/projects/kasser/products.jpeg" alt="Products Management" loading="lazy" />
+                </div>
+                <div class="sys-thumb" onclick="changeKasserImage(this, 'assets/images/projects/kasser/orders.jpeg')">
+                  <img src="assets/images/projects/kasser/orders.jpeg" alt="Orders Management" loading="lazy" />
+                </div>
+                <div class="sys-thumb" onclick="changeKasserImage(this, 'assets/images/projects/kasser/customers.jpeg')">
+                  <img src="assets/images/projects/kasser/customers.jpeg" alt="Customers Management" loading="lazy" />
+                </div>
+                <div class="sys-thumb" onclick="changeKasserImage(this, 'assets/images/projects/kasser/settings.jpeg')">
+                  <img src="assets/images/projects/kasser/settings.jpeg" alt="System Settings" loading="lazy" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- AZ International System Card -->
+          <div class="sys-project-card reverse-layout" id="az-card">
+            <div class="sys-project-content">
+              <div class="project-tags">
+                <span class="sys-tag"><i class="fas fa-certificate"></i> <span data-i18n="az.badge">مشروع
+                    رائد</span></span>
+                <span class="sys-tag sys-tag-outline">Enterprise</span>
+              </div>
+              <h3 class="sys-project-title" data-i18n="az.title">AZ International - نظام إدارة شهادات الفحص الهندسي</h3>
+              <p class="sys-project-desc" data-i18n="az.subtitle">
+                منصة رقمية لإدارة شهادات الفحص الهندسي والتحقق منها، تجمع بين البحث العام عن الشهادات ولوحة إدارة داخلية
+                لإصدار البيانات ومتابعتها وتحديثها بدقة وأمان.
+              </p>
+
+              <div class="sys-project-features">
+                <div class="feat-badge"><i class="fas fa-search"></i> <span data-i18n="az.feature_1">بحث عن الشهادات بالاسم أو الرقم</span></div>
+                <div class="feat-badge"><i class="fas fa-certificate"></i> <span data-i18n="az.feature_2">إدارة شهادات ومتدربين</span></div>
+                <div class="feat-badge"><i class="fas fa-vial"></i> <span data-i18n="az.feature_3">دعم VT / PT / MT / RT / UT</span></div>
+                <div class="feat-badge"><i class="fas fa-file-excel"></i> <span data-i18n="az.feature_4">استيراد Excel دفعة واحدة</span></div>
+                <div class="feat-badge"><i class="fas fa-calendar-check"></i> <span data-i18n="az.feature_5">حالة الشهادة وتاريخ الانتهاء</span></div>
+                <div class="feat-badge"><i class="fas fa-user-shield"></i> <span data-i18n="az.feature_6">لوحة إدارة وصلاحيات دخول</span></div>
+              </div>
+
+              <div class="sys-project-detail-grid">
+                <div class="sys-detail-panel">
+                  <h4 class="sys-detail-title" data-i18n="az.panel_1_title">تحقق عام واضح وسريع</h4>
+                  <ul class="feature-list sys-detail-list">
+                    <li><i class="fas fa-check-circle"></i> <span data-i18n="az.panel_1_item_1">صفحة بحث عامة للتحقق من الشهادات باستخدام اسم المتدرب أو الرقم التسلسلي بدون تعقيد.</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span data-i18n="az.panel_1_item_2">صفحة شهادة تعرض بيانات الإصدار والانتهاء والحالة الحالية مع QR Code للطباعة أو التحميل.</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span data-i18n="az.panel_1_item_3">إظهار واضح لحالة الشهادة: سارية أو منتهية أو غير صالحة لسهولة التحقق السريع.</span></li>
+                  </ul>
+                </div>
+                <div class="sys-detail-panel">
+                  <h4 class="sys-detail-title" data-i18n="az.panel_2_title">إدارة داخلية للشهادات والبيانات</h4>
+                  <ul class="feature-list sys-detail-list">
+                    <li><i class="fas fa-check-circle"></i> <span data-i18n="az.panel_2_item_1">إضافة وتعديل وحذف المتدربين والشهادات مع منع تكرار الرقم التسلسلي أو تكرار نفس طريقة الفحص لنفس الشخص.</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span data-i18n="az.panel_2_item_2">استيراد جماعي من ملفات Excel مع البحث والتصفية وتجميع النتائج داخل لوحة الإدارة.</span></li>
+                    <li><i class="fas fa-check-circle"></i> <span data-i18n="az.panel_2_item_3">بنية جاهزة للتنبيهات البريدية، وتأمين دخول الإدارة عبر صلاحيات وتوكنات JWT.</span></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="sys-project-actions">
+                <a href="https://azinternational-eg.com/" class="btn btn-glow-solid" target="_blank"
+                  rel="noopener noreferrer">
+                  <span data-i18n="az.demo_btn">زيارة الموقع</span> <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="sys-project-visuals">
+              <div class="visuals-frame">
+                <img id="az-main-img" src="assets/images/projects/az/main.png" alt="AZ International System Dashboard"
+                  class="main-screen-img" decoding="async" loading="lazy" />
+              </div>
+              <div class="visuals-thumbnails" id="az-thumbs">
+                <div class="sys-thumb active" onclick="changeAZImage(this, 'assets/images/projects/az/main.png')">
                   <img src="assets/images/projects/az/main.png" alt="Main Dashboard" loading="lazy" />
                 </div>
-                <div class="thumbnail" onclick="changeAZImage(this, 'assets/images/projects/az/verify.png')">
+                <div class="sys-thumb" onclick="changeAZImage(this, 'assets/images/projects/az/verify.png')">
                   <img src="assets/images/projects/az/verify.png" alt="Verification System" loading="lazy" />
                 </div>
-                <div class="thumbnail" onclick="changeAZImage(this, 'assets/images/projects/az/about.png')">
+                <div class="sys-thumb" onclick="changeAZImage(this, 'assets/images/projects/az/about.png')">
                   <img src="assets/images/projects/az/about.png" alt="About Page" loading="lazy" />
                 </div>
-                <div class="thumbnail" onclick="changeAZImage(this, 'assets/images/projects/az/clients.png')">
+                <div class="sys-thumb" onclick="changeAZImage(this, 'assets/images/projects/az/clients.png')">
                   <img src="assets/images/projects/az/clients.png" alt="Clients Management" loading="lazy" />
                 </div>
               </div>
             </div>
-
-            <!-- System Features -->
-            <div class="showcase-details">
-              <h4 data-i18n="systems.showcase_features_title">
-                الميزات الرئيسية
-              </h4>
-              <div class="features-grid">
-                <div class="feature-item">
-                  <i class="fas fa-microchip"></i>
-                  <span data-i18n="az.feature_1">إدارة شاملة لخدمات الفحص الهندسي (VT, PT, MT, RT,
-                    UT)</span>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-file-excel"></i>
-                  <span data-i18n="az.feature_2">استيراد ذكي لبيانات الشهادات من ملفات Excel بكميات
-                    ضخمة</span>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-qrcode"></i>
-                  <span data-i18n="az.feature_3">نظام تحقق من صحة الشهادات عبر الرقم التسلسلي (S/N)</span>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-bell"></i>
-                  <span data-i18n="az.feature_4">تتبع آلي لتواريخ انتهاء الصلاحية وتنبيهات التجديد</span>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-database"></i>
-                  <span data-i18n="az.feature_5">قاعدة بيانات مركزية آمنة لجميع العملاء والفحوصات</span>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-chart-pie"></i>
-                  <span data-i18n="az.feature_7">إنشاء تقارير فورية ودقيقة للفحوصات والشهادات
-                    المصدرة</span>
-                </div>
-              </div>
-
-              <div class="showcase-actions">
-                <a href="https://az-international.vercel.app/" target="_blank" class="btn btn-primary">
-                  <i class="fas fa-external-link-alt"></i>
-                  <span data-i18n="az.demo_btn">Live Demo</span>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
+
     </section>
     <!-- FAQ Section -->
-    <section class="services" id="faq">
+    <section class="sys-faq-section" id="faq">
       <div class="container">
-        <div class="section-heading">
-          <span class="badge badge-muted" data-i18n="systems.faq_badge">الأسئلة الشائعة</span>
-          <h2 data-i18n="systems.faq_title">أسئلة شائعة</h2>
-          <p data-i18n="systems.faq_lead">
-            إجابات على الأسئلة الأكثر شيوعاً حول أنظمتنا الإدارية وحلول POS
-          </p>
-        </div>
-
-        <div class="faq-container">
-          <details class="faq-item">
-            <summary data-i18n="systems.faq_q1">
-              كم يستغرق تنفيذ النظام؟
-            </summary>
-            <p data-i18n="systems.faq_a1">
-              عادة من 5 إلى 15 يومًا حسب حجم النظام والخصائص المطلوبة. نعمل
-              معك خطوة بخطوة لضمان التسليم في الوقت المحدد.
+        <div class="sys-faq-layout">
+          <div class="sys-faq-header">
+            <span class="badge premium-badge" data-i18n="systems.faq_badge" style="margin-bottom: 16px;">
+              <i class="fas fa-question-circle"></i> الأسئلة الشائعة
+            </span>
+            <h2 class="section-title" data-i18n="systems.faq_title">لديك استفسار؟<br>لدينا الإجابة.</h2>
+            <p class="section-lead" data-i18n="systems.faq_lead">
+              إجابات سريعة وواضحة على الأسئلة الأكثر شيوعاً حول أنظمتنا الإدارية وحلول POS. إذا كان لديك سؤال آخر، لا
+              تتردد في التواصل معنا.
             </p>
-          </details>
+            <div class="sys-faq-contact-box">
+              <p>لم تجد إجابتك؟</p>
+              <a href="contact.html?service=systems" class="btn btn-outline-dynamic">
+                تواصل مع الدعم الفني <i class="fas fa-headset"></i>
+              </a>
+            </div>
+          </div>
 
-          <details class="faq-item">
-            <summary data-i18n="systems.faq_q2">
-              هل النظام يعمل على السحابة أم محلياً؟
-            </summary>
-            <p data-i18n="systems.faq_a2">
-              نوفر كلا الخيارين. يمكن تشغيل النظام محلياً على خوادمك أو على
-              السحابة حسب احتياجاتك وتفضيلاتك.
-            </p>
-          </details>
+          <div class="sys-faq-accordion">
+            <details class="sys-faq-item" open>
+              <summary>
+                <span class="faq-icon"><i class="fas fa-clock"></i></span>
+                <span class="faq-text" data-i18n="systems.faq_q1">كم يستغرق تنفيذ النظام؟</span>
+                <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+              </summary>
+              <div class="faq-content">
+                <p data-i18n="systems.faq_a1">
+                  عادة من 5 إلى 15 يومًا حسب تقييم حجم عملك والخصائص المطلوبة. نعمل معك خطوة بخطوة بطريقة رشيقة (Agile)
+                  لضمان التسليم السريع والآمن.
+                </p>
+              </div>
+            </details>
 
-          <details class="faq-item">
-            <summary data-i18n="systems.faq_q3">
-              هل يمكن ربط عدة فروع بنفس النظام؟
-            </summary>
-            <p data-i18n="systems.faq_a3">
-              نعم، أنظمتنا تدعم الفروع المتعددة مع إمكانية المراقبة المركزية
-              وتبادل البيانات بين الفروع.
-            </p>
-          </details>
+            <details class="sys-faq-item">
+              <summary>
+                <span class="faq-icon"><i class="fas fa-network-wired"></i></span>
+                <span class="faq-text" data-i18n="systems.faq_q2">هل يمكن ربط عدة فروع بنفس النظام؟</span>
+                <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+              </summary>
+              <div class="faq-content">
+                <p data-i18n="systems.faq_a3">
+                  نعم بكل تأكيد، أنظمتنا مصممة لتكون سحابية المنشأ (Cloud-Native) مما يتيح لك مزامنة بيانات الفروع في
+                  الوقت الفعلي والاطلاع عليها من لوحة تحكم مركزية واحدة.
+                </p>
+              </div>
+            </details>
 
-          <details class="faq-item">
-            <summary data-i18n="systems.faq_q4">
-              هل تقدمون تدريب على استخدام النظام؟
-            </summary>
-            <p data-i18n="systems.faq_a4">
-              نعم، نقدم تدريب شامل لفريقك على استخدام النظام مع دليل مستخدم
-              مفصل ودعم فني مستمر.
-            </p>
-          </details>
+            <details class="sys-faq-item">
+              <summary>
+                <span class="faq-icon"><i class="fas fa-chalkboard-teacher"></i></span>
+                <span class="faq-text" data-i18n="systems.faq_q4">هل تقدمون تدريب على استخدام النظام؟</span>
+                <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+              </summary>
+              <div class="faq-content">
+                <p data-i18n="systems.faq_a4">
+                  نعم، كل باقة تأتي مع جلسات تدريب شاملة لفريقك (حضورياً أو أونلاين)، بالإضافة لأدلة استخدام وفيديوهات
+                  توضيحية لضمان تحقيق أقصى استفادة.
+                </p>
+              </div>
+            </details>
 
-          <details class="faq-item">
-            <summary data-i18n="systems.faq_q5">
-              هل يمكن تخصيص النظام حسب احتياجاتي؟
-            </summary>
-            <p data-i18n="systems.faq_a5">
-              بالطبع، نقوم بتخصيص الأنظمة لتناسب طبيعة عملك ومتطلباتك الخاصة
-              مع إمكانية إضافة ميزات جديدة.
-            </p>
-          </details>
+            <details class="sys-faq-item">
+              <summary>
+                <span class="faq-icon"><i class="fas fa-tools"></i></span>
+                <span class="faq-text" data-i18n="systems.faq_q5">هل يمكن تخصيص النظام حسب احتياجاتي؟</span>
+                <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+              </summary>
+              <div class="faq-content">
+                <p data-i18n="systems.faq_a5">
+                  بالطبع! نحن لا نبيع علباً جاهزة فقط، بل نهندس النظام ليطابق دورتك المستندية وطبيعة نشاطك لتوفير أكبر
+                  قدر من الوقت والجهد.
+                </p>
+              </div>
+            </details>
 
-          <details class="faq-item">
-            <summary data-i18n="systems.faq_q6">
-              ما هي أنواع التقارير المتاحة؟
-            </summary>
-            <p data-i18n="systems.faq_a6">
-              نوفر تقارير شاملة للمبيعات، المخزون، الأرباح، أداء الموظفين،
-              وتحليلات مفصلة لمساعدتك في اتخاذ القرارات.
-            </p>
-          </details>
+            <details class="sys-faq-item">
+              <summary>
+                <span class="faq-icon"><i class="fas fa-chart-line"></i></span>
+                <span class="faq-text" data-i18n="systems.faq_q6">ما هي أنواع التقارير المتاحة؟</span>
+                <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+              </summary>
+              <div class="faq-content">
+                <p data-i18n="systems.faq_a6">
+                  نوفر تقارير مفصلة للمبيعات (بالكاشير أو الصنف)، جرد المخزون، حسابات الأرباح، أداء فريق العمل، وتقارير
+                  الضرائب، مصحوبة برسوم بيانية مرئية لسهولة القراءة.
+                </p>
+              </div>
+            </details>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Final CTA Section -->
-    <section class="contact-banner" id="cta">
-      <div class="container banner-container">
-        <div class="banner-text">
-          <h2 data-i18n="systems.cta_title">جاهز لتطوير نظامك؟</h2>
+    <!-- Final CTA Section (Systems) -->
+    <section class="sys-cta-section" id="cta">
+      <div class="sys-cta-bg">
+        <div class="sys-cta-glow"></div>
+        <div class="sys-cta-grid"></div>
+      </div>
+      <div class="container relative-z">
+        <div class="sys-cta-content text-center">
+          <span class="badge premium-badge" style="margin-bottom: 20px;">
+            <i class="fas fa-rocket"></i> انطلق نحو المستقبل
+          </span>
+          <h2 data-i18n="systems.cta_title">جاهز لتطوير نظامك الإداري؟</h2>
           <p data-i18n="systems.cta_lead">
-            فريقنا جاهز لتحويل عملياتك إلى نظام رقمي متطور خلال أيام قليلة
+            فريقنا جاهز لتحويل أفكارك وعملياتك إلى نظام رقمي متطور يعزز مبيعاتك خلال أيام قليلة. اتصل بنا وابدأ رحلة
+            التحول الرقمي.
           </p>
-          <a class="banner-phone" href="tel:01014078319">01014078319</a>
-          <div class="social-links">
-            <a href="https://wa.me/201014078319" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-whatsapp"></i>
-              <span data-i18n="systems.cta_whatsapp">واتساب</span>
+          <div class="sys-cta-actions">
+            <a class="btn btn-glow-solid btn-lg" data-i18n="systems.cta_button" href="contact.html?service=systems">
+              احصل على عرض مجاني <i class="fas fa-arrow-left"></i>
             </a>
-            <a href="https://www.linkedin.com/company/arslantech" aria-label="LinkedIn" target="_blank"
-              rel="noopener noreferrer">
-              <i class="fab fa-linkedin-in"></i>
-              <span data-i18n="systems.cta_linkedin">LinkedIn</span>
-            </a>
-            <a href="https://www.facebook.com/Arslantecheg/" aria-label="Facebook" target="_blank"
-              rel="noopener noreferrer">
-              <i class="fab fa-facebook-f"></i>
-              <span data-i18n="systems.cta_facebook">Facebook</span>
+            <a class="btn btn-outline-dynamic btn-lg contact-phone" href="tel:01014078319">
+              <i class="fas fa-phone-alt"></i> 01014078319
             </a>
           </div>
-        </div>
-        <div class="banner-cta">
-          <a class="btn btn-light" data-i18n="systems.cta_button" href="contact.html?service=systems">
-            احصل على عرض مجاني
-          </a>
+          <div class="sys-cta-socials">
+            <a href="https://wa.me/201014078319" class="social-icon whatsapp" aria-label="WhatsApp" target="_blank"
+              rel="noopener noreferrer">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/arslantech" class="social-icon linkedin" aria-label="LinkedIn"
+              target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.facebook.com/Arslantecheg/" class="social-icon facebook" aria-label="Facebook"
+              target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -777,7 +905,7 @@
         <p>
           <i class="fas fa-map-marker-alt"></i>
           <strong data-i18n="contact.address_label">العنوان:</strong>
-          <span data-i18n="contact.address">الفيوم المسلة العبودي بجوار محمصات وكافيه شيخ البلد</span>
+          <span data-i18n="contact.address">الفيوم المسله العبودي امام مستشفي الندي</span>
         </p>
       </div>
     </div>
@@ -846,6 +974,17 @@
       }
       clickedThumb.classList.add("active");
     }
+
+    // تبديل صور نظام ERP
+    function changeERPImage(clickedThumb, imageSrc) {
+      document.getElementById("erp-main-img").src = imageSrc;
+      var thumbs = document.getElementById("erp-thumbs").children;
+      for (var i = 0; i < thumbs.length; i++) {
+        thumbs[i].classList.remove("active");
+      }
+      clickedThumb.classList.add("active");
+    }
+
   </script>
 </body>
 
