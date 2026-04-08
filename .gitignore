@@ -1,3 +1,4 @@
 # Ignore hidden directories (names starting with .)
 .*/
 **/.*/
+Hisham/
