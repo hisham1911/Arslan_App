@@ -1,5 +1,3 @@
-@import url("./styles.css");
-
 /* ============================================
    SERVICES PAGE - CREATIVE & MODERN DESIGN
    ============================================ */
@@ -798,7 +796,8 @@
 .cta-bg-animation {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at 30% 50%,
       rgba(14, 184, 226, 0.15),
       transparent 50%

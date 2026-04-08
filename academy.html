@@ -7,10 +7,23 @@
       (function () {
         try {
           var saved = localStorage.getItem("site_lang") || "en";
+          var lang = saved === "ar" ? "ar" : "en";
           var html = document.documentElement;
-          html.lang = saved === "ar" ? "ar" : "en";
-          html.dir = saved === "ar" ? "rtl" : "ltr";
+          html.lang = lang;
+          html.dir = lang === "ar" ? "rtl" : "ltr";
           html.classList.add("lang-loading");
+          window.__SITE_LANG__ = lang;
+          if (window.fetch) {
+            window.__I18N_PRELOAD__ = fetch("assets/i18n/" + lang + ".json", {
+              cache: "force-cache",
+            })
+              .then(function (response) {
+                return response && response.ok ? response.json() : null;
+              })
+              .catch(function () {
+                return null;
+              });
+          }
         } catch (e) {}
       })();
     </script>
@@ -72,12 +85,26 @@
       rel="stylesheet"
     />
     <link
-      rel="stylesheet"
+      rel="preload"
+      as="style"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+    </noscript>
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/academy.css" />
     <link rel="stylesheet" href="assets/css/svg-decorations.css" />
@@ -622,7 +649,7 @@
           </p>
         </div>
         <div class="footer-links">
-          <h4 data-i18n="footer.links_title">روابط سريعة</h4>
+          <h3 data-i18n="footer.links_title">روابط سريعة</h3>
           <ul>
             <li><a data-i18n="nav.home" href="/">الرئيسية</a></li>
             <li><a data-i18n="nav.about" href="/about">من نحن</a></li>
@@ -644,7 +671,7 @@
           </ul>
         </div>
         <div class="footer-contact">
-          <h4 data-i18n="footer.contact_title">تواصل معنا</h4>
+          <h3 data-i18n="footer.contact_title">تواصل معنا</h3>
           <p>
             <i class="fas fa-phone"></i>
             <strong data-i18n="footer.phone">الهاتف:</strong>

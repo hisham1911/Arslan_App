@@ -6,9 +6,16 @@
   const navbar = document.getElementById("navbar");
   const scrollTopBtn = document.getElementById("scrollTop");
   const reducedMotionQuery = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
+    "(prefers-reduced-motion: reduce)",
   );
   const prefersReducedMotion = reducedMotionQuery.matches;
+  const runWhenIdle = (callback, timeout = 1200) => {
+    if (typeof window.requestIdleCallback === "function") {
+      window.requestIdleCallback(() => callback(), { timeout });
+    } else {
+      window.setTimeout(callback, 0);
+    }
+  };
 
   if (!prefersReducedMotion) {
     document.documentElement.classList.add("js-motion");
@@ -22,7 +29,7 @@
     element.addEventListener(
       "animationend",
       () => element.classList.remove(className),
-      { once: true }
+      { once: true },
     );
   };
 
@@ -30,7 +37,7 @@
     const heroGroups = document.querySelectorAll(".hero, .systems-hero");
     heroGroups.forEach((group) => {
       const targets = group.querySelectorAll(
-        ".hero-content > *, .hero-card, .hero-stats > div, .hero-meta > *, .systems-hero-content > *, .systems-hero-actions > *, .hero-badge-wrapper > *"
+        ".hero-content > *, .hero-card, .hero-stats > div, .hero-meta > *, .systems-hero-content > *, .systems-hero-actions > *, .hero-badge-wrapper > *",
       );
       targets.forEach((target, index) => {
         target.style.setProperty("--motion-index", String(index));
@@ -40,7 +47,7 @@
 
   const armTapFeedback = () => {
     const tapTargets = document.querySelectorAll(
-      ".btn, .product-btn, .btn-submit, .btn-outline-dark, .btn-whatsapp, .cta-phone, .feature-badge, .floating-toggle-btn, .scroll-top"
+      ".btn, .product-btn, .btn-submit, .btn-outline-dark, .btn-whatsapp, .cta-phone, .feature-badge, .floating-toggle-btn, .scroll-top",
     );
 
     tapTargets.forEach((target) => {
@@ -65,8 +72,10 @@
   };
 
   if (!prefersReducedMotion) {
-    stampHeroMotion();
-    armTapFeedback();
+    runWhenIdle(() => {
+      stampHeroMotion();
+      armTapFeedback();
+    }, 1600);
 
     const startMotion = () => {
       requestAnimationFrame(() => {
@@ -91,7 +100,7 @@
       // set aria-expanded correctly
       menuToggle.setAttribute(
         "aria-expanded",
-        String(navLinks.classList.contains("show"))
+        String(navLinks.classList.contains("show")),
       );
     });
 
@@ -137,45 +146,63 @@
 
   const revealSelector =
     ".service-card, .service-card-enhanced, .testimonial-card, .contact-form, .contact-info, .partner-logo, .highlight-reveal, .product-card, .info-block, .vm-card, .feature-card, .service-detail, .partner-item, .highlight-item";
-  const revealItems = Array.from(document.querySelectorAll(revealSelector));
+  const initScrollAnimations = () => {
+    const revealItems = Array.from(document.querySelectorAll(revealSelector));
 
-  revealItems.forEach((item) => {
-    item.classList.add("reveal-item");
-    const parent = item.parentElement;
-    const siblingIndex = parent
-      ? Array.from(parent.children)
-          .filter((child) => child.matches(revealSelector))
-          .indexOf(item)
-      : 0;
+    revealItems.forEach((item) => {
+      item.classList.add("reveal-item");
+      const parent = item.parentElement;
+      const siblingIndex = parent
+        ? Array.from(parent.children)
+            .filter((child) => child.matches(revealSelector))
+            .indexOf(item)
+        : 0;
 
-    item.style.setProperty(
-      "--reveal-delay",
-      `${Math.max(0, Math.min(siblingIndex, 5)) * 85}ms`
-    );
-  });
+      item.style.setProperty(
+        "--reveal-delay",
+        `${Math.max(0, Math.min(siblingIndex, 5)) * 85}ms`,
+      );
+    });
 
-  if (prefersReducedMotion) {
-    revealItems.forEach((item) => item.classList.add("in-view"));
-  } else {
-    const observer = new IntersectionObserver(
-      (entries) => {
+    if (prefersReducedMotion) {
+      revealItems.forEach((item) => item.classList.add("in-view"));
+    } else {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in-view");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.18,
+          rootMargin: "0px 0px -8% 0px",
+        },
+      );
+
+      revealItems.forEach((item) => observer.observe(item));
+    }
+
+    const counters = document.querySelectorAll(".count-up");
+
+    const counterObserver = new IntersectionObserver(
+      (entries, obs) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("in-view");
-            observer.unobserve(entry.target);
+            animateCount(entry.target);
+            obs.unobserve(entry.target);
           }
         });
       },
-      {
-        threshold: 0.18,
-        rootMargin: "0px 0px -8% 0px",
-      }
+      { threshold: 0.6 },
     );
 
-    revealItems.forEach((item) => observer.observe(item));
-  }
-
-  const counters = document.querySelectorAll(".count-up");
+    counters.forEach((counter) => {
+      counterObserver.observe(counter);
+    });
+  };
 
   const animateCount = (el) => {
     const target = parseInt(el.dataset.target, 10) || 0;
@@ -199,21 +226,7 @@
     requestAnimationFrame(tick);
   };
 
-  const counterObserver = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateCount(entry.target);
-          obs.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.6 }
-  );
-
-  counters.forEach((counter) => {
-    counterObserver.observe(counter);
-  });
+  runWhenIdle(initScrollAnimations, 1800);
 
   const handleScrollUI = () => {
     const y = window.scrollY || window.pageYOffset;
@@ -348,7 +361,7 @@
       if (academyStatus) {
         academyStatus.textContent = t(
           "academy_page.form.sending",
-          currentLang === "ar" ? "جارٍ الإرسال..." : "Sending..."
+          currentLang === "ar" ? "جارٍ الإرسال..." : "Sending...",
         );
         academyStatus.className = "form-status pending";
         triggerMotion(academyStatus, "motion-pop");
@@ -370,7 +383,7 @@
               "academy_page.form.success",
               currentLang === "ar"
                 ? "تم الاستلام بنجاح"
-                : "Received successfully"
+                : "Received successfully",
             );
             academyStatus.className = "form-status success";
             triggerMotion(academyStatus, "motion-pop");
@@ -380,7 +393,7 @@
         if (academyStatus) {
           academyStatus.textContent = t(
             "academy_page.form.error",
-            currentLang === "ar" ? "تعذر الإرسال حالياً" : "Could not send now"
+            currentLang === "ar" ? "تعذر الإرسال حالياً" : "Could not send now",
           );
           academyStatus.className = "form-status error";
           triggerMotion(academyStatus, "motion-pop");
@@ -415,36 +428,93 @@
     ar: /* inline content omitted here (kept above in file) */ null,
   };
 
-  // We'll attempt to load external JSON translation files from /assets/i18n/*.json
+  // Load translations by demand and cache them locally to avoid blocking first render.
+  const I18N_CACHE_PREFIX = "arslan_i18n_cache_v1_";
+  const I18N_CACHE_TTL = 1000 * 60 * 60 * 24 * 3;
   let translations = {};
 
-  async function loadExternalTranslations() {
+  const normalizeLang = (lang) => (lang === "ar" ? "ar" : "en");
+
+  const getInitialLang = () => {
+    if (typeof window !== "undefined" && window.__SITE_LANG__) {
+      return normalizeLang(window.__SITE_LANG__);
+    }
     try {
-      const enResp = await fetch(resolveI18nUrl("en"));
-      const arResp = await fetch(resolveI18nUrl("ar"));
-      if (!enResp.ok || !arResp.ok)
-        throw new Error("Failed to fetch i18n files");
-      const en = await enResp.json();
-      const ar = await arResp.json();
-      translations = { en, ar };
-      console.info("Loaded external translations");
+      return normalizeLang(localStorage.getItem("site_lang") || "en");
     } catch (err) {
-      // Fallback: try to recover translations from existing in-file definitions
-      console.warn(
-        "Could not load external translations, using inline fallbacks. Error:",
-        err
+      return "en";
+    }
+  };
+
+  const readCachedTranslation = (lang) => {
+    try {
+      const raw = localStorage.getItem(`${I18N_CACHE_PREFIX}${lang}`);
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      if (!parsed || typeof parsed !== "object") return null;
+      if (!parsed.ts || Date.now() - parsed.ts > I18N_CACHE_TTL) return null;
+      if (!parsed.data || typeof parsed.data !== "object") return null;
+      return parsed.data;
+    } catch (err) {
+      return null;
+    }
+  };
+
+  const writeCachedTranslation = (lang, data) => {
+    try {
+      localStorage.setItem(
+        `${I18N_CACHE_PREFIX}${lang}`,
+        JSON.stringify({ ts: Date.now(), data }),
       );
-      // Recreate translations from current inline object by reading dataset keys already present in the file.
-      // For simplicity we keep the existing translations object defined earlier in the file scope (if present).
-      // We'll parse keys from the DOM defaults where possible.
-      // As a safe fallback, use existing `translations` if already defined, otherwise no-op.
-      if (typeof window !== "undefined" && window.__INLINE_TRANSLATIONS__) {
-        translations = window.__INLINE_TRANSLATIONS__;
-      } else {
-        // Minimal fallback: keep translations empty so translatePage leaves original text
-        translations = {};
+    } catch (err) {}
+  };
+
+  async function fetchTranslation(lang) {
+    const response = await fetch(resolveI18nUrl(lang), {
+      cache: "force-cache",
+    });
+    if (!response.ok) {
+      throw new Error(`Failed to fetch i18n file for ${lang}`);
+    }
+    return response.json();
+  }
+
+  async function loadTranslationsForLang(lang) {
+    const targetLang = normalizeLang(lang);
+
+    if (translations[targetLang]) return translations[targetLang];
+
+    const cached = readCachedTranslation(targetLang);
+    if (cached) {
+      translations[targetLang] = cached;
+      return cached;
+    }
+
+    let payload = null;
+
+    if (
+      typeof window !== "undefined" &&
+      window.__I18N_PRELOAD__ &&
+      window.__SITE_LANG__ === targetLang
+    ) {
+      try {
+        payload = await Promise.resolve(window.__I18N_PRELOAD__);
+      } catch (err) {
+        payload = null;
       }
     }
+
+    if (!payload) {
+      payload = await fetchTranslation(targetLang);
+    }
+
+    if (!payload || typeof payload !== "object") {
+      throw new Error(`Invalid translation payload for ${targetLang}`);
+    }
+
+    translations[targetLang] = payload;
+    writeCachedTranslation(targetLang, payload);
+    return payload;
   }
 
   // Attribute translations: alt, aria-label, title
@@ -474,26 +544,6 @@
       if (txt) el.title = txt;
     });
   }
-
-  // Initialize: try to load external translations, then wire up language buttons
-  loadExternalTranslations().finally(() => {
-    // store the inline translations as a global fallback so loadExternalTranslations can use them if needed
-    if (!window.__INLINE_TRANSLATIONS__)
-      window.__INLINE_TRANSLATIONS__ = translationsInline;
-    // if external translations weren't loaded, fall back to inline (if available)
-    if (!translations.en) {
-      // attempt to construct translations from DOM defaults using keys present in the file
-      // (we keep it simple: use the previously defined translationsInline if populated)
-      translations = window.__INLINE_TRANSLATIONS__ || {};
-    }
-    // Apply initial language (reads localStorage)
-    const saved = localStorage.getItem("site_lang");
-    const defaultLang = saved || "en";
-    setLanguage(defaultLang);
-
-    // language is now applied, show content if it was hidden during initialization
-    document.documentElement.classList.remove("lang-loading");
-  });
 
   const langButtons = document.querySelectorAll(".lang-btn");
 
@@ -553,8 +603,11 @@
   }
 
   function setLanguage(lang) {
-    localStorage.setItem("site_lang", lang);
-    translatePage(lang);
+    const targetLang = normalizeLang(lang);
+    try {
+      localStorage.setItem("site_lang", targetLang);
+    } catch (err) {}
+    translatePage(targetLang);
     // Update validation messages if form exists
     if (typeof window.updateValidationMessages === "function") {
       window.updateValidationMessages();
@@ -562,12 +615,56 @@
   }
 
   langButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      setLanguage(btn.dataset.lang);
+    btn.addEventListener("click", async () => {
+      const targetLang = normalizeLang(btn.dataset.lang);
+      if (!translations[targetLang]) {
+        try {
+          await loadTranslationsForLang(targetLang);
+        } catch (err) {
+          if (
+            !translations[targetLang] &&
+            window.__INLINE_TRANSLATIONS__ &&
+            window.__INLINE_TRANSLATIONS__[targetLang]
+          ) {
+            translations[targetLang] =
+              window.__INLINE_TRANSLATIONS__[targetLang];
+          }
+        }
+      }
+      setLanguage(targetLang);
     });
   });
 
-  // (initialization handled after attempting to load external translations)
+  async function initializeLanguage() {
+    if (!window.__INLINE_TRANSLATIONS__) {
+      window.__INLINE_TRANSLATIONS__ = translationsInline;
+    }
+
+    const initialLang = getInitialLang();
+
+    try {
+      await loadTranslationsForLang(initialLang);
+    } catch (err) {
+      if (
+        window.__INLINE_TRANSLATIONS__ &&
+        window.__INLINE_TRANSLATIONS__[initialLang]
+      ) {
+        translations[initialLang] = window.__INLINE_TRANSLATIONS__[initialLang];
+      } else {
+        translations[initialLang] = translations[initialLang] || {};
+      }
+    }
+
+    setLanguage(initialLang);
+    document.documentElement.classList.remove("lang-loading");
+
+    const secondaryLang = initialLang === "ar" ? "en" : "ar";
+    runWhenIdle(() => {
+      loadTranslationsForLang(secondaryLang).catch(() => {});
+    }, 2600);
+  }
+
+  initializeLanguage();
 
   /* ====== CSRF Protection ====== */
   let csrfToken = "";
@@ -584,8 +681,14 @@
     }
   }
 
-  // Fetch token on load
-  fetchCsrfToken();
+  // Fetch token after load so it does not compete with critical render requests.
+  window.addEventListener(
+    "load",
+    () => {
+      fetchCsrfToken();
+    },
+    { once: true },
+  );
   /* End CSRF Protection */
 
   /* End i18n */
@@ -601,7 +704,7 @@
     // Update validation messages for visible errors
     window.updateValidationMessages = function () {
       const formFields = salesForm.querySelectorAll(
-        "input.error, textarea.error, select.error"
+        "input.error, textarea.error, select.error",
       );
       formFields.forEach((field) => {
         validateField(field);
